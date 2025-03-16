@@ -27,6 +27,10 @@ body {
   border-color: var(--grey-color);
 }
 
+small {
+  font-size: 12px;
+}
+
 .btn:hover {
   background-color: #00f;
   color: #fff;
