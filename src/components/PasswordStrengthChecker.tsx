@@ -19,11 +19,11 @@ const PasswordStrengthChecker: React.FC<PasswordStrengthCheckerProps> = ({ passw
 
     if (length >= 12 && hasUpper && hasLower && hasDigit && hasSpecial) {
       return { text: "Excellent", class: "text-success" };
-    } else if (length >= 8 && hasUpper && hasLower && hasDigit && hasSpecial) {
+    } else if (length >= 10 && hasUpper && hasLower && hasDigit && hasSpecial) {
       return { text: "Strong", class: "text-primary" };
-    } else if (length >= 6 && hasUpper && hasLower && hasDigit) {
+    } else if (length >= 8 && hasUpper && hasLower && hasDigit) {
       return { text: "Very Good", class: "text-info" }; 
-    } else if (length >= 6 && hasUpper && hasLower) {
+    } else if (length >= 8 && hasUpper && hasLower) {
       return { text: "Good", class: "text-warning" };
     } else {
       return { text: "Weak", class: "text-danger" }; 

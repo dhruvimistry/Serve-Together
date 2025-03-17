@@ -22,6 +22,14 @@ body {
   color: #fff;
 }
 
+.common-bg {
+  background-color: #f0f5f9;
+}
+
+.common-radius {
+  border-radius: 20px;
+}
+
 .input-box {
   background: none;
   border-color: var(--grey-color);

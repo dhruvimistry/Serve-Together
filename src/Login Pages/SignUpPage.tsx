@@ -53,6 +53,10 @@ const OrganizationForm: React.FC = () => (
   <>
     <div className="row">
       <div className="col-md-6 mb-3">
+<<<<<<< HEAD:src/pages/SignUpPage.tsx
+=======
+        
+>>>>>>> main:src/Login Pages/SignUpPage.tsx
         <label>Name of Organization</label>
         <input type="text" className="form-control" placeholder="Enter organization name" />
       </div>
