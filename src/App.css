@@ -31,6 +31,7 @@ small {
   font-size: 12px;
 }
 
+/* Change name of specific btn */
 .btn:hover {
   background-color: #00f;
   color: #fff;

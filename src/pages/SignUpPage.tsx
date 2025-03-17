@@ -4,7 +4,7 @@ import HeadLogo from '../assets/serve-together-1.png';
 
 const VolunteerForm: React.FC = () => (
   <>
-    <div className="row">
+    <div className="row pb-1">
       <div className="col-md-6 mb-3">
         <label>Name</label>
         <input type="text" className="form-control" placeholder="Enter your name" />
@@ -14,7 +14,7 @@ const VolunteerForm: React.FC = () => (
         <input type="text" className="form-control" placeholder="Enter mobile number" />
       </div>
     </div>
-    <div className="row">
+    <div className="row pb-1">
       <div className="col-md-6 mb-3">
         <label>Email</label>
         <input type="email" className="form-control" placeholder="Enter email" />
@@ -24,7 +24,7 @@ const VolunteerForm: React.FC = () => (
         <input type="password" className="form-control" placeholder="Enter password" />
       </div>
     </div>
-    <div className="row">
+    <div className="row pb-1">
       <div className="col-md-4 mb-3">
         <label>Age</label>
         <input type="number" className="form-control" placeholder="Enter age" />
@@ -72,7 +72,7 @@ const OrganizationForm: React.FC = () => (
       </div>
     </div>
     <div className="row">
-      <div className="col-md-12 mb-3">
+      <div className="col-md-6 offset-3 mb-3">
         <label>City</label>
         <select className="form-select">
           <option>Select city</option>
@@ -89,14 +89,14 @@ const SignUpPage: React.FC = () => {
 
   return (
     <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div className="card shadow p-5 w-75">
+      <div className="card shadow p-5 w-100">
         <div className="text-center">
           <img src={HeadLogo} className="mb-3 logo" alt="Logo"/>
         </div>
         <h4 className="text-center mb-4">Sign Up</h4>
         
         <div className="d-flex justify-content-center mb-3">
-          <select className="form-select role-selection" onChange={(e) => setRole(e.target.value)} value={role}>
+          <select className="form-select w-auto theme fw-bold" onChange={(e) => setRole(e.target.value)} value={role}>
             <option value="volunteer">Volunteer</option>
             <option value="organization">Organization</option>
           </select>
@@ -105,11 +105,11 @@ const SignUpPage: React.FC = () => {
         {role === "volunteer" ? <VolunteerForm /> : <OrganizationForm />}
 
         <div className="d-flex justify-content-center">
-          <button className="btn btn-primary my-3 create-btn">Create Account</button>
+          <button className="btn theme-bg my-3 create-btn">Create Account</button>
         </div>
-        <div className="text-center">
+        <div className="text-center small-text">
           <span>
-            Already have an account? <a href="#" className="text-primary">Log in</a>
+            Already have an account? <a href="#" className="link-text">Log in</a>
           </span>
         </div>
       </div>

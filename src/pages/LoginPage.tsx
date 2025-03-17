@@ -70,8 +70,7 @@ const LoginForm: React.FC = () => {
 
           <div className="text-center mt-3 fw-bold small-text py-3">
             <span>
-              Don't have an account? 
-              <a href="#" className="link-text">Sign up  </a>
+              Don't have an account? <a href="#" className="link-text">Sign up</a>
               {/* <Link to="/src/pages/SignUpPage.tsx"className="link-text">Sign up</Link> */}
             </span>
           </div>
