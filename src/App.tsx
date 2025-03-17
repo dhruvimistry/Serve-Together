@@ -1,7 +1,7 @@
 // import { useState } from 'react'
 import './App.css'
 // import LoginPage from './pages/LoginPage'
-import ForgotPasswordPage from './pages/ForgotPage'
+import ForgotPasswordPage from './ForgotPages/ForgotPage'
 
 function App() {
 

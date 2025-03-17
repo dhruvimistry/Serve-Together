@@ -1,5 +1,5 @@
 import React from "react";
-import ImageSection from "../components/ImageSection1";
+import IllustrationSection from "../components/IllustrationSection";
 import HeadLogo from "../assets/serve-together-1.png";
 
 const ForgotPasswordForm: React.FC = () => {
@@ -30,7 +30,7 @@ const ForgotPasswordForm: React.FC = () => {
 const ForgotPasswordPage: React.FC = () => {
   return (
     <div className="container-fluid d-flex p-0 vh-100">
-      <ImageSection />
+      <IllustrationSection />
       <ForgotPasswordForm />
     </div>
   );

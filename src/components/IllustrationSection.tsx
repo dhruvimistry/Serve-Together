@@ -1,0 +1,34 @@
+// import Password from "../assets/Forgot password gif.gif"
+
+// const IllustrationSection: React.FC = () => {
+//     return (
+//         <>
+//                 <div className="col-md-8 vh-100 p-0 bg-white">
+//                 <img
+//                 src={Password} 
+//                 alt="Forget Password"
+//                 className="page justify-content-center" 
+//                 />
+//                 </div>
+//         </>
+        
+//     );
+// };
+
+// export default IllustrationSection 
+
+
+import React from "react";
+import Illustration from "../assets/Forgot password gif.gif";
+
+const ImageSection: React.FC = () => {
+  return (
+    <div className="col-md-8 vh-100 d-flex align-items-center justify-content-center bg-white">
+      <div className="text-center">
+        <img src={Illustration} alt="Forgot Password Illustration" className="img-fluid" />
+      </div>
+    </div>
+  );
+};
+
+export default ImageSection;
