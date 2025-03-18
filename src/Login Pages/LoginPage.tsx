@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
+import './LoginPage.css';
 // import PasswordStrengthChecker from "../components/PasswordStrengthChecker";
 import ImageSection from "../components/ImageSection";
 import HeadLogo from "../assets/serve-together-1.png";
@@ -20,12 +21,12 @@ const LoginForm: React.FC = () => {
   };
 
   return (
-    <div className="col-md-4 d-flex align-items-center justify-content-center vh-100">
+    <div className="col-lg-4 col-md-12 d-flex align-items-center justify-content-center vh-100 p-2">
       <div className="p-1 w-75">
         <div className="text-center">
-          <img src={HeadLogo} className="w-75" alt="Logo" />
+          <img src={HeadLogo} className="w-75 logo" alt="Logo" />
         </div>
-        <h4 className="text-center my-5">Log in</h4>
+        <h4 className="text-center my-5" id="log-in">Log in</h4>
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
@@ -77,7 +78,7 @@ const LoginForm: React.FC = () => {
 
 const LoginPage: React.FC = () => {
   return (
-    <div className="container-fluid d-flex p-0 vh-100">
+    <div className="container-fluid d-flex p-0 flex-wrap">
       <ImageSection />
       <LoginForm />
     </div>

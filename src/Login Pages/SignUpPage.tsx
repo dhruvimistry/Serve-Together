@@ -3,34 +3,37 @@ import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import './SignUpPage.css';
 import HeadLogo from '../assets/serve-together-1.png';
+import PasswordStrengthChecker from '../components/PasswordStrengthChecker';
 
 interface FormProps {
   register: any;
   errors: any;
+  password: string;
+  setPassword: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const emailExp: RegExp = /^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,})$/;
 
-const VolunteerForm: React.FC<FormProps> = ({ register, errors }) => (
+const VolunteerForm: React.FC<FormProps> = ({ register, errors, password, setPassword }) => (
   <>
     <div className="row pb-1">
-      <div className="col-md-6 mb-3">
+      <div className="col-lg-6 mb-3">
         <label>Name</label>
-        <input type="text" className="form-control" {...register("name", { required: "Name is required" })} placeholder="Enter your name" />
+        <input type="text" className="form-control input-box" {...register("name", { required: "Name is required" })} placeholder="Enter your name" />
         {errors.name && <p className="text-danger small">{errors.name.message}</p>}
       </div>
 
-      <div className="col-md-6 mb-3">
+      <div className="col-lg-6 mb-3">
         <label>Mobile Number</label>
-        <input type="text" className="form-control" {...register("mobile", { required: "Mobile number is required" })} placeholder="Enter mobile number" />
+        <input type="number" className="form-control input-box" {...register("mobile", { required: "Mobile number is required" })} placeholder="Enter mobile number" />
         {errors.mobile && <p className="text-danger small">{errors.mobile.message}</p>}
       </div>
     </div>
 
     <div className="row pb-1">
-      <div className="col-md-6 mb-3">
+      <div className="col-lg-6 mb-3">
         <label>Email</label>
-        <input type="email" className="form-control" {...register("email", { 
+        <input type="email" className="form-control input-box" {...register("email", { 
           required: "Email is required", 
           pattern: { 
             value: emailExp, 
@@ -40,21 +43,25 @@ const VolunteerForm: React.FC<FormProps> = ({ register, errors }) => (
         {errors.email && <p className="text-danger small">{errors.email.message}</p>}
       </div>
 
-      <div className="col-md-6 mb-3">
+      <div className="col-lg-6 mb-3">
         <label>Password</label>
-        <input type="password" className="form-control" {...register("password", { required: "Password is required" })} placeholder="Enter password" />
-        {errors.password && <p className="text-danger small">{errors.password.message}</p>}
+        <PasswordStrengthChecker password={password} setPassword={setPassword} />
+        {/* <input type="password" className="form-control" {...register("password", { required: "Password is required" })} placeholder="Enter password" />
+        {errors.password && <p className="text-danger small">{errors.password.message}</p>} */}
       </div>
     </div>
 
     <div className="row pb-1">
-      <div className="col-md-4 mb-3">
+      <div className="col-lg-4 mb-3">
         <label>Age</label>
-        <input type="number" className="form-control" {...register("age", { required: "Age is required", min: { value: 18, message: "Must be at least 18" } })} placeholder="Enter age" />
+        <input type="number" className="form-control input-box" {...register("age", { 
+          required: "Age is required", 
+          min: { value: 18, message: "Must be at least 18" } 
+        })} placeholder="Enter age" />
         {errors.age && <p className="text-danger small">{errors.age.message}</p>}
       </div>
 
-      <div className="col-md-4 mb-3">
+      <div className="col-lg-4 mb-3">
         <label>Gender</label>
         <select className="form-select" {...register("gender", { required: "Gender is required" })}>
           <option value="">Select gender</option>
@@ -64,7 +71,7 @@ const VolunteerForm: React.FC<FormProps> = ({ register, errors }) => (
         {errors.gender && <p className="text-danger small">{errors.gender.message}</p>}
       </div>
 
-      <div className="col-md-4 mb-3">
+      <div className="col-lg-4 mb-3">
         <label>City</label>
         <select className="form-select" {...register("city", { required: "City is required" })}>
           <option value="">Select city</option>
@@ -77,39 +84,40 @@ const VolunteerForm: React.FC<FormProps> = ({ register, errors }) => (
   </>
 );
 
-const OrganizationForm: React.FC<FormProps> = ({ register, errors }) => (
+const OrganizationForm: React.FC<FormProps> = ({ register, errors, password, setPassword }) => (
   <>
     <div className="row pb-1">
-      <div className="col-md-6 mb-3">
+      <div className="col-lg-6 mb-3">
         
         <label>Name of Organization</label>
-        <input type="text" className="form-control" {...register("orgName", { required: "Organization name is required" })} placeholder="Enter organization name" />
+        <input type="text" className="form-control input-box" {...register("orgName", { required: "Organization name is required" })} placeholder="Enter organization name" />
         {errors.orgName && <p className="text-danger small">{errors.orgName.message}</p>}
       </div>
 
-      <div className="col-md-6 mb-3">
+      <div className="col-lg-6 mb-3">
         <label>Mobile Number</label>
-        <input type="text" className="form-control" {...register("orgMobile", { required: "Mobile number is required" })} placeholder="Enter mobile number" />
+        <input type="number" className="form-control input-box" {...register("orgMobile", { required: "Mobile number is required" })} placeholder="Enter mobile number" />
         {errors.orgMobile && <p className="text-danger small">{errors.orgMobile.message}</p>}
       </div>
     </div>
 
     <div className="row pb-1">
-      <div className="col-md-6 mb-3">
+      <div className="col-lg-6 mb-3">
         <label>Email</label>
-        <input type="email" className="form-control" {...register("email", { required: "Email is required" })} placeholder="Enter email" />
+        <input type="email" className="form-control input-box" {...register("email", { required: "Email is required" })} placeholder="Enter email" />
         {errors.email && <p className="text-danger small">{errors.email.message}</p>}
       </div>
 
-      <div className="col-md-6 mb-3">
-        {/* <label>Password</label>
-        <input type="password" className="form-control" {...register("password", { required: "Password is required" })} placeholder="Enter password" />
+      <div className="col-lg-6 mb-3">
+        <label>Password</label>
+        <PasswordStrengthChecker password={password} setPassword={setPassword} />
+        {/* <input type="password" className="form-control" {...register("password", { required: "Password is required" })} placeholder="Enter password" />
         {errors.password && <p className="text-danger small">{errors.password.message}</p>} */}
       </div>
     </div>
 
     <div className="row">
-      <div className="col-md-6 offset-3 mb-3">
+      <div className="col-lg-6 offset-lg-3 mb-3">
         <label>City</label>
         <select className="form-select" {...register("city", { required: "City is required" })}>
           <option value="">Select city</option>
@@ -124,6 +132,7 @@ const OrganizationForm: React.FC<FormProps> = ({ register, errors }) => (
 
 const SignUpPage: React.FC = () => {
   const [role, setRole] = useState("volunteer");
+  const [password, setPassword] = useState("")
 
   const {
     register,
@@ -137,22 +146,36 @@ const SignUpPage: React.FC = () => {
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div className="card shadow p-5 w-100 common-radius">
+    <div className="container d-flex justify-content-center align-items-center vh-100 mx-auto my-3">
+      <div className="card shadow p-5 w-100 common-radius m-auto">
         <div className="text-center"> 
           <img src={HeadLogo} className="mb-3 logo" alt="Logo"/>
         </div>
         <h4 className="text-center mb-4">Sign Up</h4>
         
         <div className="d-flex justify-content-center mb-3">
-          <select className="form-select w-auto theme fw-bold" onChange={(e) => setRole(e.target.value)} value={role}>
+          <select className="form-select w-auto theme fw-bold role-select" onChange={(e) => setRole(e.target.value)} value={role}>
             <option value="volunteer">Volunteer</option>
             <option value="organization">Organization</option>
           </select>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
-          {role === "volunteer" ? <VolunteerForm register={register} errors={errors} /> : <OrganizationForm register={register} errors={errors} />}
+        {role === "volunteer" ? (
+            <VolunteerForm
+              register={register}
+              errors={errors}
+              password={password} 
+              setPassword={setPassword} 
+            />
+          ) : (
+            <OrganizationForm
+              register={register}
+              errors={errors}
+              password={password} 
+              setPassword={setPassword}
+            />
+          )}
           <div className="d-flex justify-content-center">
             <button type="submit" className="btn theme-bg my-3 create-btn">Create Account</button>
           </div>
