@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ImageSection from "../components/ImageSection";
+import IllustationSection from "../components/IllustrationSection";
 import HeadLogo from "../assets/serve-together-1.png";
 
 const OTPForm: React.FC = () => {
@@ -45,7 +45,7 @@ const OTPForm: React.FC = () => {
 const OTPPage: React.FC = () => {
   return (
     <div className="container-fluid d-flex p-0 vh-100">
-      <ImageSection />
+      <IllustationSection />
       <OTPForm />
     </div>
   );

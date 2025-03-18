@@ -12,20 +12,3 @@ const ImageSection: React.FC = () => {
 };
 
 export default ImageSection;
-
-
-// import Illustration from "../assets/illustration.png"; // Replace with actual illustration image
-
-// const ImageSection: React.FC = () => {
-//   return (
-//     <div className="col-md-8 vh-100 p-0 flex justify-center items-center bg-gray-100">
-//       <img
-//         src={Illustration}
-//         alt="Illustration of login process"
-//         className="max-w-md"
-//       />
-//     </div>
-//   );
-// };
-
-// export default ImageSection;
