@@ -1,32 +1,22 @@
-import React, { useState } from "react";
-import PasswordStrengthChecker from "../components/PasswordStrengthChecker";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { Link } from 'react-router-dom';
+// import PasswordStrengthChecker from "../components/PasswordStrengthChecker";
 import ImageSection from "../components/ImageSection";
 import HeadLogo from "../assets/serve-together-1.png";
-// import { Link } from "react-router";
 
 const emailExp: RegExp = /^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,})$/;
 
 const LoginForm: React.FC = () => {
-  const [email, setEmail] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-    if (e.target.value === "" || !emailExp.test(e.target.value)) {
-      setEmailError("Please enter a valid email address.");
-    } else {
-      setEmailError("");
-    }
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!emailExp.test(email)) {
-      setEmailError("Please enter a valid email address.");
-      return;
-    }
-    alert("Login successful!"); 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  
+  const onSubmit = (data: any) => {
+    alert("Login successful!");
+    console.log("Form Data:", data);
   };
 
   return (
@@ -37,41 +27,46 @@ const LoginForm: React.FC = () => {
         </div>
         <h4 className="text-center my-5">Log in</h4>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
             <label className="form-label mb-0">Email</label>
             <input
               type="email"
               className="form-control input-box"
               placeholder="Enter your email"
-              value={email}
-              onChange={handleEmailChange}
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: emailExp,
+                  message: "Invalid email format",
+                },
+              })}
             />
-            {emailError && <small className="text-danger">{emailError}</small>}
+            {errors.email?.message && <small className="text-danger">{String(errors.email.message)}</small>}
           </div>
 
           <div className="mb-4">
             <label className="form-label mb-0">Password</label>
-            <PasswordStrengthChecker password={password} setPassword={setPassword} />
+            {/* <PasswordStrengthChecker password="" setPassword={() => {}} /> */}
+            <input type="password" className="form-control input-box" {...register("password", { required: "Password is required" })} placeholder="Enter password" />
+            {errors.password && <p className="text-danger small">{errors.password.message as String}</p>}
           </div>
-
 
           <button className="btn w-100 theme-bg my-4" type="submit">
             Log in
           </button>
 
           <div className="text-center small-text py-3">
-            <a href="#" className="link-text fw-bold">
+            <a href="#" className="link-text">
               Forgot Password?
             </a>
           </div>
 
           <hr />
 
-          <div className="text-center mt-3 fw-bold small-text py-3">
+          <div className="text-center mt-3 small-text py-3">
             <span>
-              Don't have an account? <a href="#" className="link-text">Sign up</a>
-              {/* <Link to="/src/pages/SignUpPage.tsx"className="link-text">Sign up</Link> */}
+              Don't have an account? <Link to="/signup" className="link-text">Sign up</Link>
             </span>
           </div>
         </form>
