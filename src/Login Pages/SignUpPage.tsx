@@ -1,148 +1,72 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './SignUpPage.css';
 import HeadLogo from '../assets/serve-together-1.png';
-import PasswordStrengthChecker from '../components/PasswordStrengthChecker';
+import VolunteerForm from './VolunteerForm';
+import OrganizationForm from './OrganizationForm';
 
-interface FormProps {
-  register: any;
-  errors: any;
-  password: string;
-  setPassword: React.Dispatch<React.SetStateAction<string>>;
-}
-
-const emailExp: RegExp = /^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,})$/;
-
-const VolunteerForm: React.FC<FormProps> = ({ register, errors, password, setPassword }) => (
-  <>
-    <div className="row pb-1">
-      <div className="col-lg-6 mb-3">
-        <label>Name</label>
-        <input type="text" className="form-control input-box" {...register("name", { required: "Name is required" })} placeholder="Enter your name" />
-        {errors.name && <p className="text-danger small">{errors.name.message}</p>}
-      </div>
-
-      <div className="col-lg-6 mb-3">
-        <label>Mobile Number</label>
-        <input type="number" className="form-control input-box" {...register("mobile", { required: "Mobile number is required" })} placeholder="Enter mobile number" />
-        {errors.mobile && <p className="text-danger small">{errors.mobile.message}</p>}
-      </div>
-    </div>
-
-    <div className="row pb-1">
-      <div className="col-lg-6 mb-3">
-        <label>Email</label>
-        <input type="email" className="form-control input-box" {...register("email", { 
-          required: "Email is required", 
-          pattern: { 
-            value: emailExp, 
-            message: "Invalid email format" 
-          }
-          })} placeholder="Enter email" />
-        {errors.email && <p className="text-danger small">{errors.email.message}</p>}
-      </div>
-
-      <div className="col-lg-6 mb-3">
-        <label>Password</label>
-        <PasswordStrengthChecker password={password} setPassword={setPassword} />
-        {/* <input type="password" className="form-control" {...register("password", { required: "Password is required" })} placeholder="Enter password" />
-        {errors.password && <p className="text-danger small">{errors.password.message}</p>} */}
-      </div>
-    </div>
-
-    <div className="row pb-1">
-      <div className="col-lg-4 mb-3">
-        <label>Age</label>
-        <input type="number" className="form-control input-box" {...register("age", { 
-          required: "Age is required", 
-          min: { value: 18, message: "Must be at least 18" } 
-        })} placeholder="Enter age" />
-        {errors.age && <p className="text-danger small">{errors.age.message}</p>}
-      </div>
-
-      <div className="col-lg-4 mb-3">
-        <label>Gender</label>
-        <select className="form-select" {...register("gender", { required: "Gender is required" })}>
-          <option value="">Select gender</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-        {errors.gender && <p className="text-danger small">{errors.gender.message}</p>}
-      </div>
-
-      <div className="col-lg-4 mb-3">
-        <label>City</label>
-        <select className="form-select" {...register("city", { required: "City is required" })}>
-          <option value="">Select city</option>
-          <option value="city1">City 1</option>
-          <option value="city2">City 2</option>
-        </select>
-        {errors.city && <p className="text-danger small">{errors.city.message}</p>}
-      </div>
-    </div>
-  </>
-);
-
-const OrganizationForm: React.FC<FormProps> = ({ register, errors, password, setPassword }) => (
-  <>
-    <div className="row pb-1">
-      <div className="col-lg-6 mb-3">
-        
-        <label>Name of Organization</label>
-        <input type="text" className="form-control input-box" {...register("orgName", { required: "Organization name is required" })} placeholder="Enter organization name" />
-        {errors.orgName && <p className="text-danger small">{errors.orgName.message}</p>}
-      </div>
-
-      <div className="col-lg-6 mb-3">
-        <label>Mobile Number</label>
-        <input type="number" className="form-control input-box" {...register("orgMobile", { required: "Mobile number is required" })} placeholder="Enter mobile number" />
-        {errors.orgMobile && <p className="text-danger small">{errors.orgMobile.message}</p>}
-      </div>
-    </div>
-
-    <div className="row pb-1">
-      <div className="col-lg-6 mb-3">
-        <label>Email</label>
-        <input type="email" className="form-control input-box" {...register("email", { required: "Email is required" })} placeholder="Enter email" />
-        {errors.email && <p className="text-danger small">{errors.email.message}</p>}
-      </div>
-
-      <div className="col-lg-6 mb-3">
-        <label>Password</label>
-        <PasswordStrengthChecker password={password} setPassword={setPassword} />
-        {/* <input type="password" className="form-control" {...register("password", { required: "Password is required" })} placeholder="Enter password" />
-        {errors.password && <p className="text-danger small">{errors.password.message}</p>} */}
-      </div>
-    </div>
-
-    <div className="row">
-      <div className="col-lg-6 offset-lg-3 mb-3">
-        <label>City</label>
-        <select className="form-select" {...register("city", { required: "City is required" })}>
-          <option value="">Select city</option>
-          <option value="city1">City 1</option>
-          <option value="city2">City 2</option>
-        </select>
-        {errors.city && <p className="text-danger small">{errors.city.message}</p>}
-      </div>
-    </div>
-  </>
-);
-
+// There is an error in backend for nameOfOrganization
 const SignUpPage: React.FC = () => {
   const [role, setRole] = useState("volunteer");
-  const [password, setPassword] = useState("")
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  /** The useForm Hook is used HERE */ 
 
-  const onSubmit = (data: any) => {
-    console.log("Form Data:", data);
+  const onSubmit = async (data: any) => {
+    setLoading(true);
+  
+    const filteredData = role === "volunteer" 
+      ? {
+          name: data.name,
+          email: data.email,
+          mobileNo: data.mobileNo,
+          password: data.password,
+          age: Number(data.age),
+          gender: data.gender,
+          city: data.city,
+        }
+      : {
+          nameOfOrganization: data.nameOfOrganization,
+          email: data.email,
+          mobileNo: data.mobileNo,
+          password: data.password,
+          city: data.city,
+        };
+  
+    const url = role === "volunteer"
+      ? "https://ngo-volunteer-2.onrender.com/volunteer/signup"
+      : "https://ngo-volunteer-2.onrender.com/ngo/signup";
+  
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(filteredData),
+      });
+  
+      const result = await response.json();
+      if (response.ok) {
+        alert("Signup successful! Redirecting...");
+        console.log("API Response:", result);
+        setTimeout(() => navigate("/login"), 2000);
+      } else {
+        alert(result.message || "Signup failed. Try again.");
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+    console.log(filteredData);
   };
 
   return (
@@ -152,7 +76,7 @@ const SignUpPage: React.FC = () => {
           <img src={HeadLogo} className="mb-3 logo" alt="Logo"/>
         </div>
         <h4 className="text-center mb-4">Sign Up</h4>
-        
+
         <div className="d-flex justify-content-center mb-3">
           <select className="form-select w-auto theme fw-bold role-select" onChange={(e) => setRole(e.target.value)} value={role}>
             <option value="volunteer">Volunteer</option>
@@ -161,30 +85,20 @@ const SignUpPage: React.FC = () => {
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        {role === "volunteer" ? (
-            <VolunteerForm
-              register={register}
-              errors={errors}
-              password={password} 
-              setPassword={setPassword} 
-            />
+          {role === "volunteer" ? (
+            <VolunteerForm register={register} errors={errors} password={password} setPassword={setPassword} />
           ) : (
-            <OrganizationForm
-              register={register}
-              errors={errors}
-              password={password} 
-              setPassword={setPassword}
-            />
+            <OrganizationForm register={register} errors={errors} password={password} setPassword={setPassword} />
           )}
           <div className="d-flex justify-content-center">
-            <button type="submit" className="btn theme-bg my-3 create-btn">Create Account</button>
+            <button type="submit" className="btn theme-bg my-3 create-btn" disabled={loading}>
+              {loading ? "Creating..." : "Create Account"}
+            </button>
           </div>
         </form>
 
         <div className="text-center small-text">
-          <span>
-            Already have an account? <Link to="/login" className="link-text">Log in</Link>
-          </span>
+          <span>Already have an account? <Link to="/login" className="link-text">Log in</Link></span>
         </div>
       </div>
     </div>

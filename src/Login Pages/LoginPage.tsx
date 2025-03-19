@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './LoginPage.css';
 // import PasswordStrengthChecker from "../components/PasswordStrengthChecker";
 import ImageSection from "../components/ImageSection";
@@ -9,16 +9,44 @@ import HeadLogo from "../assets/serve-together-1.png";
 const emailExp: RegExp = /^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,})$/;
 
 const LoginForm: React.FC = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   
-  const onSubmit = (data: any) => {
-    alert("Login successful!");
-    console.log("Form Data:", data);
+  const onSubmit = async (data: any) => {
+    try {
+      const response = await fetch("https://ngo-volunteer-2.onrender.com/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: data.email,
+          password: data.password,
+        }),
+      });
+  
+      const result = await response.json();
+  
+      if (response.ok) {
+        alert("Login successful!");
+  
+        if (result.token) {
+          localStorage.setItem("authToken", result.token);
+        }
+        navigate("/");
+      } else {
+        alert(result.message || "Login failed. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+      alert("Something went wrong. Please try again.");
+    }
   };
+  
 
   return (
     <div className="col-lg-4 col-md-12 d-flex align-items-center justify-content-center vh-100 p-2">

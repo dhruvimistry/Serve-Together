@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 
 interface PasswordStrengthCheckerProps {
-  password: string;
+  // password: string;
   setPassword: (password: string) => void;
+  register: any;
+  errors: any;
 }
 
-const PasswordStrengthChecker: React.FC<PasswordStrengthCheckerProps> = ({ password, setPassword }) => {
+const PasswordStrengthChecker: React.FC<PasswordStrengthCheckerProps> = ({ setPassword, register, errors }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [passwordStrength, setPasswordStrength] = useState("");
   const [strengthClass, setStrengthClass] = useState("text-muted");
@@ -38,9 +40,9 @@ const PasswordStrengthChecker: React.FC<PasswordStrengthCheckerProps> = ({ passw
     setStrengthClass(strength.class);
   };
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
+  // const togglePasswordVisibility = () => {
+  //   setShowPassword(!showPassword);
+  // };
 
   return (
     <div>
@@ -49,14 +51,23 @@ const PasswordStrengthChecker: React.FC<PasswordStrengthCheckerProps> = ({ passw
           type={showPassword ? "text" : "password"}
           className="form-control input-box"
           placeholder="Enter your password"
-          value={password}
+          // value={password}
+          // onChange={handlePasswordChange}
+          // {...register("password", { required: "Password is required" })}
+          {...register("password", { required: "Password is required" })}
           onChange={handlePasswordChange}
         />
-        <span onClick={togglePasswordVisibility} className="input-group-text input-box" style={{ cursor: "pointer" }}>
+        <span 
+          // onClick={togglePasswordVisibility}
+          onClick={() => setShowPassword(!showPassword)}
+          className="input-group-text input-box" 
+          style={{ cursor: "pointer" }}
+        >
           <i className={`bx ${showPassword ? "bx-show" : "bx-hide"}`} />
         </span>
       </div>
-      {password && <small className={`mt-2 ${strengthClass}`}>{passwordStrength}</small>}
+      {passwordStrength && <small className={`mt-2 ${strengthClass}`}>{passwordStrength}</small>}
+      {errors.password && <p className="text-danger small">{errors.password.message}</p>}
     </div>
   );
 };
