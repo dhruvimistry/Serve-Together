@@ -27,7 +27,7 @@ const OTPForm: React.FC = () => {
               <input
                 key={index}
                 type="text"
-                className="form-control text-center mx-1"
+                className="input-box form-control text-center mx-1"
                 maxLength={1}
                 value={digit}
                 onChange={(e) => handleChange(index, e.target.value)}
@@ -44,7 +44,7 @@ const OTPForm: React.FC = () => {
 
 const OTPPage: React.FC = () => {
   return (
-    <div className="container-fluid d-flex p-0 vh-100">
+    <div className="container-fluid d-flex flex-column flex-md-row vh-100 p-0">
       <IllustationSection />
       <OTPForm />
     </div>

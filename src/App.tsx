@@ -4,7 +4,8 @@ import './App.css'
 // import ForgotPasswordPage from './ForgotPages/ForgotPage'
 // import LoginPage from './Login Pages/LoginPage'
 // import SignUpPage from './Login Pages/SignUpPage'
-import OTPPage from './ForgotPages/OPTpage'
+// import OTPPage from './ForgotPages/OPTpage'
+import ResetPage from './ForgotPages/ResetPage'
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
      {/* <LoginPage /> */}
      {/* <ForgotPasswordPage /> */}
       {/* <SignUpPage /> */}
-      < OTPPage />
+      {/* < OTPPage /> */}
+      <ResetPage/>
     </>
   )
 }
