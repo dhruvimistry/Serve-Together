@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
 import './LoginPage.css';
@@ -10,6 +10,8 @@ const emailExp: RegExp = /^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,})$
 
 const LoginForm: React.FC = () => {
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
+
   const {
     register,
     handleSubmit,
@@ -31,22 +33,19 @@ const LoginForm: React.FC = () => {
   
       const result = await response.json();
   
-      if (response.ok) {
-        alert("Login successful!");
-  
+      if (response.ok && result.success) {
         if (result.token) {
           localStorage.setItem("authToken", result.token);
         }
         navigate("/");
       } else {
-        alert(result.message || "Login failed. Please try again.");
+        setErrorMessage(result.message || "Login failed. Please try again.");
       }
     } catch (error) {
       console.error("Error during login:", error);
-      alert("Something went wrong. Please try again.");
+      setErrorMessage("Something went wrong. Please try again.");
     }
   };
-  
 
   return (
     <div className="col-lg-4 col-md-12 d-flex align-items-center justify-content-center vh-100 p-2">
@@ -55,6 +54,8 @@ const LoginForm: React.FC = () => {
           <img src={HeadLogo} className="w-75 logo" alt="Logo" />
         </div>
         <h4 className="text-center my-5" id="log-in">Log in</h4>
+
+    {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
@@ -104,10 +105,30 @@ const LoginForm: React.FC = () => {
   );
 };
 
-const LoginPage: React.FC = () => {
+/*const LoginPage: React.FC = () => {
   return (
     <div className="container-fluid d-flex p-0 flex-wrap">
       <ImageSection />
+      <LoginForm />
+    </div>
+  );
+}; */
+
+const LoginPage: React.FC = () => {
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768); 
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 768); 
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize); 
+  }, []);
+
+  return (
+    <div className="container-fluid d-flex p-0 flex-wrap">
+      {isDesktop && <ImageSection />} 
       <LoginForm />
     </div>
   );
