@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
 import './LoginPage.css';
@@ -87,9 +87,9 @@ const LoginForm: React.FC = () => {
           </button>
 
           <div className="text-center small-text py-3">
-            <a href="#" className="link-text">
+            <Link to="/forgotpassword" className="link-text">
               Forgot Password?
-            </a>
+            </Link>
           </div>
 
           <hr />
@@ -105,33 +105,33 @@ const LoginForm: React.FC = () => {
   );
 };
 
-const LoginPage: React.FC = () => {
-  return (
-    <div className="container-fluid d-flex p-0 flex-wrap">
-      <ImageSection />
-      <LoginForm />
-    </div>
-  );
-}; 
-
 // const LoginPage: React.FC = () => {
-//   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024); 
-
-//   useEffect(() => {
-//     const handleResize = () => {
-//       setIsDesktop(window.innerWidth > 1024); 
-//     };
-
-//     window.addEventListener("resize", handleResize);
-//     return () => window.removeEventListener("resize", handleResize); 
-//   }, []);
-
 //   return (
 //     <div className="container-fluid d-flex p-0 flex-wrap">
-//       {isDesktop && <ImageSection />} 
+//       <ImageSection />
 //       <LoginForm />
 //     </div>
 //   );
-// };
+// }; 
+
+const LoginPage: React.FC = () => {
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024); 
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024); 
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize); 
+  }, []);
+
+  return (
+    <div className="container-fluid d-flex p-0 flex-wrap">
+      {isDesktop && <ImageSection />} 
+      <LoginForm />
+    </div>
+  );
+};
 
 export default LoginPage;
