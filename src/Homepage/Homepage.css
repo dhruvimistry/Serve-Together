@@ -1,7 +1,6 @@
 .hero-container{
   position: relative;
 }
-
 .overlay{
   position: absolute;
   top: 0 ;
@@ -11,7 +10,6 @@
   background-color: #053fff80;
 
 }
-
 .caption-center {
   position: absolute;
   top: 50%;
@@ -25,28 +23,24 @@
 .cap {
  font-size: 60px;
 }
-
 .carousel-item {
-  min-height: 100vh; 
+  min-width: 100%; 
+}
+.carousel-item img {
+  /* object-fit: cover; */
+  min-width: 100%;
 }
 
-.carousel-item img {
-  object-fit: cover;
-  height: 100vh;
-  width: 100%;
-}
 .name{
   color: #003366;
   font-size: 48px;
-  }
-  
+  } 
 .about{
   margin: 0;
 }
 .feature .buttons .Apply {
   padding: 5px 94px;
 }
-
 .about .info{
   color: #7A7D7F;
   font-size: 16px;
@@ -60,9 +54,6 @@
   color: #7A7D7F;
   font-size: 16px;
   text-align: justify;
-}
-.container .questions{
-  margin: 0;
 }
 .accordion-button{
   color: #003366 !important;
@@ -79,13 +70,11 @@
     }
   } */
 @media (max-width: 1024px) {
-  .feature .buttons .Apply {
-    padding: 5px 74px;
+  .carousel-item {
+    width: 100%;
   }
 }
-.feature .card2{
-  padding: 0;
-}
+
 
 @media (max-width: 1024px) {
 .cap {
