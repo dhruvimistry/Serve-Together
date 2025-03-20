@@ -31,7 +31,9 @@ const ForgotPasswordForm: React.FC = () => {
 const ForgotPasswordPage: React.FC = () => {
   return (
     <div className="container-fluid d-flex flex-column flex-md-row vh-100 p-0">
+      <div className="d-none d-md-block col-md-8 col-lg-8">
       <IllustrationSection />
+      </div>
       <ForgotPasswordForm />
     </div>
   );
