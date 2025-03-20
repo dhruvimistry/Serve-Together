@@ -1,117 +1,104 @@
 import React, { useState } from 'react';
+import { useForm } from "react-hook-form";
+import { Link, useNavigate } from 'react-router-dom';
 import './SignUpPage.css';
 import HeadLogo from '../assets/serve-together-1.png';
+import VolunteerForm from './VolunteerForm';
+import OrganizationForm from './OrganizationForm';
 
-const VolunteerForm: React.FC = () => (
-  <>
-    <div className="row pb-1">
-      <div className="col-md-6 mb-3">
-        <label>Name</label>
-        <input type="text" className="form-control" placeholder="Enter your name" />
-      </div>
-      <div className="col-md-6 mb-3">
-        <label>Mobile Number</label>
-        <input type="text" className="form-control" placeholder="Enter mobile number" />
-      </div>
-    </div>
-    <div className="row pb-1">
-      <div className="col-md-6 mb-3">
-        <label>Email</label>
-        <input type="email" className="form-control" placeholder="Enter email" />
-      </div>
-      <div className="col-md-6 mb-3">
-        <label>Password</label>
-        <input type="password" className="form-control" placeholder="Enter password" />
-      </div>
-    </div>
-    <div className="row pb-1">
-      <div className="col-md-4 mb-3">
-        <label>Age</label>
-        <input type="number" className="form-control" placeholder="Enter age" />
-      </div>
-      <div className="col-md-4 mb-3">
-        <label>Gender</label>
-        <select className="form-select">
-          <option>Select gender</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-      </div>
-      <div className="col-md-4 mb-3">
-        <label>City</label>
-        <select className="form-select">
-          <option>Select city</option>
-          <option value="city1">City 1</option>
-          <option value="city2">City 2</option>
-        </select>
-      </div>
-    </div>
-  </>
-);
-
-const OrganizationForm: React.FC = () => (
-  <>
-    <div className="row">
-      <div className="col-md-6 mb-3">
-        
-        <label>Name of Organization</label>
-        <input type="text" className="form-control" placeholder="Enter organization name" />
-      </div>
-      <div className="col-md-6 mb-3">
-        <label>Mobile Number</label>
-        <input type="text" className="form-control" placeholder="Enter mobile number" />
-      </div>
-    </div>
-    <div className="row">
-      <div className="col-md-6 mb-3">
-        <label>Email</label>
-        <input type="email" className="form-control" placeholder="Enter email" />
-      </div>
-      <div className="col-md-6 mb-3">
-        <label>Password</label>
-        <input type="password" className="form-control" placeholder="Enter password" />
-      </div>
-    </div>
-    <div className="row">
-      <div className="col-md-6 offset-3 mb-3">
-        <label>City</label>
-        <select className="form-select">
-          <option>Select city</option>
-          <option value="city1">City 1</option>
-          <option value="city2">City 2</option>
-        </select>
-      </div>
-    </div>
-  </>
-);
-
+// There is an error in backend for nameOfOrganization
 const SignUpPage: React.FC = () => {
   const [role, setRole] = useState("volunteer");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = async (data: any) => {
+    setLoading(true);
+  
+    const filteredData = role === "volunteer" 
+      ? {
+          name: data.name,
+          email: data.email,
+          mobileNo: data.mobileNo,
+          password: data.password,
+          age: Number(data.age),
+          gender: data.gender,
+          city: data.city,
+        }
+      : {
+          nameOfOrganization: data.nameOfOrganization,
+          email: data.email,
+          mobileNo: data.mobileNo,
+          password: data.password,
+          city: data.city,
+        };
+  
+    const url = role === "volunteer"
+      ? "https://ngo-volunteer-2.onrender.com/volunteer/signup"
+      : "https://ngo-volunteer-2.onrender.com/ngo/signup";
+  
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(filteredData),
+      });
+  
+      const result = await response.json();
+      if (response.ok) {
+        alert("Signup successful! Redirecting...");
+        console.log("API Response:", result);
+        setTimeout(() => navigate("/login"), 2000);
+      } else {
+        alert(result.message || "Signup failed. Try again.");
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+    console.log(filteredData);
+  };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div className="card shadow p-5 w-100">
-        <div className="text-center">
+    <div className="container d-flex justify-content-center align-items-center vh-100 mx-auto my-3">
+      <div className="card shadow p-5 w-100 common-radius m-auto">
+        <div className="text-center"> 
           <img src={HeadLogo} className="mb-3 logo" alt="Logo"/>
         </div>
         <h4 className="text-center mb-4">Sign Up</h4>
-        
+
         <div className="d-flex justify-content-center mb-3">
-          <select className="form-select w-auto theme fw-bold" onChange={(e) => setRole(e.target.value)} value={role}>
+          <select className="form-select w-auto theme fw-bold role-select" onChange={(e) => setRole(e.target.value)} value={role}>
             <option value="volunteer">Volunteer</option>
             <option value="organization">Organization</option>
           </select>
         </div>
 
-        {role === "volunteer" ? <VolunteerForm /> : <OrganizationForm />}
+        <form onSubmit={handleSubmit(onSubmit)} noValidate>
+          {role === "volunteer" ? (
+            <VolunteerForm register={register} errors={errors} password={password} setPassword={setPassword} />
+          ) : (
+            <OrganizationForm register={register} errors={errors} password={password} setPassword={setPassword} />
+          )}
+          <div className="d-flex justify-content-center">
+            <button type="submit" className="btn theme-bg my-3 create-btn" disabled={loading}>
+              {loading ? "Creating..." : "Create Account"}
+            </button>
+          </div>
+        </form>
 
-        <div className="d-flex justify-content-center">
-          <button className="btn theme-bg my-3 create-btn">Create Account</button>
-        </div>
         <div className="text-center small-text">
-          <span>
-            Already have an account? <a href="#" className="link-text">Log in</a>
-          </span>
+          <span>Already have an account? <Link to="/login" className="link-text">Log in</Link></span>
         </div>
       </div>
     </div>

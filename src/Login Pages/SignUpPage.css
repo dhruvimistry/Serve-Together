@@ -1,3 +1,31 @@
 .logo, .create-btn {
   width: 200px;
 }
+
+.small {
+  margin-bottom: 5px;
+}
+
+*{
+  color: #37474f;
+}
+
+@media (width <= 768px) {
+  .logo, .role-select {
+    width: 150px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  label, input, input::placeholder, select, option, span, .btn {
+    font-size: 12px !important; 
+  }
+}
+
+@media (width <= 425px) {
+  .logo {
+    width: 120px;
+  }
+}

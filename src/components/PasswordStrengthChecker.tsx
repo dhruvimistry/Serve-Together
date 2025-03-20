@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 
 interface PasswordStrengthCheckerProps {
-  password: string;
+  // password: string;
   setPassword: (password: string) => void;
+  register: any;
+  errors: any;
 }
 
-const PasswordStrengthChecker: React.FC<PasswordStrengthCheckerProps> = ({ password, setPassword }) => {
+const PasswordStrengthChecker: React.FC<PasswordStrengthCheckerProps> = ({ setPassword, register, errors }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [passwordStrength, setPasswordStrength] = useState("");
   const [strengthClass, setStrengthClass] = useState("text-muted");
@@ -19,11 +21,11 @@ const PasswordStrengthChecker: React.FC<PasswordStrengthCheckerProps> = ({ passw
 
     if (length >= 12 && hasUpper && hasLower && hasDigit && hasSpecial) {
       return { text: "Excellent", class: "text-success" };
-    } else if (length >= 10 && hasUpper && hasLower && hasDigit && hasSpecial) {
+    } else if (length >= 8 && hasUpper && hasLower && hasDigit && hasSpecial) {
       return { text: "Strong", class: "text-primary" };
-    } else if (length >= 8 && hasUpper && hasLower && hasDigit) {
+    } else if (length >= 6 && hasUpper && hasLower && hasDigit) {
       return { text: "Very Good", class: "text-info" }; 
-    } else if (length >= 8 && hasUpper && hasLower) {
+    } else if (length >= 6 && hasUpper && hasLower) {
       return { text: "Good", class: "text-warning" };
     } else {
       return { text: "Weak", class: "text-danger" }; 
@@ -38,9 +40,9 @@ const PasswordStrengthChecker: React.FC<PasswordStrengthCheckerProps> = ({ passw
     setStrengthClass(strength.class);
   };
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
+  // const togglePasswordVisibility = () => {
+  //   setShowPassword(!showPassword);
+  // };
 
   return (
     <div>
@@ -49,14 +51,23 @@ const PasswordStrengthChecker: React.FC<PasswordStrengthCheckerProps> = ({ passw
           type={showPassword ? "text" : "password"}
           className="form-control input-box"
           placeholder="Enter your password"
-          value={password}
+          // value={password}
+          // onChange={handlePasswordChange}
+          // {...register("password", { required: "Password is required" })}
+          {...register("password", { required: "Password is required" })}
           onChange={handlePasswordChange}
         />
-        <span onClick={togglePasswordVisibility} className="input-group-text input-box" style={{ cursor: "pointer" }}>
+        <span 
+          // onClick={togglePasswordVisibility}
+          onClick={() => setShowPassword(!showPassword)}
+          className="input-group-text input-box" 
+          style={{ cursor: "pointer" }}
+        >
           <i className={`bx ${showPassword ? "bx-show" : "bx-hide"}`} />
         </span>
       </div>
-      {password && <small className={`mt-2 ${strengthClass}`}>{passwordStrength}</small>}
+      {passwordStrength && <small className={`mt-2 ${strengthClass}`}>{passwordStrength}</small>}
+      {errors.password && <p className="text-danger small">{errors.password.message}</p>}
     </div>
   );
 };
