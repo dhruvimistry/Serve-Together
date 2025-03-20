@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const ForgotPasswordForm: React.FC = () => {
   return (
     <div className="col-md-6 col-lg-4 d-flex align-items-center justify-content-center vh-100">
-      <div className="p-3 w-100">
+      <div className="p-1 w-75">
         <div className="text-center mb-4">
           <img src={HeadLogo} className="img-fluid w-50" alt="Serve Together Logo" />
         </div>
@@ -17,7 +17,7 @@ const ForgotPasswordForm: React.FC = () => {
             <label className="form-label">Email</label>
             <input
               type="email"
-              className="form-control"
+              className="input-box form-control"
               placeholder="Enter your email"
             />
           </div>

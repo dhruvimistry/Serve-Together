@@ -9,9 +9,9 @@ import HomePage from './Home'
 import OTPPage from './ForgotPages/OPTpage'
 import ResetPage from './ForgotPages/ResetPage'
 import NGOProfilePage from './NGO Profile Page/NGOProfilePage'
-import Homepage from './Homepage/Homepage'
+// import Homepage from './Homepage/Homepage'
 // import LoginPage from './pages/LoginPage'
-// import Profile from './Volprofile/Volprofileviewer'
+import Volprofileviewer from './Volprofile/Volprofileviewer'
 
 
 
@@ -20,9 +20,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-       <Route path='/' element={<HomePage />}/>
+        <Route path='/volprofileviewer' element={<Volprofileviewer />}/>
+        <Route path='/' element={<HomePage />}/>
         <Route path='/login' element={<LoginPage />}/>
-        <Route path='/sign' element={<SignUpPage />}/>
+        <Route path='/signup' element={<SignUpPage />}/>
         <Route path='/forgotpassword' element={<ForgotPasswordPage />}/>
         <Route path='/otp' element={<OTPPage />}/>
         <Route path='/resetpassword' element={<ResetPage />}/>
