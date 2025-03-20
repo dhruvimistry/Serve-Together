@@ -17,11 +17,11 @@ function App() {
       <Routes>
        <Route path='/' element={<HomePage />}/>
         <Route path='/login' element={<LoginPage />}/>
-        <Route path='/sign' element={<SignUpPage />}/>
-        <Route path='/forgotpassword' element={<ForgotPasswordPage />}/>
+        <Route path='/signup' element={<SignUpPage />}/>
+        <Route path='/forgot-password' element={<ForgotPasswordPage />}/>
         <Route path='/otp' element={<OTPPage />}/>
-        <Route path='/resetpassword' element={<ResetPage />}/>
-        <Route path='/ngoprofile' element={<NGOProfilePage/>}/>
+        <Route path='/reset-password' element={<ResetPage />}/>
+        <Route path='/ngo-profile' element={<NGOProfilePage/>}/>
       </Routes>
     </BrowserRouter>
   )

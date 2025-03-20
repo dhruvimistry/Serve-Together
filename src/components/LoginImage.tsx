@@ -2,7 +2,7 @@ import HappyKids from "../assets/Happy kids.jpg"
 
 const ImageSection: React.FC = () => {
   return (
-    <div className="col-lg-8 vh-100 p-0 image-section">
+    <div className="col-xl-8 col-lg-7 vh-100 p-0 image-section">
       <img
         src={HappyKids}
         alt="Happy kids"

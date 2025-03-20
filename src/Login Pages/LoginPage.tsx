@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
+import { loginUser, isAuthenticated} from '../utils/authentication';
 import './LoginPage.css';
 // import PasswordStrengthChecker from "../components/PasswordStrengthChecker";
-import ImageSection from "../components/ImageSection";
+import ImageSection from "../components/LoginImage";
 import HeadLogo from "../assets/serve-together-1.png";
 
 const emailExp: RegExp = /^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,})$/;
@@ -11,6 +12,7 @@ const emailExp: RegExp = /^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,})$
 const LoginForm: React.FC = () => {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const {
     register,
@@ -35,7 +37,7 @@ const LoginForm: React.FC = () => {
   
       if (response.ok) {
         if (result.token) {
-          localStorage.setItem("authToken", result.token);
+          loginUser(result.token);
         }
         navigate("/");
       } else {
@@ -48,14 +50,14 @@ const LoginForm: React.FC = () => {
   };
 
   return (
-    <div className="col-lg-4 col-md-12 d-flex align-items-center justify-content-center vh-100 p-2">
+    <div className="col-xl-4 col-lg-5 col-md-12 d-flex align-items-center justify-content-center vh-100 p-2">
       <div className="p-1 w-75">
         <div className="text-center">
           <img src={HeadLogo} className="w-75 logo" alt="Logo" />
         </div>
         <h4 className="text-center my-5" id="log-in">Log in</h4>
 
-    {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
+        {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
@@ -78,8 +80,21 @@ const LoginForm: React.FC = () => {
           <div className="mb-4">
             <label className="form-label mb-0">Password</label>
             {/* <PasswordStrengthChecker password="" setPassword={() => {}} /> */}
-            <input type="password" className="form-control input-box" {...register("password", { required: "Password is required" })} placeholder="Enter password" />
-            {errors.password && <p className="text-danger small">{errors.password.message as String}</p>}
+            <div className="input-group">
+              <input 
+                type={showPassword ? "text" : "password"}  
+                className="form-control input-box" 
+                {...register("password", { required: "Password is required" })} placeholder="Enter password" 
+              />
+              {errors.password && <p className="text-danger small">{errors.password.message as String}</p>}
+              <span 
+                onClick={() => setShowPassword(!showPassword)}
+                className="input-group-text input-box" 
+                style={{ cursor: "pointer" }}
+              >
+                <i className={`bx ${showPassword ? "bx-show" : "bx-hide"}`} />
+              </span>
+            </div>
           </div>
 
           <button className="btn w-100 theme-bg my-4" type="submit">
@@ -105,17 +120,9 @@ const LoginForm: React.FC = () => {
   );
 };
 
-// const LoginPage: React.FC = () => {
-//   return (
-//     <div className="container-fluid d-flex p-0 flex-wrap">
-//       <ImageSection />
-//       <LoginForm />
-//     </div>
-//   );
-// }; 
-
 const LoginPage: React.FC = () => {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleResize = () => {
@@ -124,6 +131,13 @@ const LoginPage: React.FC = () => {
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize); 
+  }, []);
+
+  useEffect(() => {
+    if (isAuthenticated()) {
+      navigate("/"); 
+      console.log("Already logged in! Redirecting to home...");
+    }
   }, []);
 
   return (

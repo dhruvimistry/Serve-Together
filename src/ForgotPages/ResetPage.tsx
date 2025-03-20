@@ -1,5 +1,5 @@
 import React from "react";
-import Illustration from "../components/Illustration";
+import Illustration from "../components/IllustrationSection";
 import HeadLogo from "../assets/serve-together-1.png";
 
 const ResetPasswordForm: React.FC = () => {
