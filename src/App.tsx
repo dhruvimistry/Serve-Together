@@ -2,6 +2,9 @@
 import './App.css'
 import Homepage from './Homepage/Homepage'
 // import LoginPage from './pages/LoginPage'
+// import Profile from './Volprofile/Volprofileviewer'
+
+
 
 function App() {
 
@@ -9,6 +12,7 @@ function App() {
     <>
      {/* <LoginPage /> */}
      <Homepage />
+     {/* <Profile /> */}
     </>
   )
 }

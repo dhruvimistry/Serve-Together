@@ -35,4 +35,60 @@
   height: 100vh;
   width: 100%;
 }
+.name{
+  color: #003366;
+  font-size: 48px;
+  }
+  
+.about{
+  margin: 0;
+}
+.feature .buttons .Apply {
+  padding: 5px 94px;
+}
 
+.about .info{
+  color: #7A7D7F;
+  font-size: 16px;
+  text-align: justify;
+}
+.about .learnmore{
+  padding: 5px 60px  ;
+}
+
+.change .info{
+  color: #7A7D7F;
+  font-size: 16px;
+  text-align: justify;
+}
+.container .questions{
+  margin: 0;
+}
+.accordion-button{
+  color: #003366 !important;
+}
+
+.questions .texts {
+  color: #5C6970;
+}
+
+/* @media (max-width: 1440px) {
+    .feature .buttons .Apply {
+      padding: 5px 94px;
+    
+    }
+  } */
+@media (max-width: 1024px) {
+  .feature .buttons .Apply {
+    padding: 5px 74px;
+  }
+}
+.feature .card2{
+  padding: 0;
+}
+
+@media (max-width: 1024px) {
+.cap {
+  font-size: 40px;
+ }
+}
