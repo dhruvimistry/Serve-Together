@@ -13,6 +13,10 @@ body {
   color: var(--grey-color);
 }
 
+.background {
+  background-color: var(--background-color);
+}
+
 .theme {
   color: var(--theme-color);
 }
@@ -48,3 +52,4 @@ body {
 .small-text {
   font-size: 14px;
 }
+
