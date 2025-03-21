@@ -1,0 +1,37 @@
+.name {
+  color: #003366;
+  font-size: 48px;
+}
+
+.feature {
+  background-color: white;
+  margin: 0;
+}
+
+.feature .buttons .learnmore {
+  width: 180px;
+  text-align: center;
+
+}
+
+.feature .view {
+  padding: 5px 80px;
+  background-color: #003366;
+
+}
+
+.feature .cards {
+  color: #003366;
+
+
+}
+
+.feature .texts {
+  color: #5C6970;
+}
+.feature .title{
+  color: #003366;
+}
+@media (max-width: 1024px) {
+  
+}
