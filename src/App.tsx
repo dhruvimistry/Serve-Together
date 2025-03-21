@@ -2,8 +2,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 
 import ForgotPasswordPage from './ForgotPages/ForgotPage';
-import LoginPage from './Login Pages/LoginPage';
-import SignUpPage from './Login Pages/SignUpPage';
+import LoginPage from './Login/LoginPage';
+import SignUpPage from './Login/SignUpPage';
 import HomePage from './Home';
 import OTPPage from './ForgotPages/OPTpage';
 import ResetPage from './ForgotPages/ResetPage';
