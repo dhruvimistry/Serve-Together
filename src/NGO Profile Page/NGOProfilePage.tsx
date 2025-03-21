@@ -1,118 +1,79 @@
 import React from "react";
-import {
-  Navbar,
-  Nav,
-  Container,
-  Row,
-  Col,
-  Card,
-  Button,
-} from "react-bootstrap";
-import {
-  FaUserCircle,
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaCalendarAlt,
-} from "react-icons/fa";
+import { FaUserCircle, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaCalendarAlt } from "react-icons/fa";
 import HeadLogo from "../assets/serve-together-1.png";
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavBar from "../components/Navbar";
 
 const App: React.FC = () => {
   return (
     <>
-      <Navbar expand="lg" className="p-3 px-5" style={{ background: "#F5F8FC" }}>
-        <Navbar.Brand
-          href="#"
-          className="fw-bold text-primary d-flex align-items-center"
-        >
-          <img src={HeadLogo} style={{ height: "40px", marginRight: "10px" }} />
-        </Navbar.Brand>
-        <Nav className="ms-auto">
-          <Nav.Link href="#">Home</Nav.Link>
-          <Nav.Link href="#">About</Nav.Link>
-          <Nav.Link href="#">Events</Nav.Link>
-          <Nav.Link href="#">Volunteers</Nav.Link>
-          <Nav.Link href="#">Requests</Nav.Link>
-          <Nav.Link href="#">
-            <FaUserCircle size={24} className="text-primary" />
-          </Nav.Link>
-        </Nav>
-      </Navbar>
-
-      <Container className="mt-4">
+      {/* Navbar */}
+      <NavBar />
+      
+      {/* Profile Section */}
+      <div className="container mt-4">
         <div className="d-flex justify-content-between align-items-center">
           <h3 className="fw-bold">Profile</h3>
-          <Button variant="primary">Edit</Button>
+          <button className="btn btn-primary">Edit</button>
         </div>
 
-        <Row className="mt-3">
-          <Col md={6}>
-            <Card className="p-4 shadow-sm border-0">
+        <div className="row mt-3">
+          <div className="col-md-6 mb-3">
+            <div className="card p-4 shadow-sm border-0 common-radius">
               <div className="text-center">
                 <FaUserCircle size={80} className="text-secondary" />
                 <h4 className="mt-2">Hope Foundation</h4>
                 <p className="text-muted">NGO</p>
               </div>
               <h6 className="fw-bold">Address</h6>
-              <p>
-                <FaMapMarkerAlt className="me-2" /> 5 Street Hope, Near River Church, 
-                Navsari, Gujarat - 396445
-              </p>
+              <p><FaMapMarkerAlt className="me-2" /> Shanti Nagar, Near Patel Chowk, Ahmedabad, Gujarat - 380015</p>
               <h6 className="fw-bold">Contact Information</h6>
-              <p>
-                <FaPhoneAlt className="me-2" /> +91 98765 43210
-              </p>
-              <p>
-                <FaEnvelope className="me-2" /> someone@mail.com
-              </p>
-            </Card>
-          </Col>
-          <Col md={6}>
-            <Card className="p-4 shadow-sm border-0">
+              <p><FaPhoneAlt className="me-2" /> +91 98765 43210</p>
+              <p><FaEnvelope className="me-2" /> someone@mail.com</p>
+            </div>
+          </div>
+          <div className="col-md-6 mb-3">
+            <div className="card p-4 shadow-sm border-0 common-radius">
               <h6 className="fw-bold">About</h6>
-              <p>
-                Hope Foundation is a Nonprofit Organization committed to transforming the lives of
-                underprivileged children through education and skill development. We believe in
-                fostering a world where every child is nurtured, empowered, and given the right
-                opportunities.
-              </p>
-            </Card>
-          </Col>
-        </Row>
+              <p>Hope Foundation is a nonprofit organization committed to transforming the lives of
+                underprivileged children, especially orphans. We provide education, healthcare, and
+                essential resources to ensure a brighter future. Through community support and volunteer
+                efforts, we strive to create a world where every child feels safe, nurtured, and empowered.</p>
+            </div>
+          </div>
+        </div>
 
+        {/* Events Section */}
         <div className="d-flex justify-content-between align-items-center mt-4">
           <h3 className="fw-bold">Events</h3>
-          <Button variant="primary">Add</Button>
+          <button className="btn btn-primary">Add</button>
         </div>
 
-        <Row className="mt-3">
+        <div className="row mt-3">
           {["Art & Creativity Workshop", "Gardening Workshop", "Music & Dance Training", "Speech for All"].map((event, idx) => (
-            <Col md={6} key={idx} className="mb-3">
-              <Card className="p-4 shadow-sm border-0">
+            <div className="col-md-6 mb-3" key={idx}>
+              <div className="card p-4 shadow-sm border-0 common-radius">
                 <h6 className="fw-bold">{event}</h6>
-                <p>
-                  <FaCalendarAlt className="me-2" /> 19th March 2025 | 3:00 PM
-                </p>
+                <p><FaCalendarAlt className="me-2" /> 19th March 2025 | 3:00 PM</p>
                 <p>Workshop, Creativity</p>
-                <Button variant="danger">Delete</Button>
-              </Card>
-            </Col>
+                <button className="btn btn-danger">Delete</button>
+              </div>
+            </div>
           ))}
-        </Row>
-      </Container>
-
-      <footer className="text-center py-4" style={{ background: "#F5F8FC" }}>
-        <img src={HeadLogo} style={{ height: "40px" }} />
-        <div className="mt-2">
-          <Nav className="justify-content-center">
-            <Nav.Link href="#">Home</Nav.Link>
-            <Nav.Link href="#">About</Nav.Link>
-            <Nav.Link href="#">Events</Nav.Link>
-            <Nav.Link href="#">Volunteers</Nav.Link>
-            <Nav.Link href="#">Requests</Nav.Link>
-          </Nav>
         </div>
-        <p className="text-muted mt-2">&copy; Copyright Serve Together 2025</p>
+      </div>
+
+      {/* Footer */}
+      <footer className="text-center py-4 bg-light mt-4">
+        <img src={HeadLogo} alt="Serve Together" height="40" className="mb-2" />
+        <ul className="nav justify-content-center">
+          <li className="nav-item"><a className="nav-link" href="#">Home</a></li>
+          <li className="nav-item"><a className="nav-link" href="#">About</a></li>
+          <li className="nav-item"><a className="nav-link" href="#">Events</a></li>
+          <li className="nav-item"><a className="nav-link" href="#">Volunteers</a></li>
+          <li className="nav-item"><a className="nav-link" href="#">Requests</a></li>
+        </ul>
+        <p className="text-muted mt-2">@Copyright Serve Together 2025</p>
       </footer>
     </>
   );
