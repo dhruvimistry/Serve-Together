@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import IllustationSection from "../components/IllustrationSection";
-import HeadLogo from "../assets/serve-together-1.png";
+import IllustationSection from "../../components/IllustrationSection";
+import HeadLogo from "../../assets/serve-together-1.png";
 
 const OTPForm: React.FC = () => {
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
