@@ -10,6 +10,7 @@
 
 .feature .buttons .learnmore {
   width: 180px;
+  text-align: center;
 
 }
 
@@ -30,4 +31,7 @@
 }
 .feature .title{
   color: #003366;
+}
+@media (max-width: 1024px) {
+  
 }

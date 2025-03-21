@@ -3,8 +3,7 @@ import { Navbar, Container, Nav, Button, Row, Col, Carousel, Accordion } from "r
 import HeadLogo from "../assets/serve-together-1.png";
 import HeroImg1 from "../assets/hands 11.jpg";
 import './Homepage.css'
-import FeaturedEvents from "../components/featuredevents";
-import '../components/featuredevents.css'
+import FeaturedEvents from "./featuredevents";
 import Footer from "../components/footer";
 
 const Homepage: React.FC = () => {
@@ -24,7 +23,7 @@ const Homepage: React.FC = () => {
               <Nav.Link href="#volunteers" className="theme">Volunteers</Nav.Link>
               <Nav.Link href="#requests" className="theme">Requests</Nav.Link>
             </Nav>
-            <div className="d-flex gap-2 ms-3">
+            <div className="d-flex gap-3 ms-3">
               <Button variant="primary">Login</Button>
               <Button variant="primary">Sign Up</Button>
             </div>
@@ -32,7 +31,7 @@ const Homepage: React.FC = () => {
         </Container>
       </Navbar>
 
-      <div className="hero-section px-5">
+      <Container className="hero-section">
         <Carousel className="hero-container">
           <Carousel.Item>
             <img className="d-block w-100" src={HeroImg1} alt="First slide" />
@@ -42,7 +41,7 @@ const Homepage: React.FC = () => {
               <p>- Mahatma Gandhi</p>
               <p className="cap2">Every helping hand matters. Find opportunities, contribute, and inspire positive change.</p>
               <div className="d-flex gap-2">
-                <Button variant="primary">Find Volunteer Opportunities</Button>
+              <Button className="find border-0" style={{ backgroundColor: " #003366" }}>Find Volunteer Opportunities</Button>
               </div>
             </Carousel.Caption>
           </Carousel.Item>
@@ -54,7 +53,7 @@ const Homepage: React.FC = () => {
               <p>- Mahatma Gandhi</p>
               <p className="cap2">Every helping hand matters. Find opportunities, contribute, and inspire positive change.</p>
               <div className="d-flex gap-2 ">
-                <Button variant="primary">Find Volunteer Opportunities</Button>
+              <Button className="find border-0" style={{ backgroundColor: " #003366" }}>Find Volunteer Opportunities</Button>
               </div>
             </Carousel.Caption>
           </Carousel.Item>
@@ -66,15 +65,15 @@ const Homepage: React.FC = () => {
               <p>- Mahatma Gandhi</p>
               <p className="cap2">Every helping hand matters. Find opportunities, contribute, and inspire positive change.</p>
               <div className="d-flex gap-2  ">
-                <Button variant="primary">Find Volunteer Opportunities</Button>
+                <Button className="find border-0" style={{ backgroundColor: " #003366" }}>Find Volunteer Opportunities</Button>
               </div>
             </Carousel.Caption>
           </Carousel.Item>
 
 
         </Carousel>
-      </div>
-      <Container fluid className="about p-5" style={{ backgroundColor: "#F0F5F9" }}>
+      </Container>
+      <Container className="about" style={{ backgroundColor: "#F0F5F9" }}>
         <h3 className=" name fw-bold  mb-3 text-center pb-5">About Us</h3>
         <Row className="align-items-center">
           <Col md={6} className="text-center pt-2">
@@ -105,7 +104,7 @@ const Homepage: React.FC = () => {
 
       <FeaturedEvents />
 
-      <Container fluid className=" change p-5" style={{ backgroundColor: "#F0F5F9" }}>
+      <Container className=" change p-5" style={{ backgroundColor: "#F0F5F9" }}>
         <Row className="align-items-center">
           <Col md={6} className="text-center pt-2">
             <img
@@ -133,7 +132,7 @@ const Homepage: React.FC = () => {
           </Col>
         </Row>
       </Container>
-      <Container fluid className=" questions mt-4 p-5" >
+      <Container className="questions mt-4" >
         <h3 className=" name fw-bold text-center">Frequently Asked Questions</h3>
         <h3 className="fw-light text-center pt-5" >Your Queries Answered Here !!</h3>
 

@@ -1,6 +1,6 @@
 import React from "react";
-import IllustrationSection from "../components/IllustrationSection";
-import HeadLogo from "../assets/serve-together-1.png";
+import IllustrationSection from "../../components/IllustrationSection";
+import HeadLogo from "../../assets/serve-together-1.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const ForgotPasswordForm: React.FC = () => {
