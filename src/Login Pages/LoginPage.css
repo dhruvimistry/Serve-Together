@@ -1,0 +1,12 @@
+@media (width <=1024px) {
+  #log-in {
+    margin: 20px 0 !important;
+  }
+}
+
+@media (width <= 992px) {
+  .logo {
+    width: 50% !important;
+    padding: 15px;
+  }
+}
