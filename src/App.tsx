@@ -1,12 +1,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 
-import ForgotPasswordPage from './ForgotPages/ForgotPage';
+import ForgotPasswordPage from './Login/ForgotPages/ForgotPage';
 import LoginPage from './Login/LoginPage';
 import SignUpPage from './Login/SignUpPage';
 import HomePage from './Home';
-import OTPPage from './ForgotPages/OPTpage';
-import ResetPage from './ForgotPages/ResetPage';
+import OTPPage from './Login/ForgotPages/OPTpage';
+import ResetPage from './Login/ForgotPages/ResetPage';
 import NGOProfilePage from './NGO Profile Page/NGOProfilePage';
 
 const router = createBrowserRouter([
