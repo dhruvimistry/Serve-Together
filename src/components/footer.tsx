@@ -4,7 +4,7 @@ import HeadLogo from "../assets/serve-together-1.png";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="text-center p-5 mt-4 border-top" style={{ backgroundColor: "#FFFFFF" }}>
+    <footer className="text-center py-2 mt-4 border-top" style={{ backgroundColor: "#FFFFFF" }}>
       <div className="container">
         <img src={HeadLogo} alt="Serve Together" style={{ height: "50px"  }} />
         <nav className="mt-3 pt-3">
@@ -15,10 +15,11 @@ const Footer: React.FC = () => {
           <a href="/requests" className="mx-2 text-primary text-decoration-none">Requests</a>
         </nav>
         <div className="mt-3">
-          <a href="https://facebook.com" className="mx-2 text-dark"><i className="fab fa-facebook-f"></i></a>
-          <a href="https://instagram.com" className="mx-2 text-dark"><i className="fab fa-instagram"></i></a>
-          <a href="https://twitter.com" className="mx-2 text-dark"><i className="fab fa-x-twitter"></i></a>
+          <a href="https://facebook.com" className="mx-2 text-dark"><i className="bi bi-facebook"></i></a>
+          <a href="https://instagram.com" className="mx-2 text-dark"><i className="bi bi-instagram"></i></a>
+          <a href="https://twitter.com" className="mx-2 text-dark"><i className="bi bi-twitter-x"></i></a>
         </div>
+        <hr />
         <p className="mt-3 text-muted">Copyright © Serve Together {new Date().getFullYear()}.</p>
       </div>
     </footer>

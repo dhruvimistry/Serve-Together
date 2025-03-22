@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaUserCircle, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaCalendarAlt } from "react-icons/fa";
-// import HeadLogo from "../assets/serve-together-1.png"; 
+// import HeadLogo from "../assets/serve-together-1.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "../components/Navbar";
 import Footer from "../components/footer";
@@ -61,7 +61,6 @@ const Profile: React.FC = () => {
       <div className="container mt-4">
         <div className="d-flex justify-content-between align-items-center">
           <h3 className="fw-bold">Profile</h3>
-          <button className="btn btn-primary">Edit</button>
         </div>
 
         <div className="row mt-3">
@@ -102,7 +101,6 @@ const Profile: React.FC = () => {
         <div className="mt-4">
           <div className="d-flex justify-content-between align-items-center">
             <h3 className="fw-bold">Events</h3>
-            <button className="btn btn-primary">Add +</button>
           </div>
 
           <div className="row mt-3">
@@ -117,7 +115,7 @@ const Profile: React.FC = () => {
                     <FaCalendarAlt className="me-2" /> {event.date} | {event.time}
                   </p>
                   <p>🔹 {event.details}</p>
-                  <button className="btn btn-danger">Delete</button>
+                  <button className="btn theme-bg">Apply</button>
                 </div>
               </div>
             ))}
@@ -126,38 +124,7 @@ const Profile: React.FC = () => {
       </div>
 
       {/* Footer */}
-          <Footer />
-      {/* <footer className="text-center py-4 bg-white mt-4">
-        <img src={HeadLogo} alt="Serve Together" height="40" className="mb-2" />
-        <ul className="nav justify-content-center">
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Home
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              About
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Events
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Volunteers
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Requests
-            </a>
-          </li>
-        </ul>
-        <p className="text-muted mt-2">Copyright © Serve Together</p>
-      </footer> */}
+      <Footer />
     </>
   );
 };

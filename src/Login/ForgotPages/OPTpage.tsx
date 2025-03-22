@@ -31,7 +31,7 @@ const OTPForm: React.FC = () => {
                 maxLength={1}
                 value={digit}
                 onChange={(e) => handleChange(index, e.target.value)}
-                style={{ width: "40px" }}
+                
               />
             ))}
           </div>
