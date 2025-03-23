@@ -40,6 +40,16 @@ const OTPForm: React.FC = () => {
       newOtp[index] = value;
       setOtp(newOtp);
     }
+
+    if (value && index < otp.length - 1) {
+      document.getElementById(`otp-input-${index + 1}`)?.focus();
+    }
+  };
+
+  const handleKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Backspace" && !otp[index] && index > 0) {
+      document.getElementById(`otp-input-${index - 1}`)?.focus();
+    }
   };
 
   const onSubmit = async () => {
@@ -93,18 +103,19 @@ const OTPForm: React.FC = () => {
             {otp.map((_, index) => (
               <input
               key={index}
+              id={`otp-input-${index}`}
               type="text"
               className={`input-box form-control text-center mx-1 ${errors[`otp_${index}`] ? 'border-danger' : ''}`}
               maxLength={1}
               value={otp[index]}
               {...register(`otp_${index}`, { 
                 required: true, 
-                pattern: /^\d$/ ,
-                onChange: (e) => handleChange(index, e.target.value)
+                pattern: /^\d$/
               })}
+              onChange={(e) => handleChange(index, e.target.value)}
+              onKeyDown={(e) => handleKeyDown(index, e)}
               // style={{ width: "40px" }}
             />
-            
             ))}
           </div>
           {errors.otp_0 && <p className="text-danger text-center">OTP is required</p>}
