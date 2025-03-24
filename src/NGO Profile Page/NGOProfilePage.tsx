@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { FaUserCircle, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaCalendarAlt } from "react-icons/fa";
 // import HeadLogo from "../assets/serve-together-1.png"; 
 import "bootstrap/dist/css/bootstrap.min.css";
-import NavBar from "../components/Navbar";
-import Footer from "../components/footer";
+// import NavBar from "../components/Navbar";
+// import Footer from "../components/footer";
 
 const events = [
   {
@@ -56,8 +56,6 @@ const Profile: React.FC = () => {
 
   return (
     <>
-      <NavBar />
-
       <div className="container mt-4">
       <div className="card p-3 common-radius">
         <div className="d-flex justify-content-between align-items-center">
@@ -126,9 +124,7 @@ const Profile: React.FC = () => {
             ))}
           </div>
         </div>
-
-      {/* Footer */}
-          <Footer />
+          {/* <Footer /> */}
 
     </>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BsCamera } from "react-icons/bs";
-import Footer from "../components/footer";
+// import Footer from "../components/footer";
 import "./Volunteers.css";
 
 const EditProfile: React.FC = () => {
@@ -87,7 +87,7 @@ const EditProfile: React.FC = () => {
           </Form>
         </Container>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
