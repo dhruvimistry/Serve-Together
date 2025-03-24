@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { loginUser, isAuthenticated} from '../utils/authentication';
 import './LoginPage.css';
 // import PasswordStrengthChecker from "../components/PasswordStrengthChecker";
@@ -100,38 +100,34 @@ const LoginForm: React.FC = () => {
           <button className="btn w-100 theme-bg my-4" type="submit">
             Log in
           </button>
-
-          <div className="text-center small-text py-3">
-            <Link to="/forgot-password" className="link-text">
-              Forgot Password?
-            </Link>
-          </div>
-
-          <hr />
-
-          <div className="text-center mt-3 small-text py-3">
-            <span>
-              Don't have an account? <Link to="/signup" className="link-text">Sign up</Link>
-            </span>
-          </div>
         </form>
+        <div className="text-center small-text py-3">
+          <span 
+            className="link-text"
+            onClick={() => navigate("/forgot-password")}
+          >
+            Forgot Password?
+          </span>
+        </div>
+        <hr />
+        <div className="text-center mt-3 small-text py-3">
+          <span>
+            Don't have an account? 
+            <span 
+              className="link-text" 
+              onClick={() => navigate("/signup")}
+            >
+              Sign up
+            </span>
+          </span>
+        </div>
       </div>
     </div>
   );
 };
 
 const LoginPage: React.FC = () => {
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024); 
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 1024); 
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize); 
-  }, []);
 
   useEffect(() => {
     if (isAuthenticated()) {
@@ -142,7 +138,7 @@ const LoginPage: React.FC = () => {
 
   return (
     <div className="container-fluid d-flex p-0 flex-wrap">
-      {isDesktop && <ImageSection />} 
+      <ImageSection />
       <LoginForm />
     </div>
   );

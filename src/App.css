@@ -69,6 +69,7 @@ small, .small {
 .link-text {
   text-decoration: none;
   color: var(--theme-color);
+  cursor: pointer;
 }
 
 .small-text {

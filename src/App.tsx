@@ -1,38 +1,30 @@
-// import { useState } from 'react'
-import { BrowserRouter, Route , Routes } from 'react-router-dom'
-import './App.css'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import './App.css';
 
 import ForgotPasswordPage from './ForgotPages/ForgotPage'
 import LoginPage from './Login/LoginPage'
 import SignUpPage from './Login/SignUpPage'
-// import HomePage from './Home'
-import OTPPage from './ForgotPages/OPTpage'
-import ResetPage from './ForgotPages/ResetPage'
-import NGOProfilePage from './NGO Profile Page/NGOProfilePage'
 import HomePage from './Home/Homepage'
 import VolunteerProfileViewers from './Volunteers/VolunteerProfileViewers'
 import EditProfile from './Volunteers/Editprofile'
+import OTPPage from './Login/ForgotPages/OPTpage';
+import ResetPage from './Login/ForgotPages/ResetPage';
+import NGOProfilePage from './NGO Profile Page/NGOProfilePage';
+import VolunteerProfileViewers from './Volunteers/VolunteerProfileViewers'
+
+const router = createBrowserRouter([
+  { path: '/', element: <HomePage /> },
+  { path: '/login', element: <LoginPage /> },
+  { path: '/signup', element: <SignUpPage /> },
+  { path: '/forgot-password', element: <ForgotPasswordPage /> },
+  { path: '/verify-otp', element: <OTPPage /> },
+  { path: '/reset-password', element: <ResetPage /> },
+  { path: '/ngo-profile', element: <NGOProfilePage /> },
+  { path: '/volunteer-profile', element: <VolunteerProfile />}
+]);
+
 function App() {
-
-  return (
-    <BrowserRouter>
-      <Routes>
-       <Route path='/' element={<HomePage />}/>
-        <Route path='/login' element={<LoginPage />}/>
-        <Route path='/signup' element={<SignUpPage />}/>
-        <Route path='/forgot-password' element={<ForgotPasswordPage />}/>
-        <Route path='/otp' element={<OTPPage />}/>
-        <Route path='/reset-password' element={<ResetPage />}/>
-        <Route path='/ngo-profile' element={<NGOProfilePage/>}/>
-        <Route path='/volunteerprofileviwer' element={<VolunteerProfileViewers/>}/>
-        <Route path='/EditProfile' element={<EditProfile/>}/>
-
-        
-
-        
-      </Routes>
-    </BrowserRouter>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;

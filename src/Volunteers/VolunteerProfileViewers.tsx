@@ -3,7 +3,6 @@ import { Navbar, Nav, Container, Row, Col, Card, Button, Badge } from "react-boo
 import { FaUserCircle, FaPhoneAlt, FaEnvelope, FaUser, FaCalendarAlt } from "react-icons/fa";
 import HeadLogo from "../assets/serve-together-1.png";
 
-
 const VolunteerProfileViewers: React.FC = () => {
   return (
     <>
