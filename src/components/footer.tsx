@@ -7,14 +7,18 @@ const Footer: React.FC = () => {
   return (
     <footer className="text-center py-2 mt-4 border-top" style={{ backgroundColor: "#FFFFFF" }}>
       <div className="container">
-        <img src={HeadLogo} alt="Serve Together" style={{ height: "50px"  }} />
-        <nav className="mt-3 pt-3">
+        <img src={HeadLogo} alt="Serve Together" style={{ height: "50px" }} />
+        
+        {/* Navigation Links */}
+        <nav className=" links mt-3 pt-3">
           <a href="/" className="mx-2 text-primary text-decoration-none">Home</a>
-          <a href="/about" className="mx-2 text-primary text-decoration-none">About Us</a>
+          <a href="/about" className=" mx-2 text-primary text-decoration-none">About Us</a>
           <a href="/events" className="mx-2 text-primary text-decoration-none">Events</a>
           <a href="/volunteers" className="mx-2 text-primary text-decoration-none">Volunteers</a>
           <a href="/requests" className="mx-2 text-primary text-decoration-none">Requests</a>
         </nav>
+
+        {/* Social Media Icons */}
         <div className="mt-3">
           <a href="https://facebook.com" className="mx-2 text-dark"><i className="bi bi-facebook"></i></a>
           <a href="https://instagram.com" className="mx-2 text-dark"><i className="bi bi-instagram"></i></a>

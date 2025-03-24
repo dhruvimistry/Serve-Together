@@ -59,14 +59,16 @@ const Profile: React.FC = () => {
       <NavBar />
 
       <div className="container mt-4">
+      <div className="card p-3 common-radius">
         <div className="d-flex justify-content-between align-items-center">
           <h3 className="fw-bold">Profile</h3>
           <button className="btn btn-primary">Edit</button>
         </div>
+      </div>
 
         <div className="row mt-3">
           <div className="col-md-6 mb-3">
-            <div id="left-card" className="card p-4 shadow-sm  rounded" style={{ minHeight: cardHeight }}>
+            <div id="left-card" className="card p-4 shadow-sm common-radius" style={{ minHeight: cardHeight }}>
               <div className="text-center">
                 <FaUserCircle size={80} className="text-secondary" />
                 <h4 className="mt-2">Hope Foundation</h4>
@@ -86,7 +88,7 @@ const Profile: React.FC = () => {
             </div>
           </div>
           <div className="col-md-6 mb-3">
-            <div id="right-card" className="card p-4 shadow-sm border-0 rounded" style={{ minHeight: cardHeight }}>
+            <div id="right-card" className="card p-4 shadow-sm border-0 common-radius" style={{ minHeight: cardHeight }}>
               <h6 className="fw-bold">About</h6>
               <p>
                 Hope Foundation is a nonprofit organization committed to transforming the lives of
@@ -99,11 +101,12 @@ const Profile: React.FC = () => {
         </div>
 
         {/* Events Section */}
-        <div className="mt-4">
-          <div className="d-flex justify-content-between align-items-center">
-            <h3 className="fw-bold">Events</h3>
-            <button className="btn btn-primary">Add +</button>
-          </div>
+        <div className="card p-3 common-radius">
+        <div className="d-flex justify-content-between align-items-center">
+          <h3 className="fw-bold">Events</h3>
+          <button className="btn btn-primary">Add + </button>
+        </div>
+      </div>
 
           <div className="row mt-3">
             {events.map((event, index) => (
@@ -123,7 +126,6 @@ const Profile: React.FC = () => {
             ))}
           </div>
         </div>
-      </div>
 
       {/* Footer */}
           <Footer />

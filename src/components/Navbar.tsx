@@ -1,6 +1,7 @@
 import React from "react";
 import HeadLogo from "../assets/serve-together-1.png";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { FaUserCircle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { isAuthenticated, logoutUser } from "../utils/authentication";
@@ -14,9 +15,9 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg background">
-      <div className="container">
-        <a className="navbar-brand" href="#home">
+    <Navbar expand="lg" className="background">
+      <Container>
+        <Navbar.Brand href="#home">
           <img src={HeadLogo} width="200" alt="ServeTogether Logo" />
         </a>
         <button
@@ -91,3 +92,4 @@ const NavBar: React.FC = () => {
 };
 
 export default NavBar;
+
