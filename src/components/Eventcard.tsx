@@ -14,7 +14,7 @@ interface EventCardProps {
 
 const EventCard: React.FC<EventCardProps> = ({ title, subtitle, location, dateTime, skills, icon }) => {
   return (
-    <Card className="event-card shadow-sm border-0 p-3 " style={{background:"#F0F5F9"}}>
+    <Card className="event-card shadow-sm border-0 p-3  " style={{background:"#F0F5F9"}}>
       <Card.Body>
         <h4 className="title fw-bold">{title}</h4>
         <p className="texts">

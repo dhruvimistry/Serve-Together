@@ -1,12 +1,14 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import EventCard from "../components/Eventcard";
+import  "./featuredevents.css";
+
 
 const FeaturedEvents: React.FC = () => {
   return (
-    <Container fluid className="feature p-5 "style={{background:" #FFFFFF"}}>
+    <Container fluid className="feature "style={{background:" #FFFFFF"}}>
       <h1 className="name text-center fw-bold mb-4 pt-5">Featured Events</h1>
-      <Row className="g-4 py-5">
+      <Row className=" main g-4 py-5  p-5">
         <Col lg={6} md={6} sm={12}>
           <EventCard
             title="Bright Future Foundation"

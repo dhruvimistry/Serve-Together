@@ -38,7 +38,7 @@ const Homepage: React.FC = () => {
             <div className="overlay"></div>
             <Carousel.Caption className=" text-start caption-center">
               <h3 className="cap fw-bolder">“Be the change you want”</h3>
-              <p>- Mahatma Gandhi</p>
+              <p className="cap1">- Mahatma Gandhi</p>
               <p className="cap2">Every helping hand matters. Find opportunities, contribute, and inspire positive change.</p>
               <div className="d-flex gap-2">
               <Button className="find border-0" style={{ backgroundColor: " #003366" }}>Find Volunteer Opportunities</Button>
@@ -50,7 +50,7 @@ const Homepage: React.FC = () => {
             <div className="overlay"></div>
             <Carousel.Caption className="text-start caption-center">
               <h3 className="cap fw-bolder">“Be the change you want”</h3>
-              <p>- Mahatma Gandhi</p>
+              <p className="cap1" >- Mahatma Gandhi</p>
               <p className="cap2">Every helping hand matters. Find opportunities, contribute, and inspire positive change.</p>
               <div className="d-flex gap-2 ">
               <Button className="find border-0" style={{ backgroundColor: " #003366" }}>Find Volunteer Opportunities</Button>
@@ -62,7 +62,7 @@ const Homepage: React.FC = () => {
             <div className="overlay"></div>
             <Carousel.Caption className="text-start caption-center">
               <h3 className="cap fw-bolder">“Be the change you want”</h3>
-              <p>- Mahatma Gandhi</p>
+              <p className="cap1">- Mahatma Gandhi</p>
               <p className="cap2">Every helping hand matters. Find opportunities, contribute, and inspire positive change.</p>
               <div className="d-flex gap-2  ">
                 <Button className="find border-0" style={{ backgroundColor: " #003366" }}>Find Volunteer Opportunities</Button>
@@ -73,7 +73,7 @@ const Homepage: React.FC = () => {
 
         </Carousel>
       </Container>
-      <Container className="about" style={{ backgroundColor: "#F0F5F9" }}>
+      <Container className="about pt-5" style={{ backgroundColor: "#F0F5F9" }}>
         <h3 className=" name fw-bold  mb-3 text-center pb-5">About Us</h3>
         <Row className="align-items-center">
           <Col md={6} className="text-center pt-2">
@@ -95,9 +95,11 @@ const Homepage: React.FC = () => {
               bridges the gap between skilled individuals and organizations in
               need.
             </p>
+            <div className=" learn pb-5">
             <Button variant="primary" className=" learnmore  mt-4 fw-bold">
               Learn More
             </Button>
+            </div>
           </Col>
         </Row>
       </Container>
@@ -114,14 +116,14 @@ const Homepage: React.FC = () => {
               style={{ maxWidth: "auto", height: "auto" }}
             />
           </Col>
-          <Col md={6}>
-            <h2 className=" name pt-5 fw-bold">Ready to Make a Change?</h2>
+          <Col md={6} className="read">
+            <h2 className=" nam  fw-bold">Ready to Make a Change?</h2>
             <p className=" info fw-bold  pt-5 ">
               Join hands with NGOs & volunteers to create a better world! Whether
               you want to share your skills or need volunteers for your cause,
               Serve Together is here to connect you.
             </p>
-            <div className=" pt-5 d-flex gap-5">
+            <div className="but pt-5 d-flex gap-5">
               <Button variant="primary" className="fw-bold">
                 Register As NGO
               </Button>
@@ -132,11 +134,11 @@ const Homepage: React.FC = () => {
           </Col>
         </Row>
       </Container>
-      <Container className="questions mt-4" >
+      <Container className="questions mt-5 mb-5" >
         <h3 className=" name fw-bold text-center">Frequently Asked Questions</h3>
-        <h3 className="fw-light text-center pt-5" >Your Queries Answered Here !!</h3>
+        <h3 className="fw-light text-center pt-5 pb-5" >Your Queries Answered Here !!</h3>
 
-        <Accordion className="pt-5">
+        <Accordion>
           <Accordion.Item eventKey="0">
             <Accordion.Header className="que1" style={{  }}>Who can register as a volunteer ?</Accordion.Header>
             <Accordion.Body className="texts">
@@ -146,7 +148,7 @@ const Homepage: React.FC = () => {
           </Accordion.Item>
         </Accordion>
 
-        <Accordion className="pt-5">
+        <Accordion>
           <Accordion.Item eventKey="1">
             <Accordion.Header className="que1">How do I find NGOs or orphanages to volunteer with ?</Accordion.Header>
             <Accordion.Body className="texts">
@@ -157,7 +159,7 @@ const Homepage: React.FC = () => {
           </Accordion.Item>
         </Accordion>
 
-        <Accordion className="pt-5">
+        <Accordion>
           <Accordion.Item eventKey="2">
             <Accordion.Header className="que1">How can NGOs find volunteers ?</Accordion.Header>
             <Accordion.Body className="texts">

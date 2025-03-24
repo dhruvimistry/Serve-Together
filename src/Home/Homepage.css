@@ -27,17 +27,15 @@
   min-width: 100%; 
 }
 .carousel-item img {
-  /* object-fit: cover; */
   min-width: 100%;
 }
-
-.name{
-  color: #003366;
-  font-size: 48px;
-  } 
-.about{
-  margin: 0;
+.carousel-control-next-icon,.carousel-control-prev-icon{
+  display: none;
 }
+.nam{
+  color: #003366;
+  font-size: 34px;
+  } 
 .feature .buttons .Apply {
   padding: 5px 94px;
 }
@@ -49,7 +47,6 @@
 .about .learnmore{
   padding: 5px 60px  ;
 }
-
 .change .info{
   color: #7A7D7F;
   font-size: 16px;
@@ -58,26 +55,112 @@
 .accordion-button{
   color: #003366 !important;
 }
-
 .questions .texts {
   color: #5C6970;
 }
+.change .read{
+  background: white;
+    border-radius: 20px;
+    padding: 55px 30px 55px 30px;
+}
 
-/* @media (max-width: 1440px) {
-    .feature .buttons .Apply {
-      padding: 5px 94px;
-    
-    }
-  } */
+
 @media (max-width: 1024px) {
   .carousel-item {
     width: 100%;
   }
+  .cap {
+    font-size: 40px;
+   }
 }
 
 
 @media (max-width: 1024px) {
-.cap {
-  font-size: 40px;
+  .container{
+    max-width: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .cap {
+    font-size: 35px;
+}
+.cap1,.cap2{
+  font-size: 12px;
+}
+.find{
+  font-size: 10px;
+}
+.container{
+  max-width: none;
+}
+.change .nam{
+  font-size: 24px;
+  padding-top: 0 !important;
  }
+ .change .info{
+  font-size: 12px;
+  padding-top: 3px !important;
+
+ }
+ .change .but{
+  padding-top: 3px !important;
+  text-align: center;
+ }
+}
+@media (max-width: 767px) {
+  .cap {
+    font-size: 35px;
+}
+.cap1,.cap2{
+  font-size: 12px;
+}
+.find{
+  font-size: 10px;
+}
+.container{
+  max-width: none;
+}
+.name{
+  font-size: 38px;
+}
+.h2, h2 {
+  font-size: 25px;
+  text-align: center;
+}
+.about .learn{
+  text-align: center !important;
+}
+.about .info{
+  font-size: 15px;
+}
+
+}
+
+  @media (max-width: 609px) {
+    .cap {
+        font-size: 25px;
+    }
+}
+@media (max-width: 534px) {
+ .change .read .but{
+  padding: 0 !important;
+}
+}
+
+@media (max-width: 443px) {
+ 
+ .about .name {
+  font-size: 38px;
+}
+.feature .name{
+  font-size: 38px;
+}
+.questions .name{
+  font-size: 38px;
+}
+.change {
+padding: 0;
+}
 }
