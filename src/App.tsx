@@ -8,7 +8,11 @@ import HomePage from './Home';
 import OTPPage from './Login/ForgotPages/OPTpage';
 import ResetPage from './Login/ForgotPages/ResetPage';
 import NGOProfilePage from './NGO Profile Page/NGOProfilePage';
-import VolunteerProfile from './Volunteer Profile/Volprofileviewer';
+import NGOprofileviewer from './NGO Profile Page/NGOprofileviewer'
+import Volprofileviewer from './Volunteer Profile/Volprofileviewer'
+import Footer from './components/footer'
+import NavBar from './components/Navbar'
+
 
 const router = createBrowserRouter([
   { path: '/', element: <HomePage /> },
@@ -18,7 +22,12 @@ const router = createBrowserRouter([
   { path: '/verify-otp', element: <OTPPage /> },
   { path: '/reset-password', element: <ResetPage /> },
   { path: '/ngo-profile', element: <NGOProfilePage /> },
-  { path: '/volunteer-profile', element: <VolunteerProfile />}
+  { path: '/ngo-profile-viewer', element: <NGOprofileviewer /> },
+  { path: '/vol-profile-viewer', element: <Volprofileviewer /> },
+  { path: '/footer', element: <Footer/> },
+  { path: '/navbar', element: <NavBar/> },
+
+
 ]);
 
 function App() {
