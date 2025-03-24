@@ -42,7 +42,7 @@ const ResetPasswordForm: React.FC = () => {
     setMessage(null);
 
     try {
-      const result = await resetPassword(email, data.newPassword);
+      const result = await resetPassword(email, data.password);
 
       if (result.statusCode === 200) {
         setMessage("Password reset successfully! Redirecting to login...");
