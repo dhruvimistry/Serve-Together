@@ -8,6 +8,7 @@ import HomePage from './Home';
 import OTPPage from './Login/ForgotPages/OPTpage';
 import ResetPage from './Login/ForgotPages/ResetPage';
 import NGOProfilePage from './NGO Profile Page/NGOProfilePage';
+import VolunteerProfile from './Volunteer Profile/Volprofileviewer';
 
 const router = createBrowserRouter([
   { path: '/', element: <HomePage /> },
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
   { path: '/verify-otp', element: <OTPPage /> },
   { path: '/reset-password', element: <ResetPage /> },
   { path: '/ngo-profile', element: <NGOProfilePage /> },
+  { path: '/volunteer-profile', element: <VolunteerProfile />}
 ]);
 
 function App() {
