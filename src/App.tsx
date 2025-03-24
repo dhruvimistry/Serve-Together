@@ -9,7 +9,7 @@ import OTPPage from './Login/ForgotPages/OPTpage';
 import ResetPage from './Login/ForgotPages/ResetPage';
 import NGOProfilePage from './NGO Profile Page/NGOProfilePage';
 import NGOprofileviewer from './NGO Profile Page/NGOprofileviewer'
-import Volprofileviewer from './Volprofile/Volprofileviewer'
+import VolunteerProfileViewers from './Volunteers/VolunteerProfileViewers'
 import Footer from './components/footer'
 import NavBar from './components/Navbar'
 
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
   { path: '/reset-password', element: <ResetPage /> },
   { path: '/ngo-profile', element: <NGOProfilePage /> },
   { path: '/ngo-profile-viewer', element: <NGOprofileviewer /> },
-  { path: '/vol-profile-viewer', element: <Volprofileviewer /> },
+  { path: '/vol-profile-viewer', element: <VolunteerProfileViewers /> },
   { path: '/footer', element: <Footer/> },
   { path: '/navbar', element: <NavBar/> },
 
