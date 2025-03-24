@@ -1,11 +1,10 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 
-import ForgotPasswordPage from './ForgotPages/ForgotPage'
+import ForgotPasswordPage from './Login/ForgotPages/ForgotPage'
 import LoginPage from './Login/LoginPage'
 import SignUpPage from './Login/SignUpPage'
 import HomePage from './Home/Homepage'
-import VolunteerProfileViewers from './Volunteers/VolunteerProfileViewers'
 import EditProfile from './Volunteers/Editprofile'
 import OTPPage from './Login/ForgotPages/OPTpage';
 import ResetPage from './Login/ForgotPages/ResetPage';
@@ -20,7 +19,9 @@ const router = createBrowserRouter([
   { path: '/verify-otp', element: <OTPPage /> },
   { path: '/reset-password', element: <ResetPage /> },
   { path: '/ngo-profile', element: <NGOProfilePage /> },
-  { path: '/volunteer-profile', element: <VolunteerProfile />}
+  { path: '/volunteer-profile-edit', element: <EditProfile />},
+  { path: '/volunteer-profile-viewers', element: <VolunteerProfileViewers />}
+
 ]);
 
 function App() {
