@@ -16,7 +16,7 @@ const IllustrationSection: React.FC = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const imageSrc = location.pathname.includes("reset-password")
+  const imageSrc = location.pathname.includes("reset-password") 
     ? ResetPasswordIllustration
     : ForgotPasswordIllustration;
 
@@ -32,3 +32,4 @@ const IllustrationSection: React.FC = () => {
 };
 
 export default IllustrationSection;
+

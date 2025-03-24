@@ -1,11 +1,11 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import HeadLogo from "../assets/serve-together-1.png";
-import { BsFacebook, BsInstagram, BsTwitterX } from "react-icons/bs";
+import './footer.css';
 
 const Footer: React.FC = () => {
   return (
-    <footer className=" footer text-center p-5 mt-4 border-top" style={{ backgroundColor: "#FFFFFF" }}>
+    <footer className="text-center py-2 mt-4 border-top" style={{ backgroundColor: "#FFFFFF" }}>
       <div className="container">
         <img src={HeadLogo} alt="Serve Together" style={{ height: "50px" }} />
         
@@ -20,18 +20,11 @@ const Footer: React.FC = () => {
 
         {/* Social Media Icons */}
         <div className="mt-3">
-          <a href="https://facebook.com" className="mx-2 text-dark">
-            <BsFacebook size={20} />
-          </a>
-          <a href="https://instagram.com" className="mx-2 text-dark">
-            <BsInstagram size={20} />
-          </a>
-          <a href="https://twitter.com" className="mx-2 text-dark">
-            <BsTwitterX size={20} />
-          </a>
+          <a href="https://facebook.com" className="mx-2 text-dark"><i className="bi bi-facebook"></i></a>
+          <a href="https://instagram.com" className="mx-2 text-dark"><i className="bi bi-instagram"></i></a>
+          <a href="https://twitter.com" className="mx-2 text-dark"><i className="bi bi-twitter-x"></i></a>
         </div>
-
-        {/* Copyright */}
+        <hr />
         <p className="mt-3 text-muted">Copyright © Serve Together {new Date().getFullYear()}.</p>
       </div>
     </footer>

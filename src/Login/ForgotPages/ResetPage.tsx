@@ -58,7 +58,7 @@ const ResetPasswordForm: React.FC = () => {
   };
 
   return (
-    <div className="input-box col-md-4 d-flex align-items-center justify-content-center vh-100">
+    <div className="input-box col-xl-4 col-lg-5 col-md-12 d-flex align-items-center justify-content-center vh-100">
       <div className="p-1 w-75">
         <div className="text-center">
           <img src={HeadLogo} className="w-75" alt="Serve Together Logo" />

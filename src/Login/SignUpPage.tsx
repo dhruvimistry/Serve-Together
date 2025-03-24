@@ -15,7 +15,7 @@ const SignUpPage: React.FC = () => {
 
   const {
     register,
-    handleSubmit,
+    handleSubmit, 
     formState: { errors },
   } = useForm();
 
