@@ -134,11 +134,11 @@ const Homepage: React.FC = () => {
           </Col>
         </Row>
       </Container>
-      <Container className="questions mt-4" >
+      <Container className="questions mt-5 mb-5" >
         <h3 className=" name fw-bold text-center">Frequently Asked Questions</h3>
-        <h3 className="fw-light text-center pt-5" >Your Queries Answered Here !!</h3>
+        <h3 className="fw-light text-center pt-5 pb-5" >Your Queries Answered Here !!</h3>
 
-        <Accordion className="pt-5">
+        <Accordion>
           <Accordion.Item eventKey="0">
             <Accordion.Header className="que1" style={{  }}>Who can register as a volunteer ?</Accordion.Header>
             <Accordion.Body className="texts">
@@ -148,7 +148,7 @@ const Homepage: React.FC = () => {
           </Accordion.Item>
         </Accordion>
 
-        <Accordion className="pt-5">
+        <Accordion>
           <Accordion.Item eventKey="1">
             <Accordion.Header className="que1">How do I find NGOs or orphanages to volunteer with ?</Accordion.Header>
             <Accordion.Body className="texts">
@@ -159,7 +159,7 @@ const Homepage: React.FC = () => {
           </Accordion.Item>
         </Accordion>
 
-        <Accordion className="pt-5">
+        <Accordion>
           <Accordion.Item eventKey="2">
             <Accordion.Header className="que1">How can NGOs find volunteers ?</Accordion.Header>
             <Accordion.Body className="texts">

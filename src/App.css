@@ -89,3 +89,15 @@ small, .small {
   background-color: #033fff80;
   z-index: 1;
 }
+@media (max-width: 320px) {
+  .editprofile{
+    padding: 0 !important;
+  }
+  .edit{
+      padding: 10px !important;
+  }
+  .footer{
+      padding: 15px !important;
+  }
+ 
+}

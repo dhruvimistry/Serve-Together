@@ -102,7 +102,7 @@ const LoginForm: React.FC = () => {
           </button>
 
           <div className="text-center small-text py-3">
-            <Link to="/forgotpassword" className="link-text">
+            <Link to="/forgot-password" className="link-text">
               Forgot Password?
             </Link>
           </div>

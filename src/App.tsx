@@ -10,8 +10,8 @@ import OTPPage from './ForgotPages/OPTpage'
 import ResetPage from './ForgotPages/ResetPage'
 import NGOProfilePage from './NGO Profile Page/NGOProfilePage'
 import HomePage from './Home/Homepage'
-// import Profile from './Volprofile/Volprofileviewer'
-
+import VolunteerProfileViewers from './Volunteers/VolunteerProfileViewers'
+import EditProfile from './Volunteers/Editprofile'
 function App() {
 
   return (
@@ -24,6 +24,12 @@ function App() {
         <Route path='/otp' element={<OTPPage />}/>
         <Route path='/reset-password' element={<ResetPage />}/>
         <Route path='/ngo-profile' element={<NGOProfilePage/>}/>
+        <Route path='/volunteerprofileviwer' element={<VolunteerProfileViewers/>}/>
+        <Route path='/EditProfile' element={<EditProfile/>}/>
+
+        
+
+        
       </Routes>
     </BrowserRouter>
   )
