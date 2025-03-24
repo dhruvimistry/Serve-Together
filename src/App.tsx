@@ -4,7 +4,7 @@ import './App.css';
 import ForgotPasswordPage from './Login/ForgotPages/ForgotPage';
 import LoginPage from './Login/LoginPage';
 import SignUpPage from './Login/SignUpPage';
-import HomePage from './Home';
+// import HomePage from './Home';
 import OTPPage from './Login/ForgotPages/OPTpage';
 import ResetPage from './Login/ForgotPages/ResetPage';
 import NGOProfilePage from './NGO Profile Page/NGOProfilePage';
@@ -12,10 +12,11 @@ import NGOprofileviewer from './NGO Profile Page/NGOprofileviewer'
 import Volprofileviewer from './Volunteer Profile/Volprofileviewer'
 import Footer from './components/footer'
 import NavBar from './components/Navbar'
+import Homepage from './Home/Homepage';
 
 
 const router = createBrowserRouter([
-  { path: '/', element: <HomePage /> },
+  { path: '/', element: <Homepage /> },
   { path: '/login', element: <LoginPage /> },
   { path: '/signup', element: <SignUpPage /> },
   { path: '/forgot-password', element: <ForgotPasswordPage /> },
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
   { path: '/reset-password', element: <ResetPage /> },
   { path: '/ngo-profile', element: <NGOProfilePage /> },
   { path: '/ngo-profile-viewer', element: <NGOprofileviewer /> },
-  { path: '/vol-profile-viewer', element: <Volprofileviewer /> },
+  { path: '/volunteer-profile', element: <Volprofileviewer /> },
   { path: '/footer', element: <Footer/> },
   { path: '/navbar', element: <NavBar/> },
 
