@@ -16,7 +16,7 @@ const router = createBrowserRouter([
   { path: '/login', element: <LoginPage /> },
   { path: '/signup', element: <SignUpPage /> },
   { path: '/forgot-password', element: <ForgotPasswordPage /> },
-  { path: '/otp', element: <OTPPage /> },
+  { path: '/verify-otp', element: <OTPPage /> },
   { path: '/reset-password', element: <ResetPage /> },
   { path: '/ngo-profile', element: <NGOProfilePage /> },
   { path: '/ngo-profile-viewer', element: <NGOprofileviewer /> },

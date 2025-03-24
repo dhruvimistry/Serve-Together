@@ -1,65 +1,94 @@
-import React, { useState } from "react";
-import IllustrationSection from "../../components/IllustrationSection";
+import React, { useState } from "react"; 
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import HeadLogo from "../../assets/serve-together-1.png";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../ForgotPages/OTPPage.css";
+import IllustrationSection from "../../components/IllustrationSection";
+import "../LoginPage.css";
+
+const emailExp: RegExp = /^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,})$/;
 
 const ForgotPasswordForm: React.FC = () => {
-  const [emailSent, setEmailSent] = useState(false);
-  const [otp, setOtp] = useState(new Array(6).fill(""));
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false); 
+  const [message, setMessage] = useState<string | null>(null);
 
-  const handleChange = (element: any, index: number) => {
-    if (isNaN(element.value)) return;
+  interface ForgotPasswordFormData {
+    email: string;
+  }
+  
+  const { 
+    register, 
+    handleSubmit, 
+    formState: { errors } 
+  } = useForm<ForgotPasswordFormData>();
 
-    let newOtp = [...otp];
-    newOtp[index] = element.value;
-    setOtp(newOtp);
+  const onSubmit = async (data: { email: string }) => {
+    setLoading(true); 
+    setMessage(null); 
 
-    if (element.nextSibling) {
-      element.nextSibling.focus();
+    try {
+      const response = await fetch("https://ngo-volunteer-2.onrender.com/otp/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: data.email }), 
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setMessage("OTP sent successfully! Redirecting...");
+        setTimeout(() => navigate("/verify-otp", { state: { email: data.email } }), 1500);
+      } else {
+        setMessage(result.message || "Failed to send OTP.");
+      }
+    } catch (error) {
+      setMessage("An error occurred. Please try again.");
     }
+
+    setLoading(false);
   };
 
   return (
-    <div className="col-md-6 col-lg-4 d-flex align-items-center justify-content-center vh-100">
+    <div className="col-xl-4 col-lg-5 col-md-12 d-flex align-items-center justify-content-center vh-100 p-2">
       <div className="p-1 w-75">
-        <div className="text-center mb-4">
-          <img src={HeadLogo} className="img-fluid w-50" alt="Serve Together Logo" />
+        <div className="text-center">
+          <img src={HeadLogo} className="w-75 logo mb-3" alt="Serve Together Logo" />
         </div>
-        <h4 className="text-center my-3">{emailSent ? "Verify OTP" : "Forgot Password?"}</h4>
-        <p className="text-center">
-          {emailSent ? "Enter the OTP sent to your email" : "Enter the email associated with your account"}
-        </p>
-        <form>
-          {!emailSent ? (
-            <>
-              <div className="mb-3">
-                <label className="form-label">Email</label>
-                <input type="email" className="input-box form-control" placeholder="Enter your email" />
-              </div>
-              <button className="btn btn-primary w-100" onClick={() => setEmailSent(true)}>Send OTP</button>
-            </>
-          ) : (
-            <>
-              <div className="otp-container">
-                {otp.map((data, index) => (
-                  <input
-                    key={index}
-                    type="text"
-                    className="otp-input"
-                    maxLength={1}
-                    value={data}
-                    onChange={(e) => handleChange(e.target, index)}
-                    onFocus={(e) => e.target.select()}
-                  />
-                ))}
-              </div>
-              <button className="btn btn-primary w-100 mt-3" disabled={otp.includes("")}>
-                Reset Password
-              </button>
-            </>
-          )}
+        <h4 className="text-center my-3">Forgot Password?</h4>
+        <p className="text-center my-4">Enter the email associated with your account</p>
+        
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="mb-4">
+            <label className="form-label mb-0">Email</label>
+            <input
+              type="email"
+              className="form-control input-box"
+              placeholder="Enter your email"
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: emailExp,
+                  message: "Invalid email format",
+                },
+              })}
+            />
+            {errors.email?.message && <small className="text-danger">{String(errors.email.message)}</small>} {/* Show validation error */}
+          </div>
+
+          <button className="btn w-100 theme-bg my-4" type="submit" disabled={loading}>
+            {loading ? "Sending..." : "Send OTP"}
+          </button>
         </form>
+
+        {message && <p className="text-center mt-2 text-danger">{message}</p>} {/* Show success/error message */}
+
+        <div className="text-center small-text py-3">
+          <span className="link-text" onClick={() => navigate("/login")}>
+            Back to Login
+          </span>
+        </div>
       </div>
     </div>
   );
@@ -67,10 +96,8 @@ const ForgotPasswordForm: React.FC = () => {
 
 const ForgotPasswordPage: React.FC = () => {
   return (
-    <div className="container-fluid d-flex flex-column flex-md-row vh-100 p-0">
-      <div className="d-none d-md-block col-md-8 col-lg-8">
-        <IllustrationSection />
-      </div>
+    <div className="container-fluid d-flex p-0 flex-wrap">
+      <IllustrationSection />
       <ForgotPasswordForm />
     </div>
   );
