@@ -53,7 +53,4 @@ const NavBar: React.FC = () => {
 };
 
 export default NavBar;
-
-{/* <Nav.Link href="#">
-              <FaUserCircle size={24} className="text-primary" />
-            </Nav.Link> */}
+ 

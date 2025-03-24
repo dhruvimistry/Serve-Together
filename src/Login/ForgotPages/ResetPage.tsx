@@ -4,7 +4,7 @@ import HeadLogo from "../../assets/serve-together-1.png";
 
 const ResetPasswordForm: React.FC = () => {
   return (
-    <div className="input-box col-md-4 d-flex align-items-center justify-content-center vh-100">
+    <div className="input-box col-xl-4 col-lg-5 col-md-12 d-flex align-items-center justify-content-center vh-100">
       <div className="p-1 w-75">
         <div className="text-center">
           <img src={HeadLogo} className="w-75" alt="Serve Together Logo" />
@@ -34,10 +34,8 @@ const ResetPasswordForm: React.FC = () => {
 
 const ResetPage: React.FC = () => {
   return (
-    <div className="container-fluid d-flex flex-column flex-md-row vh-100 p-0">
-      <div className="d-none d-md-block col-lg-8">
+    <div className="container-fluid d-flex p-0 flex-wrap">
       <Illustration />
-      </div>
       <ResetPasswordForm />
     </div>
   );

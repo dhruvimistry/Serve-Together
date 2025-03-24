@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import HeadLogo from "../assets/serve-together-1.png";
+import './footer.css';
 
 const Footer: React.FC = () => {
   return (

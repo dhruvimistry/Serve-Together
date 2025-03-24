@@ -10,6 +10,9 @@ import ResetPage from './Login/ForgotPages/ResetPage';
 import NGOProfilePage from './NGO Profile Page/NGOProfilePage';
 import NGOprofileviewer from './NGO Profile Page/NGOprofileviewer'
 import Volprofileviewer from './Volprofile/Volprofileviewer'
+import Footer from './components/footer'
+import NavBar from './components/Navbar'
+
 
 const router = createBrowserRouter([
   { path: '/', element: <HomePage /> },
@@ -21,6 +24,8 @@ const router = createBrowserRouter([
   { path: '/ngo-profile', element: <NGOProfilePage /> },
   { path: '/ngo-profile-viewer', element: <NGOprofileviewer /> },
   { path: '/vol-profile-viewer', element: <Volprofileviewer /> },
+  { path: '/footer', element: <Footer/> },
+  { path: '/navbar', element: <NavBar/> },
 
 
 ]);

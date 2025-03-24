@@ -66,7 +66,7 @@ const Profile: React.FC = () => {
 
         <div className="row mt-3">
           <div className="col-md-6 mb-3">
-            <div id="left-card" className="card p-4 shadow-sm border-0 rounded" style={{ minHeight: cardHeight }}>
+            <div id="left-card" className="card p-4 shadow-sm  rounded" style={{ minHeight: cardHeight }}>
               <div className="text-center">
                 <FaUserCircle size={80} className="text-secondary" />
                 <h4 className="mt-2">Hope Foundation</h4>
@@ -108,7 +108,7 @@ const Profile: React.FC = () => {
           <div className="row mt-3">
             {events.map((event, index) => (
               <div className="col-md-6 mb-3" key={index}>
-                <div className="card p-4 shadow-sm border-0 common-radius">
+                <div className="card p-4 shadow-sm  common-radius">
                   <h5 className="fw-bold">{event.title}</h5>
                   <p>
                     <FaMapMarkerAlt className="me-2" /> {event.location}
@@ -127,37 +127,7 @@ const Profile: React.FC = () => {
 
       {/* Footer */}
           <Footer />
-      {/* <footer className="text-center py-4 bg-white mt-4">
-        <img src={HeadLogo} alt="Serve Together" height="40" className="mb-2" />
-        <ul className="nav justify-content-center">
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Home
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              About
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Events
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Volunteers
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Requests
-            </a>
-          </li>
-        </ul>
-        <p className="text-muted mt-2">Copyright © Serve Together</p>
-      </footer> */}
+
     </>
   );
 };

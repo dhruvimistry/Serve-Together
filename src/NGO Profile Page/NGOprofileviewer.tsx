@@ -106,7 +106,7 @@ const Profile: React.FC = () => {
           <div className="row mt-3">
             {events.map((event, index) => (
               <div className="col-md-6 mb-3" key={index}>
-                <div className="card p-4 shadow-sm border-0 common-radius">
+                <div className="card p-4 shadow-sm common-radius">
                   <h5 className="fw-bold">{event.title}</h5>
                   <p>
                     <FaMapMarkerAlt className="me-2" /> {event.location}
