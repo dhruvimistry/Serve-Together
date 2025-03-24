@@ -1,17 +1,22 @@
+"use client";
 import React from "react";
 import { Container, Button } from "react-bootstrap";
+import { FaEdit } from "react-icons/fa";
 import NavBar from "../components/Navbar";
 import ProfileCard from "../components/ProfileCard";
 import Footer from "../components/footer";
 
-const VolunteerProfileViewers: React.FC = () => {
+const VolunteerProfilePage: React.FC = () => {
   return (
     <>
       <NavBar />
-      
+
+      {/* Profile Header */}
       <Container className="pro bg-white common-radius p-3 d-flex justify-content-between align-items-center">
         <h3 className="fw-bold">Profile</h3>
-        <Button variant="primary">Invite</Button>
+        <Button variant="primary">
+          <FaEdit className="me-2 text-white" /> Edit
+        </Button>
       </Container>
 
       {/* Profile Section */}
@@ -31,4 +36,4 @@ const VolunteerProfileViewers: React.FC = () => {
   );
 };
 
-export default VolunteerProfileViewers;
+export default VolunteerProfilePage;

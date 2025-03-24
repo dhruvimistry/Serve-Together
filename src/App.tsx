@@ -12,6 +12,13 @@ import Footer from './components/footer'
 import NavBar from './components/Navbar'
 import Homepage from './Home/Homepage';
 import VolunteerProfileViewers from './Volunteers/VolunteerProfileViewers'
+import EditProfile from './Volunteers/Editprofile';
+import VolunteerProfilePage from './Volunteers/VolunteerProfilePage';
+
+
+
+
+
 
 const router = createBrowserRouter([
   { path: '/', element: <Homepage /> },
@@ -23,6 +30,8 @@ const router = createBrowserRouter([
   { path: '/ngo-profile', element: <NGOProfilePage /> },
   { path: '/ngo-profile-viewer', element: <NGOprofileviewer /> },
   { path: '/volunteer-profile-viewer', element: <VolunteerProfileViewers /> },
+  { path: '/editProfile', element: <EditProfile /> },
+  { path: '/volunteer-profile-page', element: <VolunteerProfilePage /> },
   { path: '/footer', element: <Footer/> },
   { path: '/navbar', element: <NavBar/> },
 

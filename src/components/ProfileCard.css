@@ -1,0 +1,26 @@
+.common-radius {
+    border-radius: 15px;
+  }
+  
+  .pro {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) { /* Tablet */
+    .common-radius {
+      border-radius: 10px;
+    }
+  }
+  
+  @media (max-width: 576px) { /* Mobile */
+    .common-radius {
+      border-radius: 8px;
+    }
+    .btn {
+      width: 100%;
+    }
+    
+  }
+  

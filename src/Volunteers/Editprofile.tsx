@@ -4,11 +4,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BsCamera } from "react-icons/bs";
 import Footer from "../components/footer";
 import "./Volunteers.css";
+import NavBar from "../components/Navbar";
 
 const EditProfile: React.FC = () => {
   return (
     <>
-      {/* Edit Profile Form */}
+      <NavBar />
       <div className="editprofile flex-grow-1 d-flex p-5 justify-content-center align-items-center">
         <Container className="edit bg-white shadow-sm p-5 rounded w-100" style={{ maxWidth: "800px" }}>
           <h3 className="fw-bold pt-3 pb-3">Edit Profile</h3>
