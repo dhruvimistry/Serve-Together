@@ -14,7 +14,7 @@ const VolunteerProfilePage: React.FC = () => {
         </Button>
       </Container>
 
-      <Container className="mt-4">
+      <Container className="mt-4 px-0">
         <ProfileCard
           name="Alice Jane"
           role="Volunteer"

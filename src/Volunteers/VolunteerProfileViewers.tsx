@@ -6,12 +6,12 @@ import ProfileCard from "../components/ProfileCard";
 const VolunteerProfilePage: React.FC = () => {
   return (
     <Container  className=" min-vh-100  ">
-      <Container className="bg-white  p-3  common-radius d-flex justify-content-between align-items-center">
+      <Container className="bg-white p-3 common-radius d-flex justify-content-between align-items-center">
         <h3 className="fw-bold">Profile</h3>
         <Button variant="primary">Invite</Button>
       </Container>
 
-      <Container className="mt-4 ">
+      <Container className="mt-4 px-0">
         <ProfileCard
           name="Alice Jane"
           role="Volunteer"
