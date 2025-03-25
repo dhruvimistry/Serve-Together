@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import { FaUserCircle, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaCalendarAlt } from "react-icons/fa";
 // import HeadLogo from "../assets/serve-together-1.png"; 
 import "bootstrap/dist/css/bootstrap.min.css";
+import CustomButton from "../components/common/CustomButton";
 // import NavBar from "../components/Navbar";
 // import Footer from "../components/footer";
 
+
+{/* I HAVE ADDED CUSTOMBUTTON COMPONENT HERE */}
 const events = [
   {
     title: "Art & Creativity Workshop",
@@ -60,7 +63,7 @@ const Profile: React.FC = () => {
       <div className="card p-3 common-radius">
         <div className="d-flex justify-content-between align-items-center">
           <h3 className="fw-bold">Profile</h3>
-          <button className="btn btn-primary">Edit</button>
+          <CustomButton label="Edit" variant="accept" />
         </div>
       </div>
 
@@ -102,7 +105,7 @@ const Profile: React.FC = () => {
         <div className="card p-3 common-radius">
         <div className="d-flex justify-content-between align-items-center">
           <h3 className="fw-bold">Events</h3>
-          <button className="btn btn-primary">Add + </button>
+          <CustomButton label="Add +" variant="accept" />
         </div>
       </div>
 
@@ -118,7 +121,10 @@ const Profile: React.FC = () => {
                     <FaCalendarAlt className="me-2" /> {event.date} | {event.time}
                   </p>
                   <p>🔹 {event.details}</p>
-                  <button className="btn btn-danger">Delete</button>
+                  <CustomButton 
+                    label="Delete"
+                    variant="decline"
+                  />
                 </div>
               </div>
             ))}
