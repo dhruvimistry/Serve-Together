@@ -1,13 +1,10 @@
 import React from "react";
 import { Container, Button } from "react-bootstrap";
-import NavBar from "../components/Navbar";
 import ProfileCard from "../components/ProfileCard";
-import Footer from "../components/footer";
 
 const VolunteerProfileViewers: React.FC = () => {
   return (
     <>
-      <NavBar />
       
       <Container className="pro bg-white common-radius p-3 d-flex justify-content-between align-items-center">
         <h3 className="fw-bold">Profile</h3>
@@ -26,7 +23,6 @@ const VolunteerProfileViewers: React.FC = () => {
         cities={["Surat", "Navsari"]}
       />
 
-      <Footer />
     </>
   );
 };

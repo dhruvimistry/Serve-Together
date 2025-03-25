@@ -2,14 +2,11 @@
 import React from "react";
 import { Container, Button } from "react-bootstrap";
 import { FaEdit } from "react-icons/fa";
-import NavBar from "../components/Navbar";
 import ProfileCard from "../components/ProfileCard";
-import Footer from "../components/footer";
 
 const VolunteerProfilePage: React.FC = () => {
   return (
     <>
-      <NavBar />
 
       {/* Profile Header */}
       <Container className="pro bg-white common-radius p-3 d-flex justify-content-between align-items-center">
@@ -31,7 +28,6 @@ const VolunteerProfilePage: React.FC = () => {
         cities={["Surat", "Navsari"]}
       />
 
-      <Footer />
     </>
   );
 };
