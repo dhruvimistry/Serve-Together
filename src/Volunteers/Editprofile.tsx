@@ -8,6 +8,7 @@ import NavBar from "../components/Navbar";
 const EditProfile: React.FC = () => {
   return (
     <>
+    < NavBar />
       {/* Edit Profile Form */}
       <div className="editprofile flex-grow-1 d-flex justify-content-center align-items-center">
         <Container className="edit bg-white shadow-sm p-5 common-radius w-100">
