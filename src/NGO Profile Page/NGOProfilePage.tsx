@@ -89,7 +89,7 @@ const Profile: React.FC = () => {
             </div>
           </div>
           <div className="col-md-6 mb-3">
-            <div id="right-card" className="card p-4 shadow-sm border-0 common-radius" style={{ minHeight: cardHeight }}>
+            <div id="right-card" className="card p-4 shadow-sm common-radius" style={{ minHeight: cardHeight }}>
               <h6 className="fw-bold">About</h6>
               <p>
                 Hope Foundation is a nonprofit organization committed to transforming the lives of
