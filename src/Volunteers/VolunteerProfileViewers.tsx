@@ -1,12 +1,12 @@
 import React from "react";
-import { Navbar, Nav, Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
-import { FaUserCircle, FaPhoneAlt, FaEnvelope, FaUser, FaCalendarAlt } from "react-icons/fa";
-import HeadLogo from "../assets/serve-together-1.png";
+import { Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
+import { FaPhoneAlt, FaEnvelope, FaUser, FaCalendarAlt } from "react-icons/fa";
+// import HeadLogo from "../assets/serve-together-1.png";
 
 const VolunteerProfileViewers: React.FC = () => {
   return (
     <>
-      <Navbar expand="lg" className="p-3 px-5 px-3" style={{ background: "#F5F8FC" }}>
+      {/* <Navbar expand="lg" className="p-3 px-5 px-3" style={{ background: "#F5F8FC" }}>
 
         <Navbar.Brand href="#" className="fw-bold text-primary d-flex align-items-center">
           <img src={HeadLogo} style={{ height: "40px", marginRight: "10px" }} />
@@ -23,7 +23,7 @@ const VolunteerProfileViewers: React.FC = () => {
           </Nav.Link>
         </Nav>
 
-      </Navbar>
+      </Navbar> */}
 
       {/* Profile Section */}
       <Container className=" pro  bg-white common-radius">
@@ -32,7 +32,7 @@ const VolunteerProfileViewers: React.FC = () => {
           <Button variant="primary" className=" d-flex justify-content-end">Invite</Button>
         </div>
       </Container>
-      <Container className="p-5">
+      <Container>
         <Row>
           <Col md={6}>
             <Card className="p-5  common-radius ">

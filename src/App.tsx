@@ -1,11 +1,9 @@
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import './App.css';
 
-// Components
 import NavBar from './components/Navbar';
 import Footer from './components/footer';
 
-// Pages
 import Homepage from './Home/Homepage';
 import ForgotPasswordPage from './Login/ForgotPages/ForgotPage';
 import LoginPage from './Login/LoginPage';
@@ -15,6 +13,7 @@ import ResetPage from './Login/ForgotPages/ResetPage';
 import NGOProfilePage from './NGO Profile Page/NGOProfilePage';
 import NGOProfileViewer from './NGO Profile Page/NGOprofileviewer';
 import VolunteerProfileViewer from './Volunteers/VolunteerProfileViewers';
+import EditProfile from './Volunteers/Editprofile';
 
 const MainLayout = () => (
   <>
@@ -34,6 +33,7 @@ const router = createBrowserRouter([
       { path: '/ngo-profile', element: <NGOProfilePage /> },
       { path: '/ngo-profile-viewer', element: <NGOProfileViewer /> },
       { path: '/volunteer-profile', element: <VolunteerProfileViewer /> },
+      { path: '/volunteer-profile/edit', element: <EditProfile />}
     ],
   },
   {
