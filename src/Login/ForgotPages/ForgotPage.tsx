@@ -97,6 +97,7 @@ const ForgotPasswordForm: React.FC = () => {
 const ForgotPasswordPage: React.FC = () => {
   return (
     <div className="container-fluid d-flex p-0 flex-wrap">
+      <div></div>
       <IllustrationSection />
       <ForgotPasswordForm />
     </div>

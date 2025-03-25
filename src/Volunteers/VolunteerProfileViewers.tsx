@@ -4,7 +4,9 @@ import { FaUserCircle, FaPhoneAlt, FaEnvelope, FaUser, FaCalendarAlt } from "rea
 import HeadLogo from "../assets/serve-together-1.png";
 
 
+
 const VolunteerProfileViewers: React.FC = () => {
+
   return (
     <>
       <Navbar expand="lg" className="p-3 px-5 px-3" style={{ background: "#F5F8FC" }}>
@@ -97,5 +99,4 @@ const VolunteerProfileViewers: React.FC = () => {
     </>
   );
 };
-
 export default VolunteerProfileViewers;
