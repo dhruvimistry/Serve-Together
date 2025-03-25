@@ -16,9 +16,12 @@ const NavBar: React.FC = () => {
   return (
     <nav className="navbar navbar-expand-lg background">
       <div className="container">
-        <a className="navbar-brand" href="#home">
+        {/* Logo */}
+        <Link className="navbar-brand" to="/">
           <img src={HeadLogo} width="200" alt="ServeTogether Logo" />
-        </a>
+        </Link>
+
+        {/* Navbar Toggler */}
         <button
           className="navbar-toggler"
           type="button"
@@ -30,22 +33,24 @@ const NavBar: React.FC = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+
+        {/* Navbar Links */}
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a className="nav-link theme" href="/">Home</a>
+              <Link className="nav-link theme" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link theme" href="/about">About Us</a>
+              <Link className="nav-link theme" to="/about">About Us</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link theme" href="/events">Events</a>
+              <Link className="nav-link theme" to="/events">Events</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link theme" href="/volunteers">Volunteers</a>
+              <Link className="nav-link theme" to="/volunteers">Volunteers</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link theme" href="/requests">Requests</a>
+              <Link className="nav-link theme" to="/requests">Requests</Link>
             </li>
             <div>
               {isAuthenticated() ? (
