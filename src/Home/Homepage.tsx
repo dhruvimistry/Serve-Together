@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { Container, Button, Row, Col, Carousel, Accordion, Image } from "react-bootstrap";
 import HeroImg1 from "../assets/hands 11.jpg";
@@ -9,16 +8,16 @@ import FeaturedEvents from "./featuredevents";
 const Homepage: React.FC = () => {
   return (
     <>
-      <Container fluid className="hero-section p-0">
-        <Carousel className="hero-container">
+      <Container  className="hero-section common-radius">
+        <Carousel className="hero-container common-radius">
           {[...Array(3)].map((_, index) => (
             <Carousel.Item key={index}>
               <img className="d-block w-100" src={HeroImg1} alt={`Slide ${index + 1}`} />
               <div className="overlay"></div>
               <Carousel.Caption className="text-start caption-center">
                 <h3 className="cap fw-bolder">“Be the change you want”</h3>
-                <p className="cap1">- Mahatma Gandhi</p>
-                <p className="cap2">Every helping hand matters. Find opportunities, contribute, and inspire positive change.</p>
+                <p className="cap1 text-light">- Mahatma Gandhi</p>
+                <p className="cap2 text-light">Every helping hand matters. Find opportunities, contribute, and inspire positive change.</p>
                 <div className="d-flex gap-2">
                   <Button className="oppo border-0" style={{ backgroundColor: "#003366" }}>
                     Find Volunteer Opportunities
