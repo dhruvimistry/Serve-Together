@@ -1,30 +1,30 @@
+"use client";
 import React from "react";
 import { Container, Button } from "react-bootstrap";
-import ProfileCard from "../components/ProfileCard";
+import ProfileCard from "../components/ProfileCard"; 
 
-const VolunteerProfileViewers: React.FC = () => {
+const VolunteerProfilePage: React.FC = () => {
   return (
-    <>
-      
-      <Container className="pro bg-white common-radius p-3 d-flex justify-content-between align-items-center">
+    <Container  className=" min-vh-100  ">
+      <Container className="bg-white  p-3  common-radius d-flex justify-content-between align-items-center">
         <h3 className="fw-bold">Profile</h3>
         <Button variant="primary">Invite</Button>
       </Container>
 
-      {/* Profile Section */}
-      <ProfileCard
-        name="Alice Jane"
-        role="Volunteer"
-        gender="She/Her"
-        age="21"
-        phone="+91 98765 43210"
-        email="someone@mail.com"
-        skills={["Art", "Teaching", "Dancing", "Nutrition Guidance"]}
-        cities={["Surat", "Navsari"]}
-      />
-
-    </>
+      <Container className="mt-4 ">
+        <ProfileCard
+          name="Alice Jane"
+          role="Volunteer"
+          gender="She/Her"
+          age="21"
+          phone="+91 98765 43210"
+          email="someone@mail.com"
+          skills={["Art", "Teaching", "Dancing", "Nutrition Guidance"]}
+          cities={["Surat", "Navsari"]}
+        />
+      </Container>
+    </Container>
   );
 };
 
-export default VolunteerProfileViewers;
+export default VolunteerProfilePage;

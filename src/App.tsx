@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       { path: '/ngo-profile', element: <NGOProfilePage /> },
       { path: '/ngo-profile-viewer', element: <NGOProfileViewer /> },
       { path: '/ngo-profile/edit', element: <NgoEditProfile /> },
-      { path: '/volunteer-profile', element: <VolunteerProfileViewer /> },
+      { path: '/volunteer-profile-viewer', element: <VolunteerProfileViewer /> },
       { path: '/volunteer-profile-page', element: <VolunteerProfilePage/> },
       { path: '/volunteer-profile/edit', element: <EditProfile />}
     ],

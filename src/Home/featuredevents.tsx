@@ -8,7 +8,8 @@ const FeaturedEvents: React.FC = () => {
   return (
     <Container fluid className="feature "style={{background:" #FFFFFF"}}>
       <h1 className="name text-center fw-bold mb-4 pt-5">Featured Events</h1>
-      <Row className=" main g-4 py-5  p-5">
+      <Container>
+      <Row className=" main g-4 py-5  ">
         <Col lg={6} md={6} sm={12}>
           <EventCard
             title="Bright Future Foundation"
@@ -34,6 +35,7 @@ const FeaturedEvents: React.FC = () => {
       <div className="pt-5 text-center pb-5">
       <Button className="find ps-5 pe-5  border-0" style={{ backgroundColor: " #003366" }}> View More Events</Button>
     </div>
+    </Container>
     </Container>
   );
 };

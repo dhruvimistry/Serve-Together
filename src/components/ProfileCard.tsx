@@ -15,48 +15,46 @@ interface ProfileCardProps {
 
 const ProfileCard: React.FC<ProfileCardProps> = ({ name, role, gender, age, phone, email, skills, cities }) => {
   return (
-    <Container className="p-5">
-      <Row className="g-4">
-        {/* Left Profile Section */}
-        <Col lg={6}>
-          <Card className="p-4 text-center common-radius shadow-sm">
+    <Container>
+      <Row className="d-flex justify-content-center">
+        <Col lg={6} className="mb-4">
+          <Card className="p-4 text-center shadow-sm common-radius">
             <div className="text-center">
-            <FaUserCircle size={80} className="text-secondary " />
-            <h4 className="mt-2">{name}</h4>
-            <p className="text-muted">{role}</p>
+              <FaUserCircle size={80} className="text-dark" />
+              <h4 className="mt-2 fw-bold">{name}</h4>
+              <p className="text-muted">{role}</p>
             </div>
 
-            <Row className="text-start">
+            <Row className="text-start mt-3">
               <Col>
                 <h6 className="fw-bold">Personal Information</h6>
-                <p><FaUser className="me-2" /> {gender}</p>
-                <p><FaCalendarAlt className="me-2" /> {age}</p>
+                <p><FaUser className="me-2 text-dark" /> {gender}</p>
+                <p><FaCalendarAlt className="me-2 text-dark" /> {age}</p>
               </Col>
               <Col>
                 <h6 className="fw-bold">Contact Information</h6>
-                <p><FaPhoneAlt className="me-2" /> {phone}</p>
-                <p><FaEnvelope className="me-2" /> {email}</p>
+                <p><FaPhoneAlt className="me-2 text-dark" /> {phone}</p>
+                <p><FaEnvelope className="me-2 text-dark" /> {email}</p>
               </Col>
             </Row>
           </Card>
         </Col>
 
-        {/* Right Skills & Cities Section */}
         <Col lg={6}>
-          <Card className="common-radius shadow-sm p-4">
+          <Card className="p-4 shadow-sm common-radius">
             <h6 className="fw-bold">Skills</h6>
-            <div className="mb-3">
+            <div className="d-flex flex-wrap gap-1 mb-3">
               {skills.map((skill) => (
-                <Badge key={skill} bg="light" text="dark" className="me-2 p-2 border common-radius fw-light">
+                <Badge key={skill} bg="light" text="dark" className="border rounded-pill px-3 py-2 fw-light">
                   {skill}
                 </Badge>
               ))}
             </div>
 
             <h6 className="fw-bold">Preferred Cities</h6>
-            <div>
+            <div className="d-flex flex-wrap gap-1 ">
               {cities.map((city) => (
-                <Badge key={city} bg="light" text="dark" className="me-2 p-2 border common-radius fw-light">
+                <Badge key={city} bg="light" text="dark" className="border rounded-pill px-3 py-2 fw-light">
                   {city}
                 </Badge>
               ))}
