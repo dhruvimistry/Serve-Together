@@ -1,0 +1,39 @@
+.btn {
+  /* padding: 10px 20px; */
+  font-weight: bold;
+  border: 2px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.accept {
+  color: #033fff;
+  border-color: #033fff;
+  background-color: #d1dcff;
+}
+
+.accept:hover {
+  color: white;
+  border-color: #033fff;
+  background-color: blue;
+}
+
+.decline:hover {
+  color: white;
+  border-color: #ee2f12;
+  background-color: #ee2f12;
+}
+
+.decline {
+  color: #ee2f12;
+  border-color: #ee2f12;
+  background-color: #fccec7;
+}
+
+.primary {
+  color: white;
+  border-color: #033fff;
+  background-color: blue;
+}

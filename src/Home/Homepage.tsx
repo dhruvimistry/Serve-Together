@@ -4,14 +4,10 @@ import { Container, Button, Row, Col, Carousel, Accordion } from "react-bootstra
 import HeroImg1 from "../assets/hands 11.jpg";
 import './Homepage.css'
 import FeaturedEvents from "./featuredevents";
-import Footer from "../components/footer";
-import NavBar from "../components/Navbar";
 
 const Homepage: React.FC = () => {
   return (
     <>
-      <NavBar />
-
       <Container className="hero-section">
         <Carousel className="hero-container">
           <Carousel.Item>
@@ -150,7 +146,6 @@ const Homepage: React.FC = () => {
           </Accordion.Item>
         </Accordion>
       </Container>
-      < Footer />
     </>
   );
 };

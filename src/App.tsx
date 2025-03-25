@@ -1,41 +1,53 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import './App.css';
+
+import NavBar from './components/Navbar';
+import Footer from './components/footer';
+
+import Homepage from './Home/Homepage';
 import ForgotPasswordPage from './Login/ForgotPages/ForgotPage';
 import LoginPage from './Login/LoginPage';
 import SignUpPage from './Login/SignUpPage';
-// import HomePage from './Home';
 import OTPPage from './Login/ForgotPages/OPTpage';
 import ResetPage from './Login/ForgotPages/ResetPage';
 import NGOProfilePage from './NGO Profile Page/NGOProfilePage';
-import NGOprofileviewer from './NGO Profile Page/NGOprofileviewer'
-import Footer from './components/footer'
-import NavBar from './components/Navbar'
-import Homepage from './Home/Homepage';
-import VolunteerProfileViewers from './Volunteers/VolunteerProfileViewers'
+import NGOProfileViewer from './NGO Profile Page/NGOprofileviewer';
+import VolunteerProfileViewer from './Volunteers/VolunteerProfileViewers';
 import EditProfile from './Volunteers/Editprofile';
-import VolunteerProfilePage from './Volunteers/VolunteerProfilePage';
+import NgoEditProfile from './NGO Profile Page/NGOeditprofile';
 
+const MainLayout = () => (
+  <>
+    <NavBar />
+    <Outlet />
+    <Footer />
+  </>
+);
 
-
-
-
+const AuthLayout = () => <Outlet />;
 
 const router = createBrowserRouter([
-  { path: '/', element: <Homepage /> },
-  { path: '/login', element: <LoginPage /> },
-  { path: '/signup', element: <SignUpPage /> },
-  { path: '/forgot-password', element: <ForgotPasswordPage /> },
-  { path: '/verify-otp', element: <OTPPage /> },
-  { path: '/reset-password', element: <ResetPage /> },
-  { path: '/ngo-profile', element: <NGOProfilePage /> },
-  { path: '/ngo-profile-viewer', element: <NGOprofileviewer /> },
-  { path: '/volunteer-profile-viewer', element: <VolunteerProfileViewers /> },
-  { path: '/editProfile', element: <EditProfile /> },
-  { path: '/volunteer-profile-page', element: <VolunteerProfilePage /> },
-  { path: '/footer', element: <Footer/> },
-  { path: '/navbar', element: <NavBar/> },
-
-
+  {
+    element: <MainLayout />,
+    children: [
+      { path: '/', element: <Homepage /> },
+      { path: '/ngo-profile', element: <NGOProfilePage /> },
+      { path: '/ngo-profile-viewer', element: <NGOProfileViewer /> },
+      { path: '/ngo-profile/edit', element: <NgoEditProfile /> },
+      { path: '/volunteer-profile', element: <VolunteerProfileViewer /> },
+      { path: '/volunteer-profile/edit', element: <EditProfile />}
+    ],
+  },
+  {
+    element: <AuthLayout />,
+    children: [
+      { path: '/login', element: <LoginPage /> },
+      { path: '/signup', element: <SignUpPage /> },
+      { path: '/forgot-password', element: <ForgotPasswordPage /> },
+      { path: '/verify-otp', element: <OTPPage /> },
+      { path: '/reset-password', element: <ResetPage /> },
+    ],
+  },
 ]);
 
 function App() {

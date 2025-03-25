@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { FaUserCircle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { isAuthenticated, logoutUser } from "../utils/authentication";
-import { Navbar, Container } from "react-bootstrap";
 
 const NavBar: React.FC = () => {
   const navigate = useNavigate();
@@ -15,11 +14,14 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <Navbar expand="lg" className="background">
-      <Container>
-        <Navbar.Brand href="#home">
+    <nav className="navbar navbar-expand-lg background">
+      <div className="container">
+        {/* Logo */}
+        <Link className="navbar-brand" to="/">
           <img src={HeadLogo} width="200" alt="ServeTogether Logo" />
-        </Navbar.Brand>
+        </Link>
+
+        {/* Navbar Toggler */}
         <button
           className="navbar-toggler"
           type="button"
@@ -31,22 +33,24 @@ const NavBar: React.FC = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+
+        {/* Navbar Links */}
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a className="nav-link theme" href="/">Home</a>
+              <Link className="nav-link theme" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link theme" href="/about">About Us</a>
+              <Link className="nav-link theme" to="/about">About Us</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link theme" href="/events">Events</a>
+              <Link className="nav-link theme" to="/events">Events</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link theme" href="/volunteers">Volunteers</a>
+              <Link className="nav-link theme" to="/volunteers">Volunteers</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link theme" href="/requests">Requests</a>
+              <Link className="nav-link theme" to="/requests">Requests</Link>
             </li>
             <div>
               {isAuthenticated() ? (
@@ -79,15 +83,15 @@ const NavBar: React.FC = () => {
                 </div>
               ) : (
                 <div className="d-flex gap-2 ms-3">
-                  <button className="btn theme-bg">Login</button>
-                  <button className="btn theme-bg">Sign Up</button>
+                  <Link to="/login" className="btn theme-bg">Login</Link>
+                  <Link to="/signup" className="btn theme-bg">Sign Up</Link>
                 </div>
               )}
             </div>
           </ul>
         </div>
-      </Container>
-    </Navbar>
+      </div>
+    </nav>
   );
 };
 
