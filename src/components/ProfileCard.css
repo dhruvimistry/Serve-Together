@@ -7,20 +7,23 @@
     margin: auto;
   }
   
-  /* Responsive Design */
-  @media (max-width: 768px) { /* Tablet */
+  @media (max-width: 768px) { 
     .common-radius {
       border-radius: 10px;
     }
   }
   
-  @media (max-width: 576px) { /* Mobile */
+  @media (max-width: 576px) { 
     .common-radius {
       border-radius: 8px;
     }
     .btn {
       width: 100%;
-    }
-    
+    } 
   }
-  
+  /* @media (max-width: 320px) { 
+    .container .profile{
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  } */

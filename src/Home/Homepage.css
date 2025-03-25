@@ -58,11 +58,7 @@
 .questions .texts {
   color: #5C6970;
 }
-.change .read{
-  background: white;
-    border-radius: 20px;
-    padding: 55px 30px 55px 30px;
-}
+
 
 
 @media (max-width: 1024px) {
@@ -162,5 +158,10 @@
 }
 .change {
 padding: 0;
+}
+.change .read .but{
+  display: block !important;
+  text-align: center;
+
 }
 }
