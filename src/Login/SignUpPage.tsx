@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
 import './SignUpPage.css';
 import HeadLogo from '../assets/serve-together-1.png';
-import VolunteerForm from './VolunteerForm';
-import OrganizationForm from './OrganizationForm';
+import VolunteerForm from '../components/forms/VolunteerForm';
+import OrganizationForm from '../components/forms/OrganizationForm';
 
 // There is an error in backend for nameOfOrganization
 const SignUpPage: React.FC = () => {

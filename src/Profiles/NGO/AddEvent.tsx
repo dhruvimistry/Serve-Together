@@ -1,13 +1,13 @@
 import React from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Footer from "../components/footer";
-import NavBar from "../components/Navbar";
+// import Footer from "../components/layout/footer";
+// import NavBar from "../components/layout/Navbar";
 
 const EditProfile: React.FC = () => {
   return (
     <>
-    <NavBar />
+    {/* <NavBar /> */}
       {/* Edit Profile Form */}
       <div className="editprofile flex-grow-1 d-flex p-5 justify-content-center align-items-center">
         <Container className="edit bg-white shadow-sm p-5 rounded w-100" style={{ maxWidth: "800px" }}>
@@ -60,7 +60,7 @@ const EditProfile: React.FC = () => {
           </Form>
         </Container>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

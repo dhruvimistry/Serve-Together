@@ -35,5 +35,11 @@
 .primary {
   color: white;
   border-color: #033fff;
-  background-color: blue;
+  background-color: #033fff;
+}
+
+.primary:hover {
+  color: #033fff;
+  border-color: #033fff;
+  background-color: #d1dcff;
 }

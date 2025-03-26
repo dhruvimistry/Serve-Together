@@ -1,22 +1,22 @@
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import './App.css';
 
-import NavBar from './components/Navbar';
-import Footer from './components/footer';
+import NavBar from './components/layout/Navbar';
+import Footer from './components/layout/footer';
 
 import Homepage from './Home/Homepage';
-import ForgotPasswordPage from './Login/ForgotPages/ForgotPage';
+import ForgotPasswordPage from './Login/ForgotPassword';
 import LoginPage from './Login/LoginPage';
 import SignUpPage from './Login/SignUpPage';
-import OTPPage from './Login/ForgotPages/OPTpage';
-import ResetPage from './Login/ForgotPages/ResetPage';
-import NGOProfilePage from './NGO Profile Page/NGOProfilePage';
-import NGOProfileViewer from './NGO Profile Page/NGOprofileviewer';
-import VolunteerProfileViewer from './Volunteers/VolunteerProfileViewers';
-import EditProfile from './Volunteers/Editprofile';
-import NgoEditProfile from './NGO Profile Page/NGOeditprofile';
-import VolunteerProfilePage from './Volunteers/VolunteerProfilePage';
-import AboutUs from './About/Aboutpage';
+import OTPPage from './Login/VerifyOTP';
+import ResetPage from './Login/ResetPassword';
+import NGOProfilePage from './Profiles/NGO/NGOProfilePage';
+import NGOProfileViewer from './Profiles/NGO/NGOprofileviewer';
+import VolunteerProfileViewer from './Profiles/Volunteers/VolunteerProfileViewers';
+import EditProfile from './Profiles/Volunteers/Editprofile';
+import NgoEditProfile from './Profiles/NGO/NGOeditprofile';
+import VolunteerProfilePage from './Profiles/Volunteers/VolunteerProfilePage';
+import AboutUs from './Home/Aboutpage';
 
 const MainLayout = () => (
   <>
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
       { path: '/ngo-profile-viewer', element: <NGOProfileViewer /> },
       { path: '/ngo-profile/edit', element: <NgoEditProfile /> },
       { path: '/volunteer-profile-viewer', element: <VolunteerProfileViewer /> },
-      { path: '/volunteer-profile-page', element: <VolunteerProfilePage/> },
+      { path: '/volunteer-profile', element: <VolunteerProfilePage/> },
       { path: '/volunteer-profile/edit', element: <EditProfile />},
       { path: '/about', element: <AboutUs />}
 
