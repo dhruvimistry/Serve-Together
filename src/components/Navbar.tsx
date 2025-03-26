@@ -22,16 +22,16 @@ const NavBar: React.FC = () => {
             <img src={HeadLogo} alt="ServeTogether Logo" style={{ height: "50px" }} />
           </Link>
 
-          {/* Offcanvas Toggle Button */}
-          <button
+          {/* Offcanvas Toggle*/}
+          <div
             className="navbar-toggler"
-            type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar"
             aria-controls="offcanvasNavbar"
+            style={{border: "none"}}
           >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+            <i className="bi bi-list"></i>
+          </div>
 
           {/* Offcanvas Navigation */}
           <div className="offcanvas offcanvas-end" tabIndex={-1} id="offcanvasNavbar">
@@ -92,10 +92,10 @@ const NavBar: React.FC = () => {
                     </ul>
                   </li>
                 ) : (
-                  <div className="d-flex gap-2 ms-3">
-                <Link to="/login" className="btn theme-bg">Login</Link>
-                <Link to="/signup" className="btn theme-bg">Sign Up</Link>
-              </div>
+                  <li className="d-flex gap-2">
+                    <Link to="/login" className="btn theme-bg">Login</Link>
+                    <Link to="/signup" className="btn theme-bg">Sign Up</Link>
+                  </li>
                 )}
               </ul>
             </div>

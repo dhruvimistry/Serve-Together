@@ -45,7 +45,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ name, role, gender, age, phon
             <h6 className="fw-bold">Skills</h6>
             <div className="d-flex flex-wrap gap-1 mb-3">
               {skills.map((skill) => (
-                <Badge key={skill} bg="light" text="dark" className="border rounded-pill px-3 py-2 fw-light">
+                <Badge key={skill} bg="none" text="dark" className="border common-radius px-3 py-2 fw-light">
                   {skill}
                 </Badge>
               ))}
@@ -54,7 +54,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ name, role, gender, age, phon
             <h6 className="fw-bold">Preferred Cities</h6>
             <div className="d-flex flex-wrap gap-1 ">
               {cities.map((city) => (
-                <Badge key={city} bg="light" text="dark" className="border rounded-pill px-3 py-2 fw-light">
+                <Badge key={city} bg="none" text="dark" className="border common-radius px-3 py-2 fw-light">
                   {city}
                 </Badge>
               ))}

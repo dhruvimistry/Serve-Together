@@ -1,17 +1,18 @@
 "use client";
 import React from "react";
-import { Container, Button } from "react-bootstrap";
-import { FaEdit } from "react-icons/fa";  
+import { Container } from "react-bootstrap";
+// import { FaEdit } from "react-icons/fa";  
 import ProfileCard from "../components/ProfileCard"; 
+import CustomButton from "../components/common/CustomButton";
 
 const VolunteerProfilePage: React.FC = () => {
   return (
     <Container className="min-vh-100">
       <Container className="bg-white  p-3 common-radius d-flex justify-content-between align-items-center">
-        <h3 className="fw-bold">Profile</h3>
-        <Button variant="primary">
-          <FaEdit className="me-2 text-white" /> Edit  
-        </Button>
+        <h3 className="fw-bold m-0">Profile</h3>
+        <CustomButton variant="accept" label="Edit">
+          {/* <FaEdit className="me-2 text-white" />  */}
+        </CustomButton>
       </Container>
 
       <Container className="mt-4 px-0">
