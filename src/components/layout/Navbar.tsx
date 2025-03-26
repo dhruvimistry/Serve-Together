@@ -1,9 +1,9 @@
 import React from "react";
-import HeadLogo from "../assets/serve-together-1.png";
+import HeadLogo from "../../assets/serve-together-1.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaUserCircle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import { isAuthenticated, logoutUser } from "../utils/authentication";
+import { isAuthenticated, logoutUser } from "../../utils/authentication";
 
 const NavBar: React.FC = () => {
   const navigate = useNavigate();

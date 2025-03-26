@@ -3,7 +3,7 @@ import { Container, Button, Row, Col, Carousel, Accordion, Image } from "react-b
 import HeroImg1 from "../assets/hands 11.jpg";
 import Vision from "../assets/vision.webp";
 import './Homepage.css';
-import FeaturedEvents from "./featuredevents";
+import FeaturedEvents from "../components/common/featuredevents";
 
 const Homepage: React.FC = () => {
   return (

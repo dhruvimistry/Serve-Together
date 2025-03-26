@@ -1,7 +1,8 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { FaMapMarkerAlt, FaCalendarAlt, FaHeart } from "react-icons/fa";
 import "./Eventcard.css"
+import CustomButton from "./CustomButton";
 
 interface EventCardProps {
   title: string;
@@ -29,9 +30,9 @@ const EventCard: React.FC<EventCardProps> = ({ title, subtitle, location, dateTi
         <p className="texts">
           <FaHeart className="text-warning" /> {skills}
         </p>
-        <div className="d-flex flex-wrap gap-2">
-          <Button variant="primary" className="fw-bold">View Details</Button>
-          <Button variant="primary" className="fw-bold">Apply</Button>
+        <div className="d-flex justify-content-center flex-wrap gap-2">
+          <CustomButton variant="primary" label="View Details" />
+          <CustomButton variant="primary" label="Apply" />
         </div>
       </Card.Body>
     </Card>

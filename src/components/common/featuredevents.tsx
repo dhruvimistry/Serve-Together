@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import EventCard from "../components/Eventcard";
+import EventCard from "./Eventcard";
 import  "./featuredevents.css";
 
 

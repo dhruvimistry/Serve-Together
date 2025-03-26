@@ -1,9 +1,9 @@
 import React, { useState } from "react"; 
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import HeadLogo from "../../assets/serve-together-1.png";
-import IllustrationSection from "../../components/IllustrationSection";
-import "../LoginPage.css";
+import HeadLogo from "../assets/serve-together-1.png";
+import IllustrationSection from "../components/IllustrationSection";
+import "./LoginPage.css";
 
 const emailExp: RegExp = /^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,})$/;
 

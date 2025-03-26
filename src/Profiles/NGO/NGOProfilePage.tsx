@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaUserCircle, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaCalendarAlt } from "react-icons/fa";
 // import HeadLogo from "../assets/serve-together-1.png"; 
 import "bootstrap/dist/css/bootstrap.min.css";
-import CustomButton from "../components/common/CustomButton";
+import CustomButton from "../../components/common/CustomButton";
 // import NavBar from "../components/Navbar";
 // import Footer from "../components/footer";
 

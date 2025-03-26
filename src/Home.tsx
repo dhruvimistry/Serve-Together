@@ -2,7 +2,7 @@ import React from "react";
 // import { Link } from "react-router-dom";
 // import Cookies from "js-cookie";
 // import { isAuthenticated } from "./utils/authentication";
-import NavBar from "./components/Navbar";
+import NavBar from "./components/layout/Navbar";
 
 const HomePage: React.FC = () => {
 
