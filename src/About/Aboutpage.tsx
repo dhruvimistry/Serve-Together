@@ -9,12 +9,12 @@ const AboutUs: React.FC = () => {
         <>
             <Container fluid className="bg-white">
                 <h2 className=" name text-center fw-bold text-center py-5 ">About Us</h2>
-                <Container className="hero-section common-radius ">
-                    <Carousel className="hero-container common-radius">
+                <Container className="hero-section  ">
+                    <Carousel className="hero-container ">
                         {[...Array(3)].map((_, index) => (
                             <Carousel.Item key={index}>
-                                <img className="d-block w-100" src={Hands22} alt={`Slide ${index + 1}`} />
-                                <div className="overlay"></div>
+                                <img className="d-block w-100 common-radius" src={Hands22} alt={`Slide ${index + 1}`} />
+                                <div className="overlay common-radius"></div>
                                 <Carousel.Caption className="text-start caption-center">
                                     <h3 className="cap fw-bolder text-center">Serve Together</h3>
                                     <p className="cap1 text-center text-light">Together,We Build a Better World !</p>

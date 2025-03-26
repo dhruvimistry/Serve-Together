@@ -15,7 +15,7 @@ interface ProfileCardProps {
 
 const ProfileCard: React.FC<ProfileCardProps> = ({ name, role, gender, age, phone, email, skills, cities }) => {
   return (
-    <Container>
+    <Container className="px-0">
       <Row className="d-flex justify-content-center">
         <Col lg={6} className="mb-4">
           <Card className="p-4 text-center shadow-sm common-radius">
