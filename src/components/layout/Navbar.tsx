@@ -1,9 +1,9 @@
 import React from "react";
-import HeadLogo from "../assets/serve-together-1.png";
+import HeadLogo from "../../assets/serve-together-1.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaUserCircle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import { isAuthenticated, logoutUser } from "../utils/authentication";
+import { isAuthenticated, logoutUser } from "../../utils/authentication";
 
 const NavBar: React.FC = () => {
   const navigate = useNavigate();
@@ -42,27 +42,27 @@ const NavBar: React.FC = () => {
             <div className="offcanvas-body">
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item">
-                  <Link className="nav-link" to="/" data-bs-dismiss="offcanvas">
+                  <Link className="nav-link link-text" to="/" data-bs-dismiss="offcanvas">
                     Home
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/about" data-bs-dismiss="offcanvas">
+                  <Link className="nav-link link-text" to="/about" data-bs-dismiss="offcanvas">
                     About Us
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/events" data-bs-dismiss="offcanvas">
+                  <Link className="nav-link link-text" to="/events" data-bs-dismiss="offcanvas">
                     Events
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/volunteers" data-bs-dismiss="offcanvas">
+                  <Link className="nav-link link-text" to="/volunteers" data-bs-dismiss="offcanvas">
                     Volunteers
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/requests" data-bs-dismiss="offcanvas">
+                  <Link className="nav-link link-text" to="/requests" data-bs-dismiss="offcanvas">
                     Requests
                   </Link>
                 </li>
@@ -70,14 +70,12 @@ const NavBar: React.FC = () => {
                 {/* Authentication Links */}
                 {isAuthenticated() ? (
                   <li className="nav-item dropdown">
-                    <button
-                      className="btn dropdown-toggle"
+                    <FaUserCircle 
+                      size={30}
                       id="profileDropdown"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
-                    >
-                      <FaUserCircle size={30} className="text-primary" />
-                    </button>
+                    />
                     <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
                       <li>
                         <Link className="dropdown-item" to="/ngo-profile">

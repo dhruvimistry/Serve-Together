@@ -1,8 +1,8 @@
 import React from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import AddProfile from "../../components/common/addprofileimage";
 // import { BsCamera } from "react-icons/bs";
-import AddProfile from "../components/addprofileimage";
 // import Footer from "../components/footer";
 // import NavBar from "../components/Navbar";
 

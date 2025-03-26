@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { FaUserCircle, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaCalendarAlt } from "react-icons/fa";
-// import HeadLogo from "../assets/serve-together-1.png";
+// import HeadLogo from "../assets/serve-together-1.png"; 
 import "bootstrap/dist/css/bootstrap.min.css";
+import CustomButton from "../../components/common/CustomButton";
 // import NavBar from "../components/Navbar";
 // import Footer from "../components/footer";
 
+
+{/* I HAVE ADDED CUSTOMBUTTON COMPONENT HERE */}
 const events = [
   {
     title: "Art & Creativity Workshop",
@@ -56,16 +59,17 @@ const Profile: React.FC = () => {
 
   return (
     <>
-      {/* <NavBar /> */}
-
       <div className="container mt-4">
+      <div className="card p-3 common-radius">
         <div className="d-flex justify-content-between align-items-center">
           <h3 className="fw-bold">Profile</h3>
+          <CustomButton label="Edit" variant="accept" />
         </div>
+      </div>
 
         <div className="row mt-3">
           <div className="col-md-6 mb-3">
-            <div id="left-card" className="card p-4 shadow-sm border-0 rounded" style={{ minHeight: cardHeight }}>
+            <div id="left-card" className="card p-4 shadow-sm common-radius" style={{ minHeight: cardHeight }}>
               <div className="text-center">
                 <FaUserCircle size={80} className="text-secondary" />
                 <h4 className="mt-2">Hope Foundation</h4>
@@ -85,7 +89,7 @@ const Profile: React.FC = () => {
             </div>
           </div>
           <div className="col-md-6 mb-3">
-            <div id="right-card" className="card p-4 shadow-sm border-0 rounded" style={{ minHeight: cardHeight }}>
+            <div id="right-card" className="card p-4 shadow-sm common-radius" style={{ minHeight: cardHeight }}>
               <h6 className="fw-bold">About</h6>
               <p>
                 Hope Foundation is a nonprofit organization committed to transforming the lives of
@@ -98,15 +102,17 @@ const Profile: React.FC = () => {
         </div>
 
         {/* Events Section */}
-        <div className="mt-4">
-          <div className="d-flex justify-content-between align-items-center">
-            <h3 className="fw-bold">Events</h3>
-          </div>
+        <div className="card p-3 common-radius">
+        <div className="d-flex justify-content-between align-items-center">
+          <h3 className="fw-bold">Events</h3>
+          <CustomButton label="Add +" variant="accept" />
+        </div>
+      </div>
 
           <div className="row mt-3">
             {events.map((event, index) => (
               <div className="col-md-6 mb-3" key={index}>
-                <div className="card p-4 shadow-sm common-radius">
+                <div className="card p-4 shadow-sm  common-radius">
                   <h5 className="fw-bold">{event.title}</h5>
                   <p>
                     <FaMapMarkerAlt className="me-2" /> {event.location}
@@ -115,16 +121,17 @@ const Profile: React.FC = () => {
                     <FaCalendarAlt className="me-2" /> {event.date} | {event.time}
                   </p>
                   <p>🔹 {event.details}</p>
-                  <button className="btn theme-bg">Apply</button>
+                  <CustomButton 
+                    label="Delete"
+                    variant="decline"
+                  />
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </div>
+          {/* <Footer /> */}
 
-      {/* Footer */}
-      {/* <Footer /> */}
     </>
   );
 };

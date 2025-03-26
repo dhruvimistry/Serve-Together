@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Illustration from "../../components/IllustrationSection";
-import HeadLogo from "../../assets/serve-together-1.png";
+import Illustration from "../components/IllustrationSection";
+import HeadLogo from "../assets/serve-together-1.png";
 import { useLocation, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
-import { resetPassword } from "../../services/resetPassword";
-import PasswordStrengthChecker from "../../components/PasswordStrengthChecker"; // Import component
+import { resetPassword } from "../services/resetPassword";
+import PasswordStrengthChecker from "../components/PasswordStrengthChecker";
 
 const ResetPasswordForm: React.FC = () => {
   const navigate = useNavigate();

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Container, Button } from "react-bootstrap";
-import ProfileCard from "../components/ProfileCard"; 
+import ProfileCard from "../../components/common/ProfileCard"; 
 
 const VolunteerProfilePage: React.FC = () => {
   return (

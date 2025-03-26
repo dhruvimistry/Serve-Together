@@ -3,17 +3,17 @@ import { Container, Button, Row, Col, Carousel, Accordion, Image } from "react-b
 import HeroImg1 from "../assets/hands 11.jpg";
 import Vision from "../assets/vision.webp";
 import './Homepage.css';
-import FeaturedEvents from "./featuredevents";
+import FeaturedEvents from "../components/common/featuredevents";
 
 const Homepage: React.FC = () => {
   return (
     <>
-      <Container  className="hero-section common-radius">
-        <Carousel className="hero-container common-radius">
+      <Container  className="hero-section ">
+        <Carousel className="hero-container ">
           {[...Array(3)].map((_, index) => (
             <Carousel.Item key={index}>
-              <img className="d-block w-100" src={HeroImg1} alt={`Slide ${index + 1}`} />
-              <div className="overlay"></div>
+              <img className="d-block w-100 common-radius" src={HeroImg1} alt={`Slide ${index + 1}`} />
+              <div className="overlay common-radius"></div>
               <Carousel.Caption className="text-start caption-center">
                 <h3 className="cap fw-bolder">“Be the change you want”</h3>
                 <p className="cap1 text-light">- Mahatma Gandhi</p>

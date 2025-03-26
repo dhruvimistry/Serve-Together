@@ -1,6 +1,6 @@
 import React from 'react';
 import { UseFormRegister, FieldErrors } from "react-hook-form";
-import PasswordStrengthChecker from '../components/PasswordStrengthChecker';
+import PasswordStrengthChecker from '../../components/PasswordStrengthChecker';
 
 interface VolunteerFormProps {
   register: UseFormRegister<any>;

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import IllustationSection from "../../components/IllustrationSection";
-import HeadLogo from "../../assets/serve-together-1.png";
-import { resendOTP, verifyOTP } from "../../services/verifyOtp";
+import IllustationSection from "../components/IllustrationSection";
+import HeadLogo from "../assets/serve-together-1.png";
+import { resendOTP, verifyOTP } from "../services/verifyOtp";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const OTPForm: React.FC = () => {
