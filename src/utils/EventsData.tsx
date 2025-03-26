@@ -1,0 +1,38 @@
+export interface Event {
+  title: string;
+  location: string;
+  date: string;
+  time: string;
+  details: string;
+}
+
+export const events: Event[] = [
+  {
+    title: "Art & Creativity Workshop",
+    location: "Hope Foundation Center",
+    date: "30th March 2025",
+    time: "11:00 AM - 3:00 PM",
+    details: "Painting, Crafting, Creativity",
+  },
+  {
+    title: "Gardening Workshop",
+    location: "Hope Foundation Center",
+    date: "30th March 2025",
+    time: "11:00 AM - 3:00 PM",
+    details: "Gardening, Crafting, Creativity",
+  },
+  {
+    title: "Music & Dance Therapy",
+    location: "Hope Foundation Center",
+    date: "11th April 2025",
+    time: "4:00 PM - 7:00 PM",
+    details: "Singing, Dancing, Instrumental Skills",
+  },
+  {
+    title: "Sports for All",
+    location: "Hope Foundation Center",
+    date: "5th April 2025",
+    time: "4:00 PM - 7:00 PM",
+    details: "Coaching, Motivation, Teamwork",
+  },
+];
