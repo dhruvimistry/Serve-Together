@@ -29,7 +29,7 @@ const EventCard: React.FC<EventCardProps> = ({ title, subtitle, location, dateTi
         <p className="texts">
           <FaHeart className="text-warning" /> {skills}
         </p>
-        <div className="d-flex flex-wrap gap-2">
+        <div className="d-flex justify-content-center flex-wrap gap-2">
           <Button variant="primary" className="fw-bold">View Details</Button>
           <Button variant="primary" className="fw-bold">Apply</Button>
         </div>
