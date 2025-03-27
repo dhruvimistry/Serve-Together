@@ -19,8 +19,8 @@ const Homepage: React.FC = () => {
                 <h3 className="cap fw-bolder">“Be the change you want”</h3>
                 <p className="cap1 text-light">- Mahatma Gandhi</p>
                 <p className="cap2 text-light">Every helping hand matters. Find opportunities, contribute, and inspire positive change.</p>
-                <div className="d-flex gap-2">
-                  <Button className="oppo border-0" style={{ backgroundColor: "#003366" }}>
+                <div className=" oppo pt-2">
+                  <Button className="border-0 w-30 " style={{ backgroundColor: "#003366" }}>
                     Find Volunteer Opportunities
                   </Button>
                 </div>
@@ -43,7 +43,7 @@ const Homepage: React.FC = () => {
               Whether you can teach, mentor, organize events, or help in any way, this platform bridges the gap between skilled
               individuals and organizations in need.
             </p>
-            <div className="text-md-start">
+            <div className="learn text-md-start">
               <CustomButton variant="primary" label="Learn More" />
             </div>
           </Col>
@@ -71,7 +71,7 @@ const Homepage: React.FC = () => {
         </Row>
       </Container>
 
-      <Container className="questions my-5">
+      <Container className="questions mb-5">
         <h3 className="name fw-bold text-center">Frequently Asked Questions</h3>
         <h3 className="fw-light text-center pt-3 pb-4">Your Queries Answered Here !!</h3>
 
