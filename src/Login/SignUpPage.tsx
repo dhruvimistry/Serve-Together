@@ -5,6 +5,7 @@ import './SignUpPage.css';
 import HeadLogo from '../assets/serve-together-1.png';
 import VolunteerForm from '../components/forms/VolunteerForm';
 import OrganizationForm from '../components/forms/OrganizationForm';
+import { setUserData } from '../utils/cookies';
 
 // There is an error in backend for nameOfOrganization
 const SignUpPage: React.FC = () => {
@@ -55,6 +56,7 @@ const SignUpPage: React.FC = () => {
   
       const result = await response.json();
       if (response.ok) {
+        setUserData(filteredData);
         alert("Signup successful! Redirecting...");
         console.log("API Response:", result);
         setTimeout(() => navigate("/login"), 2000);

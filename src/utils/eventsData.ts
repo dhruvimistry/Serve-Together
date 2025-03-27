@@ -3,7 +3,7 @@ export interface Event {
   location: string;
   date: string;
   time: string;
-  details: string;
+  skills: string;
 }
 
 export const events: Event[] = [
@@ -12,27 +12,27 @@ export const events: Event[] = [
     location: "Hope Foundation Center",
     date: "30th March 2025",
     time: "11:00 AM - 3:00 PM",
-    details: "Painting, Crafting, Creativity",
+    skills: "Painting, Crafting, Creativity",
   },
   {
     title: "Gardening Workshop",
     location: "Hope Foundation Center",
     date: "30th March 2025",
     time: "11:00 AM - 3:00 PM",
-    details: "Gardening, Crafting, Creativity",
+    skills: "Gardening, Crafting, Creativity",
   },
   {
     title: "Music & Dance Therapy",
     location: "Hope Foundation Center",
     date: "11th April 2025",
     time: "4:00 PM - 7:00 PM",
-    details: "Singing, Dancing, Instrumental Skills",
+    skills: "Singing, Dancing, Instrumental Skills",
   },
   {
     title: "Sports for All",
     location: "Hope Foundation Center",
     date: "5th April 2025",
     time: "4:00 PM - 7:00 PM",
-    details: "Coaching, Motivation, Teamwork",
+    skills: "Coaching, Motivation, Teamwork",
   },
 ];

@@ -1,9 +1,10 @@
 import React from "react";
 import HeadLogo from "../../assets/serve-together-1.png";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FaUserCircle } from "react-icons/fa";
+// import { FaUserCircle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { isAuthenticated, logoutUser } from "../../utils/authentication";
+import "./Navbar.css"
 
 const NavBar: React.FC = () => {
   const navigate = useNavigate();
@@ -69,13 +70,13 @@ const NavBar: React.FC = () => {
 
                 {/* Authentication Links */}
                 {isAuthenticated() ? (
-                  <li className="nav-item dropdown">
-                    <FaUserCircle 
-                      size={30}
+                  <li className="nav-item dropdown profile-icon">
+                    <i
+                      className="bi bi-person-circle link-text" 
                       id="profileDropdown"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
-                    />
+                    ></i>
                     <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
                       <li>
                         <Link className="dropdown-item" to="/ngo-profile">
