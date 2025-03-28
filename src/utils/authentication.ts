@@ -1,13 +1,13 @@
-import Cookies from "js-cookie";
+import { setAuthData, getAuthToken, clearAuthData } from "./cookies";
 
-export const loginUser = (token: string) => {
-  Cookies.set("authToken", token, { expires: 1, secure: true, sameSite: "Strict" });
+export const loginUser = (token: string, userType: string) => {
+  setAuthData(token, userType);
 };
 
 export const isAuthenticated = () => {
-  return !!Cookies.get("authToken");
+  return !!getAuthToken();
 };
 
 export const logoutUser = () => {
-  Cookies.remove("authToken");
+  clearAuthData();
 };

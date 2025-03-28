@@ -36,8 +36,8 @@ const LoginForm: React.FC = () => {
       const result = await response.json();
   
       if (response.ok) {
-        if (result.token) {
-          loginUser(result.token);
+        if (result.token && result.userType) {
+          loginUser(result.token, result.userType);
         }
         navigate("/");
       } else {

@@ -1,9 +1,11 @@
 import React from "react";
 import HeadLogo from "../../assets/serve-together-1.png";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FaUserCircle } from "react-icons/fa";
+// import { FaUserCircle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { isAuthenticated, logoutUser } from "../../utils/authentication";
+import "./Navbar.css"
+import { Offcanvas } from "bootstrap";
 
 const NavBar: React.FC = () => {
   const navigate = useNavigate();
@@ -13,11 +15,27 @@ const NavBar: React.FC = () => {
     navigate("/login");
   };
 
+  const closeOffcanvas = () => {
+    const offcanvasElement = document.getElementById("offcanvasNavbar");
+    
+    if (offcanvasElement) {
+      const bsOffcanvas = Offcanvas.getInstance(offcanvasElement);
+      
+      if (bsOffcanvas) {
+        bsOffcanvas.hide();
+      }
+  
+      const backdrop = document.querySelector(".offcanvas-backdrop");
+      if (backdrop) {
+        backdrop.remove();
+      }
+    }
+  };
+  
   return (
     <>
       <nav className="navbar navbar-expand-lg background px-3">
         <div className="container">
-          {/* Logo */}
           <Link className="navbar-brand" to="/">
             <img src={HeadLogo} alt="ServeTogether Logo" style={{ height: "50px" }} />
           </Link>
@@ -37,45 +55,45 @@ const NavBar: React.FC = () => {
           <div className="offcanvas offcanvas-end" tabIndex={-1} id="offcanvasNavbar">
             <div className="offcanvas-header">
               <h5 className="offcanvas-title">Menu</h5>
-              <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              <button type="button" className="btn-close" onClick={closeOffcanvas} aria-label="Close"></button>
             </div>
             <div className="offcanvas-body">
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item">
-                  <Link className="nav-link link-text" to="/" data-bs-dismiss="offcanvas">
+                  <Link className="nav-link link-text" to="/" onClick={closeOffcanvas}>
                     Home
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link link-text" to="/about" data-bs-dismiss="offcanvas">
+                  <Link className="nav-link link-text" to="/about" onClick={closeOffcanvas}>
                     About Us
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link link-text" to="/events" data-bs-dismiss="offcanvas">
+                  <Link className="nav-link link-text" to="/events" onClick={closeOffcanvas}>
                     Events
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link link-text" to="/volunteers" data-bs-dismiss="offcanvas">
+                  <Link className="nav-link link-text" to="/volunteers" onClick={closeOffcanvas}>
                     Volunteers
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link link-text" to="/requests" data-bs-dismiss="offcanvas">
+                  <Link className="nav-link link-text" to="/requests" onClick={closeOffcanvas}>
                     Requests
                   </Link>
                 </li>
 
                 {/* Authentication Links */}
                 {isAuthenticated() ? (
-                  <li className="nav-item dropdown">
-                    <FaUserCircle 
-                      size={30}
+                  <li className="nav-item dropdown profile-icon">
+                    <i
+                      className="bi bi-person-circle link-text" 
                       id="profileDropdown"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
-                    />
+                    ></i>
                     <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
                       <li>
                         <Link className="dropdown-item" to="/ngo-profile">
