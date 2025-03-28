@@ -5,7 +5,7 @@ import './footer.css';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="text-center py-2 mt-4 border-top" style={{ backgroundColor: "#FFFFFF" }}>
+    <footer className="text-center py-2 border-top bg-white">
       <div className="container">
         <img src={HeadLogo} alt="Serve Together" style={{ height: "50px" }} />
         
@@ -24,8 +24,7 @@ const Footer: React.FC = () => {
           <a href="https://instagram.com" className="mx-2 text-dark"><i className="bi bi-instagram"></i></a>
           <a href="https://twitter.com" className="mx-2 text-dark"><i className="bi bi-twitter-x"></i></a>
         </div>
-        <hr />
-        <p className="mt-3 text-muted">Copyright © Serve Together {new Date().getFullYear()}.</p>
+        <p className="mt-3 text-muted text-center">Copyright © Serve Together {new Date().getFullYear()}.</p>
       </div>
     </footer>
   );

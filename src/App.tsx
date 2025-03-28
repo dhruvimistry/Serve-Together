@@ -18,6 +18,7 @@ import NgoEditProfile from './Profiles/NGO/NGOeditprofile';
 import VolunteerProfilePage from './Profiles/Volunteers/VolunteerProfilePage';
 import AboutUs from './Home/Aboutpage';
 import Volunteers from './Home/Volunteers';
+import AddEvent from './Profiles/NGO/AddEvent';
 
 const MainLayout = () => (
   <>
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
       { path: '/ngo-profile', element: <NGOProfilePage /> },
       { path: '/ngo-profile-viewer', element: <NGOProfileViewer /> },
       { path: '/ngo-profile/edit', element: <NgoEditProfile /> },
+      { path: '/ngo-profile/add-event', element: <AddEvent /> },
       { path: '/volunteer-profile-viewer', element: <VolunteerProfileViewer /> },
       { path: '/volunteer-profile', element: <VolunteerProfilePage/> },
       { path: '/volunteer-profile/edit', element: <EditProfile />},

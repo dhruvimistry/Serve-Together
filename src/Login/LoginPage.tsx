@@ -6,6 +6,7 @@ import './LoginPage.css';
 // import PasswordStrengthChecker from "../components/PasswordStrengthChecker";
 import ImageSection from "../components/LoginImage";
 import HeadLogo from "../assets/serve-together-1.png";
+// import { setCookie } from "../utils/cookiess";
 
 const emailExp: RegExp = /^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,})$/;
 
@@ -36,8 +37,20 @@ const LoginForm: React.FC = () => {
       const result = await response.json();
   
       if (response.ok) {
+        console.log(response)
+
+        // setCookie("User", `${userDetails}`, 12);
+        //     setCookie("Token", `${response.JWTtoken}`, 12);
+        //     setCookie("CountS", `${response.staff}`, 12);
+        //     setCookie("CountP", `${response.policy}`, 12);
+        //     setCookie("CountL", `${response.leadscount}`, 12);
+        //     setCookie("Logintoken", `${response.token}`, 12);
+        //     setCookie("activeId", `${response.user.active_order_id}`, 12);
+        //     setCookie("AgentId", `${response.user.agent_id}`, 12);
         if (result.token && result.userType) {
           loginUser(result.token, result.userType);
+          // setCookie("Token", `${result.token}`, 12);
+          // setCookie("Usertype", `${result.userType}`, 12);
         }
         navigate("/");
       } else {
