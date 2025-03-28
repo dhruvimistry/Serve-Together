@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
           <a href="https://twitter.com" className="mx-2 text-dark"><i className="bi bi-twitter-x"></i></a>
         </div>
         <hr />
-        <p className="mt-3 text-muted">Copyright © Serve Together {new Date().getFullYear()}.</p>
+        <p className="mt-3 text-muted text-center">Copyright © Serve Together {new Date().getFullYear()}.</p>
       </div>
     </footer>
   );
