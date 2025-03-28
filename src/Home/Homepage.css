@@ -65,6 +65,9 @@
   .feature .texts {
     font-size: 12px;
   }
+  .caption-center {
+    padding: 0;
+  }
 }
 
 @media (max-width: 609px) {
@@ -89,12 +92,24 @@
 }
 .cap {
   font-size: 12px;
+  padding: 0 !important;
 }
 .cap1, .cap2 {
-  font-size: 8px;
+  font-size: 10px !important;
+  text-align: center;
 }
 .oppo{
-    width: 100%;
-    font-size: 8px;
+    text-align: center !important;
+}
+.caption-center {
+  padding: 0;
+}
+.learn {
+  display: flex;
+  padding-top: 10px;
+  justify-content: center;
+}
+.about{
+  padding-top: 0 !important;
 }
 }
