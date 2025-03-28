@@ -60,7 +60,7 @@ const Profile: React.FC = () => {
   return (
     <>
       <div className="container mt-4">
-      <div className="card p-3 common-radius">
+      <div className="card py-1 px-4  common-radius">
         <div className="d-flex justify-content-between align-items-center">
           <h3 className="fw-bold">Profile</h3>
           <CustomButton label="Edit" variant="accept" />
@@ -102,7 +102,7 @@ const Profile: React.FC = () => {
         </div>
 
         {/* Events Section */}
-        <div className="card p-3 common-radius">
+        <div className="card py-1 px-4 common-radius">
         <div className="d-flex justify-content-between align-items-center">
           <h3 className="fw-bold">Events</h3>
           <CustomButton label="Add +" variant="accept" />
