@@ -1,15 +1,15 @@
 import React from "react";
-import "./CustomButton.css"; 
+import "./CustomButton.css";
 
 interface ButtonProps {
   label: string;
-  variant?: "accept" | "decline" | "primary"; 
-  //use accept for accept and decline for decline, primary is the common blue btn we have
+  variant?: "primary" | "danger" | "default"; // Added "default" for unselected event buttons
+  onClick?: () => void;
 }
 
-const CustomButton: React.FC<ButtonProps> = ({ label, variant = "primary" }) => {
+const CustomButton: React.FC<ButtonProps> = ({ label, variant = "primary", onClick }) => {
   return (
-    <button className={`btn ${variant}`}>
+    <button className={`btn ${variant}`} onClick={onClick}>
       {label}
     </button>
   );
