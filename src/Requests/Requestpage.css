@@ -1,0 +1,44 @@
+.event-button, .volunteer-item button {
+    border: none;
+    margin: 5px 0;
+  }
+  
+  .event-button.selected {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .event-card {
+    border: none;
+    box-shadow: none;
+  }
+  
+  .event-details-card {
+    border: none;
+    box-shadow: none;
+  }
+  
+  .volunteer-card {
+    border: none;
+    box-shadow: none;
+  }
+  
+  .volunteer-item {
+    border: none;
+    box-shadow: none;
+  }
+  
+  .volunteer-item button.btn-danger {
+    background-color: red;
+    border: none;
+  }
+  
+  .volunteer-item button.btn-danger:hover {
+    background-color: darkred;
+  }
+  .event-card .btn {
+    font-size: 0.9rem;
+    width: auto;
+    text-align: center;
+    padding: 10px 15px;
+}
