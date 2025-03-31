@@ -4,8 +4,7 @@ import SearchBar from "../components/common/SearchBar";
 import eventsData from "../utils/eventsData";
 
 const Events: React.FC = () => {
-  // const [events, setEvents] = useState<{ name: string; description: string; location: string; date: string; time: string; skills: string }[]>([]);
-  const [events, setEvents] = useState<{ title: string; location: string; date: string; time: string; skills: string }[]>([]);
+  const [events, setEvents] = useState<{ title: string; nameOfOrganization: string; location: string; date: string; time: string; skills: string }[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
@@ -14,7 +13,6 @@ const Events: React.FC = () => {
     }, 500);
   }, []);
 
-  // Filter events based on search query
   const filteredEvents = events.filter(
     (event) =>
       event.title.toLowerCase().includes(searchQuery.toLowerCase()) ||

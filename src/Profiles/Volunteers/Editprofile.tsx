@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import CustomButton from "../../components/common/CustomButton";
-import AddProfile from "../../components/addprofileimage";
+import AddProfile from "../../components/common/addprofileimage";
 // import ProfilePictureUploader from "../../components/ProfilePictureUploader";
 // import Footer from "../components/footer";
 
