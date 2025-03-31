@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import HeadLogo from "../../assets/serve-together-1.png";
 import './footer.css';
+import { Link } from "react-router";
 
 const Footer: React.FC = () => {
   return (
@@ -11,11 +12,21 @@ const Footer: React.FC = () => {
         
         {/* Navigation Links */}
         <nav className=" links mt-3 pt-3">
-          <a href="/" className="mx-2 text-primary text-decoration-none">Home</a>
-          <a href="/about" className=" mx-2 text-primary text-decoration-none">About Us</a>
-          <a href="/events" className="mx-2 text-primary text-decoration-none">Events</a>
-          <a href="/volunteers" className="mx-2 text-primary text-decoration-none">Volunteers</a>
-          <a href="/requests" className="mx-2 text-primary text-decoration-none">Requests</a>
+          <Link className="mx-2 link-text" to="/" >
+            Home
+          </Link>
+          <Link className="mx-2 link-text" to="/about" >
+            About Us
+          </Link>
+          <Link className="mx-2 link-text" to="/events" >
+            Events
+          </Link>
+          <Link className="mx-2 link-text" to="/volunteers" >
+            Volunteers
+          </Link>
+          <Link className="mx-2 link-text" to="/requests" >
+            Requests
+          </Link>
         </nav>
 
         {/* Social Media Icons */}
