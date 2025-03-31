@@ -20,7 +20,7 @@ import AboutUs from './Home/Aboutpage';
 import Volunteers from './Home/Volunteers';
 import AddEvent from './Profiles/NGO/AddEvent';
 import Events from './Home/Events';
-import EventsVolunteersPage from './Requests/Requestpage';
+import Requests from './Home/Requestpage';
 
 const MainLayout = () => (
   <>
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       { path: '/volunteer-profile', element: <VolunteerProfilePage/> },
       { path: '/volunteer-profile/edit', element: <EditProfile />},
       { path: '/about', element: <AboutUs />},
-      { path: '/request', element:<EventsVolunteersPage />},
+      { path: '/requests', element:<Requests />},
       { path: '/volunteers', element: <Volunteers />},
       { path: '/events', element: <Events />}
     ],
