@@ -4,35 +4,35 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Requestpage.css"; // Import the CSS file
 
 interface Volunteer {
-    name: string;
-    event: string;
-    skills: string[];
+  name: string;
+  event: string;
+  skills: string[];
 }
 
 const events = [
-    "Art & Creativity Workshop",
-    "Sports for All",
-    "Clean & Green Drive",
-    "Music & Dance Therapy",
-    "Storytelling & Reading Drive",
+  "Art & Creativity Workshop",
+  "Sports for All",
+  "Clean & Green Drive",
+  "Music & Dance Therapy",
+  "Storytelling & Reading Drive",
 ];
 
 const allVolunteers: Volunteer[] = [
-    {
-        name: "Dhruvil Mistry",
-        event: "Art & Creativity Workshop",
-        skills: ["Teaching", "Communication", "Patience"],
-    },
-    {
-        name: "Aarav Patel",
-        event: "Sports for All",
-        skills: ["Leadership", "Teamwork", "Motivation"],
-    },
-    {
-        name: "Riya Sharma",
-        event: "Music & Dance Therapy",
-        skills: ["Creativity", "Performance", "Engagement"],
-    },
+  {
+    name: "Dhruvil Mistry",
+    event: "Art & Creativity Workshop",
+    skills: ["Teaching", "Communication", "Patience"],
+  },
+  {
+      name: "Aarav Patel",
+      event: "Sports for All",
+      skills: ["Leadership", "Teamwork", "Motivation"],
+  },
+  {
+      name: "Riya Sharma",
+      event: "Music & Dance Therapy",
+      skills: ["Creativity", "Performance", "Engagement"],
+  },
 ];
 
 const EventsVolunteersPage: React.FC = () => {

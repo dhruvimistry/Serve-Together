@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       { path: '/volunteer-profile', element: <VolunteerProfilePage/> },
       { path: '/volunteer-profile/edit', element: <EditProfile />},
       { path: '/about', element: <AboutUs />},
-      { path: '/request', element:<EventsVolunteersPage />},
+      { path: '/requests', element:<EventsVolunteersPage />},
       { path: '/volunteers', element: <Volunteers />},
       { path: '/events', element: <Events />}
     ],
