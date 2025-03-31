@@ -15,7 +15,7 @@ interface EventCardProps {
 
 const EventCard: React.FC<EventCardProps> = ({ title, subtitle, location, dateTime, skills, icon }) => {
   return (
-    <Card className="event-card shadow-sm border-0 p-3  " style={{background:"#F0F5F9"}}>
+    <Card className="event-card shadow-sm border-0 p-3" style={{background:"#F0F5F9"}}>
       <Card.Body>
         <h4 className="title fw-bold">{title}</h4>
         <p className="texts">
@@ -30,9 +30,9 @@ const EventCard: React.FC<EventCardProps> = ({ title, subtitle, location, dateTi
         <p className="texts">
           <FaHeart className="text-warning" /> {skills}
         </p>
-        <div className="d-flex justify-content-center flex-wrap gap-2">
-          <CustomButton variant="primary" label="View Details" />
-          <CustomButton variant="primary" label="Apply" />
+        <div className="d-flex justify-content-center flex-wrap gap-3">
+          <CustomButton variant="primary" label="View Details" width="w-25"/>
+          <CustomButton variant="primary" label="Apply" width="w-25" />
         </div>
       </Card.Body>
     </Card>
