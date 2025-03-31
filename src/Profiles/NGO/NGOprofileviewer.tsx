@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaUserCircle, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaCalendarAlt } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { events } from "../../utils/eventsData";
+import events from "../../utils/eventsData";
 import { getUserData, getUserType } from "../../utils/cookies";
 import CustomButton from "../../components/common/CustomButton";
 
