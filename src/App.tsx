@@ -19,6 +19,7 @@ import VolunteerProfilePage from './Profiles/Volunteers/VolunteerProfilePage';
 import AboutUs from './Home/Aboutpage';
 import Volunteers from './Home/Volunteers';
 import AddEvent from './Profiles/NGO/AddEvent';
+import Events from './Home/Events';
 
 const MainLayout = () => (
   <>
@@ -43,7 +44,8 @@ const router = createBrowserRouter([
       { path: '/volunteer-profile', element: <VolunteerProfilePage/> },
       { path: '/volunteer-profile/edit', element: <EditProfile />},
       { path: '/about', element: <AboutUs />},
-      { path: '/volunteers', element: <Volunteers />}
+      { path: '/volunteers', element: <Volunteers />},
+      { path: '/events', element: <Events />}
     ],
   },
   {

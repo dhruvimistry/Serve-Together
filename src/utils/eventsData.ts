@@ -1,12 +1,12 @@
-export interface Event {
-  title: string;
-  location: string;
-  date: string;
-  time: string;
-  skills: string;
-}
+// export interface Event {
+//   title: string;
+//   location: string;
+//   date: string;
+//   time: string;
+//   skills: string;
+// }
 
-export const events: Event[] = [
+const eventsData = [
   {
     title: "Art & Creativity Workshop",
     location: "Hope Foundation Center",
@@ -36,3 +36,4 @@ export const events: Event[] = [
     skills: "Coaching, Motivation, Teamwork",
   },
 ];
+export default eventsData;

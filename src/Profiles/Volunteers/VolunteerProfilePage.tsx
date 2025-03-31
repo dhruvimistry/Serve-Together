@@ -8,7 +8,7 @@ import CustomButton from "../../components/common/CustomButton";
 const VolunteerProfilePage: React.FC = () => {
   return (
     <Container className="min-vh-100">
-      <Container className="bg-white  p-3 common-radius d-flex justify-content-between align-items-center">
+      <Container className="bg-white py-1 px-4 common-radius d-flex justify-content-between align-items-center">
         <h3 className="fw-bold m-0">Profile</h3>
         <CustomButton variant="accept" label="Edit">
           {/* <FaEdit className="me-2 text-white" />  */}
