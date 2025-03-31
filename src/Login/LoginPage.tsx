@@ -14,6 +14,7 @@ const LoginForm: React.FC = () => {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const {
     register,
@@ -22,6 +23,8 @@ const LoginForm: React.FC = () => {
   } = useForm();
   
   const onSubmit = async (data: any) => {
+    setLoading(true);
+
     try {
       const response = await fetch("https://ngo-volunteer-2.onrender.com/auth/login", {
         method: "POST",
@@ -52,6 +55,7 @@ const LoginForm: React.FC = () => {
           // setCookie("Token", `${result.token}`, 12);
           // setCookie("Usertype", `${result.userType}`, 12);
         }
+        setLoading(false);
         navigate("/");
       } else {
         setErrorMessage(result.message || "Login failed. Please try again.");
@@ -111,7 +115,7 @@ const LoginForm: React.FC = () => {
           </div>
 
           <button className="btn w-100 theme-bg my-4" type="submit">
-            Log in
+            {loading ? "Verifying..." : "Log in"}
           </button>
         </form>
         <div className="text-center small-text py-3">
