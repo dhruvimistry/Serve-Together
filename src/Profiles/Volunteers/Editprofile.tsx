@@ -1,7 +1,8 @@
 import React from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import CustomButton from "../../components/common/CustomButton";
-import AddProfile from "../../components/common/addprofileimage";
+import AddProfileImage from "../../components/common/addprofileimage";
+// import AddProfileImage from "../../components/common/AddProfileImage";
 // import ProfilePictureUploader from "../../components/ProfilePictureUploader";
 // import Footer from "../components/footer";
 
@@ -13,10 +14,17 @@ const EditProfile: React.FC = () => {
         <Container className="bg-white shadow-sm p-5 common-radius w-100">
           <h3 className="fw-bold pt-3 pb-3">Edit Profile</h3>
           {/* <ProfilePictureUploader /> */}
-          <AddProfile />
+          {/* <AddProfile /> */}
 
           <Form className="mt-4">
-            <Row>
+            {/* <Row>
+              <Col md={12}>
+                <Col md={4}> */}
+                  <AddProfileImage />
+                {/* </Col>
+              </Col>
+            </Row> */}
+            <Row className="mt-3">
               <Col md={6}>
                 <Form.Group>
                   <Form.Label>Name</Form.Label>
