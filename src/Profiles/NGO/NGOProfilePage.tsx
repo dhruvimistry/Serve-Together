@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { FaUserCircle, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaCalendarAlt } from "react-icons/fa";
-// import HeadLogo from "../assets/serve-together-1.png"; 
+import { FaUserCircle, FaMapMarkerAlt, FaCalendarAlt } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CustomButton from "../../components/common/CustomButton";
-// import NavBar from "../components/Navbar";
-// import Footer from "../components/footer";
 
 
 {/* I HAVE ADDED CUSTOMBUTTON COMPONENT HERE */}
@@ -60,35 +57,48 @@ const Profile: React.FC = () => {
   return (
     <>
       <div className="container mt-4">
-      <div className="card py-1 px-4  common-radius">
-        <div className="d-flex justify-content-between align-items-center">
-          <h3 className="fw-bold">Profile</h3>
-          <CustomButton label="Edit" variant="accept" />
+        <div className="card py-1 px-4  common-radius">
+          <div className="d-flex justify-content-between align-items-center">
+            <h3 className="fw-bold">Profile</h3>
+            <CustomButton label="Edit" variant="accept" />
+          </div>
         </div>
-      </div>
 
         <div className="row mt-3">
-          <div className="col-md-6 mb-3">
+          <div className="col-lg-6 mb-3">
             <div id="left-card" className="card p-4 shadow-sm common-radius" style={{ minHeight: cardHeight }}>
               <div className="text-center">
                 <FaUserCircle size={80} className="text-secondary" />
                 <h4 className="mt-2">Hope Foundation</h4>
-                <p className="text-muted">NGO</p>
+                <p className="text-muted text-center">NGO</p>
               </div>
               <h6 className="fw-bold">Address</h6>
-              <p>
-                <FaMapMarkerAlt className="me-2" /> Shanti Nagar, Near Patel Chowk, Ahmedabad, Gujarat - 380015
-              </p>
+              <div>
+                <table className="table table-borderless">
+                  <tr>
+                    <td><i className="bi bi-geo-alt"/></td>
+                    <td>Shanti Nagar, Near Patel Chowk, Ahmedabad, Gujarat - 380015</td>
+                  </tr>
+                </table>
+              </div>
+              {/* <p>
+              </p> */}
               <h6 className="fw-bold">Contact Information</h6>
-              <p>
-                <FaPhoneAlt className="me-2" /> +91 98765 43210
-              </p>
-              <p>
-                <FaEnvelope className="me-2" /> someone@mail.com
-              </p>
+              <div>
+                <table className="table table-borderless mb-0">
+                  <tr>
+                    <td className="left-icon"><i className="bi bi-telephone"/></td>
+                    <td>+91 98765 43210</td>
+                  </tr>
+                  <tr>
+                    <td><i className="bi bi-envelope"/></td>
+                    <td>someone@mail.com</td>
+                  </tr>
+                </table>
+              </div>
             </div>
           </div>
-          <div className="col-md-6 mb-3">
+          <div className="col-lg-6 mb-3">
             <div id="right-card" className="card p-4 shadow-sm common-radius" style={{ minHeight: cardHeight }}>
               <h6 className="fw-bold">About</h6>
               <p>
@@ -107,31 +117,29 @@ const Profile: React.FC = () => {
           <h3 className="fw-bold">Events</h3>
           <CustomButton label="Add +" variant="accept" />
         </div>
-      </div>
-
-          <div className="row mt-3">
-            {events.map((event, index) => (
-              <div className="col-md-6 mb-3" key={index}>
-                <div className="card p-4 shadow-sm  common-radius">
-                  <h5 className="fw-bold">{event.title}</h5>
-                  <p>
-                    <FaMapMarkerAlt className="me-2" /> {event.location}
-                  </p>
-                  <p>
-                    <FaCalendarAlt className="me-2" /> {event.date} | {event.time}
-                  </p>
-                  <p>🔹 {event.details}</p>
-                  <CustomButton 
-                    label="Delete"
-                    variant="decline"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
-          {/* <Footer /> */}
 
+        <div className="row mt-3">
+          {events.map((event, index) => (
+            <div className="col-md-6 mb-3" key={index}>
+              <div className="card p-4 shadow-sm  common-radius">
+                <h5 className="fw-bold">{event.title}</h5>
+                <p>
+                  <FaMapMarkerAlt className="me-2" /> {event.location}
+                </p>
+                <p>
+                  <FaCalendarAlt className="me-2" /> {event.date} | {event.time}
+                </p>
+                <p>🔹 {event.details}</p>
+                <CustomButton 
+                  label="Delete"
+                  variant="decline"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   );
 };
