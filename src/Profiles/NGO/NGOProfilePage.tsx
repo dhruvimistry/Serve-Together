@@ -3,7 +3,6 @@ import { FaUserCircle, FaMapMarkerAlt, FaCalendarAlt } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CustomButton from "../../components/common/CustomButton";
 
-
 {/* I HAVE ADDED CUSTOMBUTTON COMPONENT HERE */}
 const events = [
   {
@@ -122,7 +121,7 @@ const Profile: React.FC = () => {
         <div className="row mt-3">
           {events.map((event, index) => (
             <div className="col-md-6 mb-3" key={index}>
-              <div className="card p-4 shadow-sm  common-radius">
+              <div className="card p-4 shadow-sm common-radius">
                 <h5 className="fw-bold">{event.title}</h5>
                 <p>
                   <FaMapMarkerAlt className="me-2" /> {event.location}
