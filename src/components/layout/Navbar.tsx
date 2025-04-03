@@ -36,12 +36,12 @@ const NavBar: React.FC = () => {
           <div className="offcanvas offcanvas-end" tabIndex={-1} id="offcanvasNavbar">
             <div className="offcanvas-header">
               <h5 className="offcanvas-title">Menu</h5>
-              <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              <button type="button" className="btn-close"  aria-label="Close" data-bs-dismiss="offcanvas"></button>
             </div>
             <div className="offcanvas-body">
               <ul className="navbar-nav ms-auto">
-                <li className="nav-item">
-                  <Link className="nav-link link-text" to="/" data-bs-dismiss="offcanvas">
+                <li className="nav-item" >
+                  <Link className="nav-link link-text" to="/" >
                     Home
                   </Link>
                 </li>
@@ -51,17 +51,17 @@ const NavBar: React.FC = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link link-text" to="/events" data-bs-dismiss="offcanvas">
+                  <Link className="nav-link link-text" to="/events" >
                     Events
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link link-text" to="/volunteers" data-bs-dismiss="offcanvas">
+                  <Link className="nav-link link-text" to="/volunteers" >
                     Volunteers
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link link-text" to="/requests" data-bs-dismiss="offcanvas">
+                  <Link className="nav-link link-text" to="/requests" >
                     Requests
                   </Link>
                 </li>

@@ -3,7 +3,7 @@
 const ProfilePictureUploader: React.FC = () => {
   return (
     <div className="profile-upload-container">
-      <input type="file" />
+      <input type="file" placeholder="Add Profile Picture"/>
     </div>
   );
 };

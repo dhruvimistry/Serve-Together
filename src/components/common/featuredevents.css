@@ -3,32 +3,23 @@
   font-size: 48px;
 }
 
-.feature {
-  background-color: white;
-  margin: 0;
-}
-
-.feature .buttons .learnmore {
+.buttons {
   width: 180px;
   text-align: center;
-
 }
 
-.feature .view {
-  padding: 5px 80px;
+.view {
   background-color: #003366;
-
 }
 
 .feature .cards {
   color: #003366;
-
-
 }
 
 .feature .texts {
   color: #5C6970;
 }
+
 .feature .title{
   color: #003366;
 }
