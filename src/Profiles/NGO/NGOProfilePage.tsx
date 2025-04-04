@@ -130,10 +130,7 @@ const Profile: React.FC = () => {
                   <FaCalendarAlt className="me-2" /> {event.date} | {event.time}
                 </p>
                 <p>🔹 {event.details}</p>
-                <CustomButton 
-                  label="Delete"
-                  variant="decline"
-                />
+                <CustomButton label="Delete" variant="decline" />
               </div>
             </div>
           ))}
