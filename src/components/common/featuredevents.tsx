@@ -15,9 +15,8 @@ const FeaturedEvents: React.FC = () => {
               title="Bright Future Foundation"
               subtitle="Teach for a Change"
               location="Sunshine Community Center"
-              dateTime="20th March 2025 | ⏰ 10:00 AM - 2:00 PM"
+              dateTime="20th March 2025 | 10:00 AM - 2:00 PM"
               skills="Teaching, Communication, Patience"
-              icon="📌"
             />
           </Col>
 
@@ -26,9 +25,8 @@ const FeaturedEvents: React.FC = () => {
               title="Hope Foundation"
               subtitle="Art & Creativity Workshop"
               location="Hope Foundation Center"
-              dateTime="30th March 2025 | ⏰ 11:00 AM - 3:00 PM"
+              dateTime="30th March 2025 | 11:00 AM - 3:00 PM"
               skills="Painting, Crafting, Creativity"
-              icon="🎨"
             />
           </Col>
         </Row>
