@@ -1,6 +1,6 @@
 import React from "react";
-import { Card, Container, Row, Col, Badge } from "react-bootstrap";
-import { FaPhoneAlt, FaEnvelope, FaUser, FaCalendarAlt, FaUserCircle } from "react-icons/fa";
+import { Card, Container, Row, Col, Badge, Table } from "react-bootstrap";
+import {  FaUserCircle } from "react-icons/fa";
 
 interface ProfileCardProps {
   name: string;
@@ -20,21 +20,36 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ name, role, gender, age, phon
         <Col lg={6} className="mb-4">
           <Card className="p-4 text-center shadow-sm common-radius">
             <div className="text-center">
-              <FaUserCircle size={80} className="text-dark" />
+              <FaUserCircle size={80} className="theme" />
               <h4 className="mt-2 fw-bold">{name}</h4>
-              <p className="text-muted">{role}</p>
+              <p className="text-muted text-center">{role}</p>
             </div>
 
             <Row className="text-start mt-3">
               <Col>
                 <h6 className="fw-bold">Personal Information</h6>
-                <p><FaUser className="me-2 text-dark" /> {gender}</p>
-                <p><FaCalendarAlt className="me-2 text-dark" /> {age}</p>
+                <Table>
+                  <tr>
+                    <td className="left-icon"><i className="bi bi-person"/></td>
+                    <td>{gender}</td>
+                  </tr>
+                  <tr>
+                    <td><i className="bi bi-balloon"/></td>
+                    <td>{age}</td>
+                  </tr>
+                </Table>
               </Col>
               <Col>
-                <h6 className="fw-bold">Contact Information</h6>
-                <p><FaPhoneAlt className="me-2 text-dark" /> {phone}</p>
-                <p><FaEnvelope className="me-2 text-dark" /> {email}</p>
+                <h6 className="fw-bold">Contact Information</h6><Table>
+                  <tr>
+                    <td className="left-icon"><i className="bi bi-telephone"/></td>
+                    <td>{phone}</td>
+                  </tr>
+                  <tr>
+                    <td><i className="bi bi-envelope"/></td>
+                    <td>{email}</td>
+                  </tr>
+                </Table>
               </Col>
             </Row>
           </Card>
