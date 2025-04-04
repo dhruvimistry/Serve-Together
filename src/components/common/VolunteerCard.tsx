@@ -26,3 +26,4 @@ const VolunteerCard: React.FC<VolunteerCardProps> = ({ name, skills, cities }) =
 };
 
 export default VolunteerCard;
+
