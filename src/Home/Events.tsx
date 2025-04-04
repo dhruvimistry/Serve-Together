@@ -34,7 +34,7 @@ const Events: React.FC = () => {
         <div className="row">
           {filteredEvents.length > 0 ? (
             filteredEvents.map((event, index) => (
-              <div key={index} className="col-md-6 mb-4">
+              <div key={index} className="col-lg-6 mb-4">
                 <EventsCard {...event} /> 
               </div>
             ))
