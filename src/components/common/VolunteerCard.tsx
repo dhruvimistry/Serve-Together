@@ -13,8 +13,18 @@ const VolunteerCard: React.FC<VolunteerCardProps> = ({ name, skills, cities }) =
       <div className="card-body p-4">
         <h5 className="card-title">{name}</h5>
         <p className="card-text">
-          <span role="img" aria-label="skills">🎯</span> {skills} <br />
-          <span role="img" aria-label="location">📍</span> {cities}
+        <table>
+          <tr>
+          <td><i className="bi bi-star"/></td>
+          <td>{skills}</td>
+          </tr>
+          <tr>
+          <td className="left-icon"><i className="bi bi-geo-alt"/></td>
+          <td>{cities}</td>
+          </tr>
+        </table>
+          {/* <span role="img" aria-label="skills">🎯</span> {skills} <br /> */}
+          {/* <span role="img" aria-label="location">📍</span> {cities} */}
         </p>
         <div className="d-flex justify-content-between gap-2">
           <CustomButton label="View Profile" variant="primary" width="w-50"/>
