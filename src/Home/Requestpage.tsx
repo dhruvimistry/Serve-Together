@@ -39,7 +39,7 @@ const Requests: React.FC = () => {
   const [selectedEvent, setSelectedEvent] = useState<string>(events[0]);
 
   return (
-    <Container className="m-5">
+    <Container className="my-5">
       <Row className="gy-4 common-radius">
         {/* event section */}
 
