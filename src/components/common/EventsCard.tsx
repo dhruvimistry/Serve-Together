@@ -18,23 +18,19 @@ const EventCard: React.FC<EventCardProps> = ({ nameOfOrganization, title, locati
         <p className="card-text ">
         <table className="table table-borderless mb-0">
           <tr>
-          <td><span role="img" aria-label="event">⭐</span></td>
+          <td><i className="bi bi-megaphone"/></td>
           <td>{title}</td>
           </tr>
           <tr>
-          <td><span role="img" aria-label="location">📍</span></td>
+          <td className="left-icon"><i className="bi bi-geo-alt"/></td>
           <td>{location}</td>
           </tr>
           <tr>
-          <td><span role="img" aria-label="calendar">📅</span></td>
-          <td>{date}</td>
+          <td><i className="bi bi-calendar"/></td>
+          <td>{date} | {time}</td>
           </tr>
           <tr>
-          <td><span role="img" aria-label="clock">⏰</span></td>
-          <td>{time}</td>
-          </tr>
-          <tr>
-          <td><span role="img" aria-label="skills">🎯</span></td>
+          <td><i className="bi bi-star"/></td>
           <td>{skills}</td>
           </tr>
         </table>
