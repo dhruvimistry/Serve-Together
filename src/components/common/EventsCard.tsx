@@ -13,9 +13,9 @@ interface EventCardProps {
 const EventCard: React.FC<EventCardProps> = ({ nameOfOrganization, title, location, date, time, skills }) => {
   return (
     <div className="card mb-3 shadow-sm common-bg common-radius border-0 my-2 px-0">
-      <div className="card-body p-4">
+      <div className="card p-4 shadow-sm common-radius">
         <h5 className="card-title">{ nameOfOrganization }</h5>
-        <p className="card-text">
+        <p className="card-text ">
           <span role="img" aria-label="event">⭐</span> {title} <br />
           <span role="img" aria-label="location">📍</span> {location} <br />
           <span role="img" aria-label="calendar">📅</span> {date} |
