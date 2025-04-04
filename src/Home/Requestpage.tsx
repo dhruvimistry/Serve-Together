@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Card, Container, Row, Col, Button } from "react-bootstrap";
+import { Card, Container, Row, Col, Button, Table } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Requestpage.css"; // Import the CSS file
+import "./Requestpage.css";
+import CustomButton from "../components/common/CustomButton";
 
 interface Volunteer {
   name: string;
@@ -39,12 +40,12 @@ const Requests: React.FC = () => {
   const [selectedEvent, setSelectedEvent] = useState<string>(events[0]);
 
   return (
-    <Container className="m-5">
+    <Container className="my-5">
       <Row className="gy-4 common-radius">
         {/* event section */}
 
         <Col xs={12} md={4}>
-          <Card className="p-3 event-card bg-white common-radius">
+          <Card className="p-3 event-card bg-white border-0 common-radius">
             <Card.Title>Events</Card.Title>
             {events.map((event, index) => (
               <Button
@@ -57,7 +58,7 @@ const Requests: React.FC = () => {
               </Button>
             ))}
           </Card>
-          <Card className="p-3 mt-3 event-details-card common-radius">
+          <Card className="p-3 mt-3 event-details-card border-0 common-radius">
             <Card.Title>Event Details</Card.Title>
             <Card.Text>
               <strong>Event:</strong> {selectedEvent}
@@ -73,23 +74,31 @@ const Requests: React.FC = () => {
         {/* reqests section */}
 
         <Col xs={12} md={8}>
-          <Card className="p-3 volunteer-card common-radius">
+          <Card className="p-3 volunteer-card border-0 common-radius">
               <Card.Title>Volunteers for the Event</Card.Title>
               {allVolunteers.filter((v) => v.event === selectedEvent).length > 0 ? (
                 allVolunteers
                   .filter((v) => v.event === selectedEvent)
                   .map((volunteer, index) => (
                     <Card className="p-2 mt-2 volunteer-item" key={index}>
-                      <Card.Text>
-                        <strong>{volunteer.name}</strong> has applied for{" "}
-                        <strong>{volunteer.event}</strong>
-                        <br />
-                        <strong>Skills:</strong> {volunteer.skills.join(", ")}
-                      </Card.Text>
-                      <div className="d-flex justify-content-between flex-wrap common-radius">
-                        <Button variant="primary">Accept</Button>
-                        <Button variant="danger">Decline</Button>
-                      </div>
+                      <Table className="mb-0">
+                        <tr>
+                          <td className="d-flex align-items-top">
+                            <Card.Text>
+                              <strong>{volunteer.name}</strong> has applied for{" "}
+                              <strong>{volunteer.event}</strong>
+                              <br />
+                              <strong>Skills:</strong> {volunteer.skills.join(", ")}
+                            </Card.Text>
+                          </td>
+                          <td> 
+                            <div className="d-flex flex-column justify-content-end gap-2 common-radius">
+                              <CustomButton variant="accept" label="Accept"/>
+                              <CustomButton variant="decline" label="Decline"/>
+                            </div>
+                          </td>
+                        </tr>
+                      </Table>
                     </Card>
                   ))
               ) : (
