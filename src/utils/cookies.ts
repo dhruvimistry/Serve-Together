@@ -1,6 +1,6 @@
 import Cookies from "js-cookie";
 
-// Set user auth data
+// Set expiration time
 export const setAuthData = (token: string, userType: string) => {
   Cookies.set("authToken", token, { expires: 1, secure: true, sameSite: "Strict" });
   Cookies.set("userType", userType, { expires: 1, secure: true, sameSite: "Strict" });

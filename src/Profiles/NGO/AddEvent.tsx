@@ -1,16 +1,16 @@
 import React from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import CustomButton from "../../components/common/CustomButton";
 // import Footer from "../components/layout/footer";
 // import NavBar from "../components/layout/Navbar";
 
-const EditProfile: React.FC = () => {
+const AddEvent: React.FC = () => {
   return (
     <>
-    {/* <NavBar /> */}
-      {/* Edit Profile Form */}
-      <div className="editprofile flex-grow-1 d-flex p-5 justify-content-center align-items-center">
-        <Container className="edit bg-white shadow-sm p-5 rounded w-100" style={{ maxWidth: "800px" }}>
+      {/* Add Event Form */}
+      <div className="flex-grow-1 d-flex p-5 justify-content-center align-items-center">
+        <Container className="bg-white shadow-sm p-5 common-radius w-100">
           <h3 className="fw-bold pt-3 pb-3">Add Event</h3>
 
           <Form className="mt-4">
@@ -18,13 +18,13 @@ const EditProfile: React.FC = () => {
               <Col md={6}>
                 <Form.Group>
                   <Form.Label>Title</Form.Label>
-                  <Form.Control className="border-black" type="text" readOnly />
+                  <Form.Control className="input-box" type="text" />
                 </Form.Group>
               </Col>
               <Col md={6}>
                 <Form.Group>
                   <Form.Label>Description</Form.Label>
-                  <Form.Control className="border-black" type="tect" readOnly />
+                  <Form.Control className="input-box" type="text" />
                 </Form.Group>
               </Col>
             </Row>
@@ -33,36 +33,31 @@ const EditProfile: React.FC = () => {
               <Col md={6}>
                 <Form.Group>
                   <Form.Label>Date</Form.Label>
-                  <Form.Control className="border-black" type="number" />
+                  <Form.Control className="input-box" type="date" />
                 </Form.Group>
               </Col>
               <Col md={6}>
                 <Form.Group>
                   <Form.Label>Time</Form.Label>
-                  <Form.Control className="border-black" type="number" />
+                  <Form.Control className="input-box" type="time" />
                 </Form.Group>
               </Col>
             </Row>
 
             <Form.Group className="mt-3">
               <Form.Label>Skills</Form.Label>
-              <Form.Control className="border-black" type="text" />
+              <Form.Control className="input-box" type="text" />
             </Form.Group>
 
-            <Container className=" d-flex mt-4 justify-content-center align-items-center gap-4 pb-3 pt-3">
-              <Button variant="primary" className="px-5">
-                Save
-              </Button>
-              <Button variant="dark" className="px-5">
-                Cancel
-              </Button>
+            <Container className=" d-flex mt-4 justify-content-center align-items-center gap-4 py-3">
+              <CustomButton variant="accept" label="Save" />
+              <CustomButton variant="decline" label="Cancel" />
             </Container>
           </Form>
         </Container>
       </div>
-      {/* <Footer /> */}
     </>
   );
 };
 
-export default EditProfile;
+export default AddEvent;

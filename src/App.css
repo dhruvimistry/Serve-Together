@@ -84,6 +84,15 @@ small, .small {
   background-color: #033fff80;
   z-index: 1;
 }
+
+tr {
+  height: 38px;
+}
+
+.left-icon {
+  width: 38px;
+}
+
 @media (max-width: 320px) {
   .editprofile{
     padding: 0 !important;

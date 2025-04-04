@@ -6,6 +6,7 @@ import './LoginPage.css';
 // import PasswordStrengthChecker from "../components/PasswordStrengthChecker";
 import ImageSection from "../components/LoginImage";
 import HeadLogo from "../assets/serve-together-1.png";
+// import { setCookie } from "../utils/cookiess";
 
 const emailExp: RegExp = /^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,})$/;
 
@@ -13,6 +14,7 @@ const LoginForm: React.FC = () => {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const {
     register,
@@ -21,6 +23,8 @@ const LoginForm: React.FC = () => {
   } = useForm();
   
   const onSubmit = async (data: any) => {
+    setLoading(true);
+
     try {
       const response = await fetch("https://ngo-volunteer-2.onrender.com/auth/login", {
         method: "POST",
@@ -36,9 +40,22 @@ const LoginForm: React.FC = () => {
       const result = await response.json();
   
       if (response.ok) {
+        console.log(response)
+
+        // setCookie("User", `${userDetails}`, 12);
+        //     setCookie("Token", `${response.JWTtoken}`, 12);
+        //     setCookie("CountS", `${response.staff}`, 12);
+        //     setCookie("CountP", `${response.policy}`, 12);
+        //     setCookie("CountL", `${response.leadscount}`, 12);
+        //     setCookie("Logintoken", `${response.token}`, 12);
+        //     setCookie("activeId", `${response.user.active_order_id}`, 12);
+        //     setCookie("AgentId", `${response.user.agent_id}`, 12);
         if (result.token && result.userType) {
           loginUser(result.token, result.userType);
+          // setCookie("Token", `${result.token}`, 12);
+          // setCookie("Usertype", `${result.userType}`, 12);
         }
+        setLoading(false);
         navigate("/");
       } else {
         setErrorMessage(result.message || "Login failed. Please try again.");
@@ -98,7 +115,7 @@ const LoginForm: React.FC = () => {
           </div>
 
           <button className="btn w-100 theme-bg my-4" type="submit">
-            Log in
+            {loading ? "Verifying..." : "Log in"}
           </button>
         </form>
         <div className="text-center small-text py-3">
