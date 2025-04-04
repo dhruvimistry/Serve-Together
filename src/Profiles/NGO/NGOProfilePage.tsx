@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaUserCircle, FaMapMarkerAlt, FaCalendarAlt } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CustomButton from "../../components/common/CustomButton";
 
@@ -120,16 +120,25 @@ const Profile: React.FC = () => {
 
         <div className="row mt-3">
           {events.map((event, index) => (
-            <div className="col-md-6 mb-3" key={index}>
+            <div className="col-lg-6 mb-3" key={index}>
               <div className="card p-4 shadow-sm common-radius">
                 <h5 className="fw-bold">{event.title}</h5>
-                <p>
-                  <FaMapMarkerAlt className="me-2" /> {event.location}
-                </p>
-                <p>
-                  <FaCalendarAlt className="me-2" /> {event.date} | {event.time}
-                </p>
-                <p>🔹 {event.details}</p>
+                <div>
+                  <table className="table table-borderless mb-0">
+                    <tr>
+                      <td className="left-icon"><i className="bi bi-geo-alt"/></td>
+                      <td>{event.location}</td>
+                    </tr>
+                    <tr>
+                      <td><i className="bi bi-calendar"/></td>
+                      <td>{event.date} | {event.time}</td>
+                    </tr>
+                    <tr>
+                      <td><i className="bi bi-star"/></td>
+                      <td>{event.details}</td>
+                    </tr>
+                  </table>
+                </div>
                 <CustomButton label="Delete" variant="decline" />
               </div>
             </div>
