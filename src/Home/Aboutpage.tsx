@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Carousel, Image,  Card } from "react-bootstrap";
+import { Container,Row,Col,Image,Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Hands22 from '../assets/hands22.jpg'
 import Vision from "../assets/vision.webp";
@@ -10,24 +10,20 @@ const AboutUs: React.FC = () => {
     return (
         <>
             <Container fluid className="bg-white">
-                <h2 className=" name text-center fw-bold text-center py-5 ">About Us</h2>
-                <Container className="hero-section  ">
-                    <Carousel className="hero-container ">
-                        {[...Array(3)].map((_, index) => (
-                            <Carousel.Item key={index}>
-                                <img className="d-block w-100 common-radius" src={Hands22} alt={`Slide ${index + 1}`} />
-                                <div className="overlay common-radius"></div>
-                                <Carousel.Caption className="text-start caption-center">
-                                    <h3 className="cap fw-bolder text-center">Serve Together</h3>
-                                    <p className="cap1 text-center text-light">Together,We Build a Better World !</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                        ))}
-                    </Carousel>
-                </Container>
-            </Container>
-            <Container fluid className="  bg-white">
-                <Container className=" py-5 ">
+    <h2 className="name text-center fw-bold text-center py-5">About Us</h2>
+    <Container className="hero-section">
+        <div className="hero-container position-relative">
+            <img className="d-block w-100 common-radius" src={Hands22} alt="About Us Image" />
+            <div className="overlay common-radius"></div>
+            <div className="text-start caption-center position-absolute w-100">
+                <h3 className="cap fw-bolder text-center text-light">Serve Together</h3>
+                <p className="cap1 text-center text-light">Together, We Build a Better World!</p>
+            </div>
+        </div>
+    </Container>
+</Container>
+            <Container fluid className="bg-white">
+                <Container className="py-5 ">
                     <Row className="align-items-center ">
                         <Col md={6} className="text-center">
                             <Image src={Vision} alt="Vision" fluid className="common-radius" />
@@ -81,7 +77,7 @@ const AboutUs: React.FC = () => {
 </Container>
 </Container>
             <Container fluid className="bg-light">
-            <Container  className=" py-5">
+            <Container  className="py-5">
                 <Row className="align-items-center">
                     <Col md={6}>
                         <Card>
@@ -108,7 +104,7 @@ const AboutUs: React.FC = () => {
             </Container>
             <Container  fluid  className="join">
                 <Container>
-                <Row className=" text-start py-5">
+                <Row className="text-start py-5">
                     <Col>
                         <h3 className="fw-bold">Join Us & Make a Difference!</h3>
                         <p>
