@@ -63,7 +63,7 @@ const Homepage: React.FC = () => {
               Join hands with NGOs & volunteers to create a better world! Whether you want to share your skills or need
               volunteers for your cause, Serve Together is here to connect you.
             </p>
-            <div className="d-flex justify-content-center flex-wrap gap-2">
+            <div className="d-flex gap-2">
               <CustomButton variant="primary" label="Register As NGO" />
               <CustomButton variant="primary" label="Sign Up As Volunteer" />
             </div>
