@@ -75,10 +75,10 @@ p {
     font-size: 14px;
   }
 
-  h2,
-  h3 {
+  h2, h3 {
     font-size: 24px;
     padding-top: 10px;
+    text-align: center;
   }
 
   p {
@@ -91,6 +91,10 @@ p {
 
   .CustomButton {
     display: block !important;
+  }
+  
+  .additional-buttons {
+    justify-content: center;
   }
 }
 
@@ -111,7 +115,6 @@ p {
   h3 {
     font-size: 22px;
     padding-top: 10px;
-    text-align: center;
   }
 
   p {

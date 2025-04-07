@@ -44,5 +44,14 @@
   background-color: #d1dcff;
 }
 
+.dark {
+  color: white;
+  border-color: #036;
+  background-color: #036;
+}
 
-
+.dark:hover {
+  color: white;
+  border-color: #003366;
+  background-color: #00336682;
+}

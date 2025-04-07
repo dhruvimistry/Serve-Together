@@ -84,6 +84,10 @@
   .caption-center {
     padding: 0;
   }
+
+  .additional-buttons {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 609px) {

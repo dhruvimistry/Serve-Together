@@ -1,12 +1,15 @@
 import React from "react";
-import { Container, Button, Row, Col, Carousel, Accordion, Image } from "react-bootstrap";
+import { Container, Row, Col, Carousel, Accordion, Image } from "react-bootstrap";
 import HeroImg1 from "../assets/hands 11.jpg";
 import Vision from "../assets/vision.webp";
 import './Homepage.css';
 import FeaturedEvents from "../components/common/featuredevents";
 import CustomButton from "../components/common/CustomButton";
+import { useNavigate } from "react-router";
 
 const Homepage: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <Container className="hero-section ">
@@ -20,9 +23,11 @@ const Homepage: React.FC = () => {
                 <p className="caption1 text-light">- Mahatma Gandhi</p>
                 <p className="caption2 text-light">Every helping hand matters. Find opportunities, contribute, and inspire positive change.</p>
                 <div className="hero-btn pt-2">
-                  <Button className="border-0 w-30 " style={{ backgroundColor: "#003366" }}>
-                    Find Volunteer Opportunities
-                  </Button>
+                  <CustomButton 
+                    label="Find Volunteer Opportunities" 
+                    variant="dark"
+                    onClick={() => navigate('/events')}
+                  />
                 </div>
               </Carousel.Caption>
             </Carousel.Item>
@@ -44,7 +49,7 @@ const Homepage: React.FC = () => {
               individuals and organizations in need.
             </p>
             <div className="learn text-md-start">
-              <CustomButton variant="primary" label="Learn More" />
+              <CustomButton variant="primary" label="Learn More" onClick={() => navigate('/about')}/>
             </div>
           </Col>
         </Row>
@@ -63,7 +68,7 @@ const Homepage: React.FC = () => {
               Join hands with NGOs & volunteers to create a better world! Whether you want to share your skills or need
               volunteers for your cause, Serve Together is here to connect you.
             </p>
-            <div className="d-flex gap-2">
+            <div className="d-flex gap-2 additional-buttons">
               <CustomButton variant="primary" label="Register As NGO" />
               <CustomButton variant="primary" label="Sign Up As Volunteer" />
             </div>

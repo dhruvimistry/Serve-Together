@@ -31,7 +31,7 @@ const FeaturedEvents: React.FC = () => {
           </Col>
         </Row>
         <div className="pt-5 text-center pb-5">
-          <Button className="find px-5 border-0" style={{ backgroundColor: " #003366" }}> View More Events</Button>
+          <Button className="px-5 py-2  border-0" style={{ backgroundColor: " #003366" }}> View More Events</Button>
         </div>
       </Container>
     </Container>
