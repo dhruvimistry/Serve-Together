@@ -79,14 +79,14 @@ const Homepage: React.FC = () => {
           <Accordion.Item eventKey="0">
             <Accordion.Header>Who can register as a volunteer?</Accordion.Header>
             <Accordion.Body>
-              Anyone with a passion for teaching, art, sports, or mentorship can register as a volunteer.
+              Anyone with a passion for making a change can register as a volunteer.
               Whether you are a professional or simply someone willing to share your skills, your contribution is valuable.
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
             <Accordion.Header>How do I find NGOs or orphanages to volunteer with?</Accordion.Header>
             <Accordion.Body>
-              You can find NGOs and orphanages on Serve Together by exploring the "Volunteers" section.
+              You can find NGOs and orphanages on Serve Together by exploring the "Events" section.
               Filter by location or cause, connect with organizations directly, and apply for roles that match your skills.
             </Accordion.Body>
           </Accordion.Item>
