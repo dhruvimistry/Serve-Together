@@ -1,10 +1,14 @@
 import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import EventCard from "./Eventcard";
 import  "./featuredevents.css";
+import CustomButton from "./CustomButton";
+import { useNavigate } from "react-router";
 
 
 const FeaturedEvents: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <Container fluid className="bg-white">
       <h1 className="name text-center fw-bold mb-4 pt-5">Featured Events</h1>
@@ -31,7 +35,7 @@ const FeaturedEvents: React.FC = () => {
           </Col>
         </Row>
         <div className="pt-5 text-center pb-5">
-          <Button className="px-5 py-2  border-0" style={{ backgroundColor: " #003366" }}> View More Events</Button>
+          <CustomButton label="View more events" variant="dark" onClick={() => navigate('/events')}/>
         </div>
       </Container>
     </Container>
