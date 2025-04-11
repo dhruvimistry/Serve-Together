@@ -1,6 +1,7 @@
 .hero-container {
   position: relative;
 }
+
 .overlay {
   position: absolute;
   top: 0;
@@ -9,6 +10,7 @@
   height: 100%;
   background-color: #053fff80 !important;
 }
+
 .caption-center {
   position: absolute;
   top: 50%;
@@ -17,21 +19,28 @@
   width: 80%;
   
 }
-.cap {
+
+.caption {
   font-size: 60px;
 }
+
 .carousel-item img {
   width: 100%;
 }
+
+.accordion-button:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
 .accordion-button {
   color: #003366 !important;
 }
-.questions .texts {
-  color: #5C6970;
-}
+
 .carousel-control-next-icon {
   display: none;
 }
+
 .carousel-control-prev-icon {
   display: none;
 }
@@ -46,27 +55,38 @@
   .cap {
     font-size: 35px;
   }
-  .cap1,.cap2 {
+
+  .caption1,.caption2 {
     font-size: 12px;
   }
+
   .change .nam {
     font-size: 24px;
   }
-  .serve {
+
+  .section-heading {
     font-size: 20px !important;
   }
-  .info {
+
+  .section-info {
     font-size: 12px !important;
   }
+
   .main {
     padding-left: 0;
     padding-right: 0;
   }
+
   .feature .texts {
     font-size: 12px;
   }
+
   .caption-center {
     padding: 0;
+  }
+
+  .additional-buttons {
+    justify-content: center;
   }
 }
 
@@ -77,39 +97,47 @@
 }
 
 @media (max-width: 455px) {
-  .serve ,.change .nam {
+  .section-heading,.change .name {
     padding-top: 20px;
     text-align: center;
     font-size: 20px !important;
   }
+
   .change{
     padding-bottom: 0 !important;
   }
-  .learnmore.btn , .find {
+
+  .learnmore.btn, .find {
     font-size: 0.8rem;
     padding: 8px;
     width: 100%;
-}
-.cap {
-  font-size: 12px;
-  padding: 0 !important;
-}
-.cap1, .cap2 {
-  font-size: 10px !important;
-  text-align: center;
-}
-.oppo{
+  }
+
+  .caption {
+    font-size: 12px;
+    padding: 0 !important;
+  }
+
+  .caption1, .caption2 {
+    font-size: 10px !important;
+    text-align: center;
+  }
+
+  .hero-btn{
     text-align: center !important;
-}
-.caption-center {
-  padding: 0;
-}
-.learn {
-  display: flex;
-  padding-top: 10px;
-  justify-content: center;
-}
-.about{
-  padding-top: 0 !important;
-}
+  }
+
+  .caption-center {
+    padding: 0;
+  }
+
+  .learn {
+    display: flex;
+    padding-top: 10px;
+    justify-content: center;
+  }
+
+  .about{
+    padding-top: 0 !important;
+  }
 }

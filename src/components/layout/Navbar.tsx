@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link, useNavigate } from "react-router-dom";
 import { isAuthenticated, logoutUser } from "../../utils/authentication";
 import "./Navbar.css"
+import CustomButton from "../common/CustomButton";
 
 const NavBar: React.FC = () => {
   const navigate = useNavigate();
@@ -77,7 +78,7 @@ const NavBar: React.FC = () => {
                     ></i>
                     <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
                       <li>
-                        <Link className="dropdown-item" to="/ngo-profile">
+                        <Link className="dropdown-item" to="/volunteer-profile">
                           Profile
                         </Link>
                       </li>
@@ -90,8 +91,8 @@ const NavBar: React.FC = () => {
                   </li>
                 ) : (
                   <li className="d-flex gap-2">
-                    <Link to="/login" className="btn theme-bg">Login</Link>
-                    <Link to="/signup" className="btn theme-bg">Sign Up</Link>
+                    <CustomButton label="Log in" onClick={() => navigate('/login')}/>
+                    <CustomButton label="Sign up" onClick={() => navigate('/signup')}/>
                   </li>
                 )}
               </ul>
