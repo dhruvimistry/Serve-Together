@@ -78,7 +78,7 @@ const NavBar: React.FC = () => {
                     ></i>
                     <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
                       <li>
-                        <Link className="dropdown-item" to="/ngo-profile">
+                        <Link className="dropdown-item" to="/volunteer-profile">
                           Profile
                         </Link>
                       </li>
