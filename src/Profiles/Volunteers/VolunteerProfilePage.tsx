@@ -9,7 +9,7 @@ const VolunteerProfilePage: React.FC = () => {
     <Container className="min-vh-100">
       <Container className="bg-white py-1 px-4 common-radius d-flex justify-content-between align-items-center">
         <h3 className="fw-bold m-0">Profile</h3>
-        <CustomButton variant="accept" label="Edit">
+        <CustomButton variant="accept" label="Edit" >
           {/* <FaEdit className="me-2 text-white" />  */}
         </CustomButton>
       </Container>
