@@ -18,20 +18,20 @@ const EventCard: React.FC<EventCardProps> = ({ nameOfOrganization, title, locati
         <p className="card-text ">
         <table className="mb-0">
           <tr>
-          <td><i className="bi bi-megaphone"/></td>
-          <td>{title}</td>
+            <td><i className="bi bi-megaphone"/></td>
+            <td>{title}</td>
           </tr>
           <tr>
-          <td className="left-icon"><i className="bi bi-geo-alt"/></td>
-          <td>{location}</td>
+            <td className="left-icon"><i className="bi bi-geo-alt"/></td>
+            <td>{location}</td>
           </tr>
           <tr>
-          <td><i className="bi bi-calendar"/></td>
-          <td>{date} | {time}</td>
+            <td><i className="bi bi-calendar"/></td>
+            <td>{date} | {time}</td>
           </tr>
           <tr>
-          <td><i className="bi bi-star"/></td>
-          <td>{skills}</td>
+            <td><i className="bi bi-star"/></td>
+            <td>{skills}</td>
           </tr>
         </table>
         </p>

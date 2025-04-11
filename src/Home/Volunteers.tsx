@@ -33,7 +33,7 @@ const Volunteers: React.FC = () => {
         <div className="row">
           {filteredVolunteers.length > 0 ? (
             filteredVolunteers.map((volunteer, index) => (
-              <div key={index} className="col-md-6">
+              <div key={index} className="col-lg-6">
                 <VolunteerCard {...volunteer} />
               </div>
             ))

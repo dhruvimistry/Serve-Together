@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Table } from "react-bootstrap";
 import "./Eventcard.css"
 import CustomButton from "./CustomButton";
+import { useNavigate } from "react-router";
 
 interface EventCardProps {
   title: string;
@@ -12,6 +13,8 @@ interface EventCardProps {
 }
 
 const EventCard: React.FC<EventCardProps> = ({ title, subtitle, location, dateTime, skills }) => {
+  const navigate = useNavigate();
+
   return (
     <Card className="event-card shadow-sm border-0" style={{background:"#F0F5F9"}}>
       <Card.Body>
@@ -35,8 +38,8 @@ const EventCard: React.FC<EventCardProps> = ({ title, subtitle, location, dateTi
           </tr>
         </Table>
         <div className="d-flex justify-content-center gap-2">
-          <CustomButton variant="primary" label="View Details" width="w-50"/>
-          <CustomButton variant="primary" label="Apply" width="w-50"/>
+          <CustomButton variant="primary" label="View Details" width="w-50" onClick={() => navigate('/events')}/>
+          <CustomButton variant="primary" label="Apply" width="w-50" onClick={() => navigate('/events')}/>
         </div>
       </Card.Body>
     </Card>
