@@ -40,7 +40,7 @@ const Requests: React.FC = () => {
   const [selectedEvent, setSelectedEvent] = useState<string>(events[0]);
 
   return (
-    <Container className="my-5">
+    <Container className="mt-2 mb-5">
       <Row className="gy-4 common-radius">
         {/* event section */}
 
@@ -91,7 +91,7 @@ const Requests: React.FC = () => {
                               <strong>Skills:</strong> {volunteer.skills.join(", ")}
                             </Card.Text>
                           </td>
-                          <td> 
+                          <td className="w-25"> 
                             <div className="d-flex flex-column justify-content-end gap-2 common-radius">
                               <CustomButton variant="accept" label="Accept"/>
                               <CustomButton variant="decline" label="Decline"/>
