@@ -34,7 +34,7 @@ const NavBar: React.FC = () => {
           </div>
 
           {/* Offcanvas Menu */}
-          <div className="offcanvas offcanvas-end" tabIndex={-1} id="offcanvasNavbar">
+          <div className="offcanvas offcanvas-end offcanvas-custom" tabIndex={-1} id="offcanvasNavbar">
             <div className="offcanvas-header">
               <h5 className="offcanvas-title">Menu</h5>
               <button type="button" className="btn-close"  aria-label="Close" data-bs-dismiss="offcanvas"></button>
