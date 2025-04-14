@@ -1,7 +1,10 @@
 import React from "react";
 import { Container, Row, Col, Carousel, Accordion, Image } from "react-bootstrap";
 import HeroImg1 from "../assets/hands 11.jpg";
+import HeroImg2 from '../assets/Kids playing.jpg'
+import HeroImg3 from '../assets/Volunteer teaching.png'
 import Vision from "../assets/vision.webp";
+import Change from "../assets/Happy kids.jpg";
 import './Homepage.css';
 import FeaturedEvents from "../components/common/featuredevents";
 import CustomButton from "../components/common/CustomButton";
@@ -9,22 +12,25 @@ import { useNavigate } from "react-router";
 
 const Homepage: React.FC = () => {
   const navigate = useNavigate();
+  const heroImages = [HeroImg1, HeroImg2, HeroImg3];
 
   return (
     <>
-      <Container className="hero-section ">
-        <Carousel className="hero-container ">
-          {[...Array(3)].map((_, index) => (
+      <Container className="hero-section">
+        <Carousel className="hero-container" interval={3000} pause={false} fade>
+          {heroImages.map((img, index) => (
             <Carousel.Item key={index}>
-              <img className="d-block w-100 common-radius" src={HeroImg1} alt={`Slide ${index + 1}`} />
+              <img className="d-block w-100 common-radius" src={img} alt={`Slide ${index + 1}`} />
               <div className="overlay common-radius"></div>
               <Carousel.Caption className="text-start caption-center">
                 <h3 className="caption fw-bolder">“Be the change you want”</h3>
                 <p className="caption1 text-light">- Mahatma Gandhi</p>
-                <p className="caption2 text-light">Every helping hand matters. Find opportunities, contribute, and inspire positive change.</p>
+                <p className="caption2 text-light">
+                  Every helping hand matters. Find opportunities, contribute, and inspire positive change.
+                </p>
                 <div className="hero-btn pt-2">
-                  <CustomButton 
-                    label="Find Volunteer Opportunities" 
+                  <CustomButton
+                    label="Find Volunteer Opportunities"
                     variant="dark"
                     onClick={() => navigate('/events')}
                   />
@@ -34,6 +40,7 @@ const Homepage: React.FC = () => {
           ))}
         </Carousel>
       </Container>
+
 
       <Container className="about py-5 ">
         <h3 className="name fw-bold text-center pb-4">About Us</h3>
@@ -60,7 +67,7 @@ const Homepage: React.FC = () => {
       <Container className="change py-5 ">
         <Row className="align-items-center">
           <Col md={6} className="text-center">
-            <Image src={Vision} alt="Vision" fluid className="rounded shadow-sm" />
+            <Image src={Change} alt="Kids Img" fluid className="rounded shadow-sm" />
           </Col>
           <Col md={6} className="read">
             <h2 className="section-heading fw-bold">Ready to Make a Change?</h2>
