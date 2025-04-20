@@ -1,9 +1,10 @@
 import React from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AddProfile from "../../components/common/addprofileimage";
 // import { BsCamera } from "react-icons/bs";
 import { useForm } from "react-hook-form";
+import CustomButton from "../../components/common/CustomButton";
 // import AddProfile from "../../components/addprofileimage";
 // import Footer from "../components/footer";
 // import NavBar from "../components/Navbar";
@@ -106,12 +107,8 @@ const NgoEditProfile: React.FC = () => {
             </Row>
 
             <Container className="d-flex mt-4 justify-content-center align-items-center gap-4 pb-3 pt-3">
-              <Button type="submit" className="px-5 btn">
-                Save
-              </Button>
-              <Button className="px-5 btn">
-                Cancel
-              </Button>
+              <CustomButton label="Save" variant="accept"/>
+              <CustomButton label="Cancel" variant="decline"/>
             </Container>
           </Form>
           </div>

@@ -101,10 +101,7 @@ const Profile: React.FC = () => {
             <div id="right-card" className="card p-4 shadow-sm common-radius" style={{ minHeight: cardHeight }}>
               <h6 className="fw-bold">About</h6>
               <p>
-                Hope Foundation is a nonprofit organization committed to transforming the lives of
-                underprivileged children, especially orphans. We provide education, healthcare, and
-                essential resources to ensure a brighter future. Through community support and volunteer
-                efforts, we strive to create a world where every child feels safe, nurtured, and empowered.
+                Hope Foundation is a nonprofit organization committed to transforming the lives of underprivileged children, especially orphans. We provide education, healthcare, and essential resources to ensure a brighter future. Through community support and volunteer efforts, we strive to create a world where every child feels safe, nurtured, and empowered.
               </p>
             </div>
           </div>
