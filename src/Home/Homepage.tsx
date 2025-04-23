@@ -3,8 +3,8 @@ import { Container, Row, Col, Carousel, Accordion, Image } from "react-bootstrap
 import HeroImg1 from "../assets/hands 11.jpg";
 import HeroImg2 from '../assets/Kids playing.jpg'
 import HeroImg3 from '../assets/Volunteer teaching.png'
-import Vision from "../assets/vision.webp";
 import Change from "../assets/Happy kids.jpg";
+import Childs from "../assets/Childs.jpeg"
 import './Homepage.css';
 import FeaturedEvents from "../components/common/featuredevents";
 import CustomButton from "../components/common/CustomButton";
@@ -46,7 +46,7 @@ const Homepage: React.FC = () => {
         <h3 className="name fw-bold text-center pb-4">About Us</h3>
         <Row className="align-items-center">
           <Col md={6} className="text-center">
-            <Image src={Vision} alt="Vision" fluid className="rounded shadow-sm" />
+            <Image src={Childs} alt="Childs" fluid className="rounded shadow-sm" />
           </Col>
           <Col md={6} >
             <h2 className="section-heading fw-bold ">Serve Together – Empowering Change, One Step at a Time</h2>

@@ -1,8 +1,9 @@
 import React from "react";
-import { Container,Row,Col,Image,Card } from "react-bootstrap";
+import { Container,Row,Col,Image} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Hands22 from '../assets/hands22.jpg'
-import Vision from "../assets/vision.webp";
+import Vision from '../assets/vision.webp'
+import Writing from "../assets/writing.jpg";
 import Change from "../assets/change.jpg"
 import './Aboutpage.css'
 import CustomButton from "../components/common/CustomButton";
@@ -52,7 +53,7 @@ const AboutUs: React.FC = () => {
           <Container fluid className="py-5">
             <Row className="align-items-center">
               <Col lg={6} className="order-md-last text-center">
-                <Image src={Vision} alt="Vision" fluid className="rounded shadow-sm w-85 mx-auto" />
+                <Image src={Writing} alt="Vision" fluid className="common-radius shadow-sm w-85 mx-auto" />
               </Col>
               <Col lg={6}>
                 <h2 className="fw-bold">Our Vision</h2>
@@ -73,11 +74,9 @@ const AboutUs: React.FC = () => {
         </Container>
         <Container fluid className="bg-light">
           <Container  className="py-5">
-            <Row className="align-items-center">
-              <Col lg={6}>
-                <Card>
-                  <Card.Img src={Change} />
-                </Card>
+            <Row className="align-items-center ">
+              <Col lg={6} className="text-center">
+              <Image src={Change} alt="change" fluid className="common-radius shadow-sm w-85 mx-auto" />
               </Col>
               <Col lg={6}>
                 <h3 className="fw-bold">Stories of Change</h3>
