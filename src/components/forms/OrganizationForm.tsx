@@ -48,8 +48,26 @@ const OrganizationForm: React.FC<OrganizationFormProps> = ({ register, errors, s
         <label>City</label>
         <select className="form-select" {...register("city", { required: "City is required" })}>
           <option value="">Select city</option>
-          <option value="city1">City 1</option>
-          <option value="city2">City 2</option>
+          <option value="ahmedabad">Ahmedabad</option>
+          <option value="anand">Anand</option>
+          <option value="bharuch">Bharuch</option>
+          <option value="bhavnagar">Bhavnagar</option>
+          <option value="bhuj">Bhuj</option>
+          <option value="dahod">Dahod</option>
+          <option value="gandhinagar">Gandhinagar</option>
+          <option value="jamnagar">Jamnagar</option>
+          <option value="junagadh">Junagadh</option>
+          <option value="mehsana">Mehsana</option>
+          <option value="morbi">Morbi</option>
+          <option value="nadiad">Nadiad</option>
+          <option value="navsari">Navsari</option>
+          <option value="patan">Patan</option>
+          <option value="porbandar">Porbandar</option>
+          <option value="rajkot">Rajkot</option>
+          <option value="surat">Surat</option>
+          <option value="vadodara">Vadodara</option>
+          <option value="valsad">Valsad</option>
+          <option value="veraval">Veraval</option>
         </select>
         {errors.city && <p className="text-danger small">{errors.city.message as string}</p>}
       </div>
