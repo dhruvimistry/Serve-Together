@@ -1,18 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './SignUpPage.css';
 import HeadLogo from '../assets/serve-together-1.png';
 import VolunteerForm from '../components/forms/VolunteerForm';
 import OrganizationForm from '../components/forms/OrganizationForm';
 import { setUserData } from '../utils/cookies';
 
-// There is an error in backend for nameOfOrganization
 const SignUpPage: React.FC = () => {
   const [role, setRole] = useState("volunteer");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const roleParam = queryParams.get("role");
+
+    if (roleParam === "volunteer" || roleParam === "organization") {
+      setRole(roleParam);
+    }
+  }, [location.search]);
 
   const {
     register,

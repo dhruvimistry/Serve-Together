@@ -72,12 +72,11 @@ const Homepage: React.FC = () => {
           <Col md={6} className="read">
             <h2 className="section-heading fw-bold">Ready to Make a Change?</h2>
             <p className="section-info pt-3" style={{ textAlign: "justify", color: " #37474F" }}>
-              Join hands with NGOs & volunteers to create a better world! Whether you want to share your skills or need
-              volunteers for your cause, Serve Together is here to connect you.
+              Join hands with NGOs & volunteers to create a better world! Whether you want to share your skills or need volunteers for your cause, Serve Together is here to connect you.
             </p>
             <div className="d-flex gap-2 additional-buttons">
-              <CustomButton variant="primary" label="Register As NGO" />
-              <CustomButton variant="primary" label="Sign Up As Volunteer" />
+              <CustomButton variant="primary" label="Register As NGO" onClick={() => navigate('/signup?role=organization')} />
+              <CustomButton variant="primary" label="Sign Up As Volunteer" onClick={() => navigate('/signup?role=volunteer')} />
             </div>
           </Col>
         </Row>
