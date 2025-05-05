@@ -1,8 +1,9 @@
 import React from "react";
-import { Container,Row,Col,Image,Card } from "react-bootstrap";
+import { Container,Row,Col,Image} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Hands22 from '../assets/hands22.jpg'
-import Vision from "../assets/vision.webp";
+import Vision from '../assets/vision.webp'
+import Writing from "../assets/writing.jpg";
 import Change from "../assets/change.jpg"
 import './Aboutpage.css'
 import CustomButton from "../components/common/CustomButton";

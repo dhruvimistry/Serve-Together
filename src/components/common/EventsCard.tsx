@@ -39,7 +39,7 @@ const EventCard: React.FC<EventCardProps> = ({ nameOfOrganization, title, locati
           <CustomButton label="Apply" variant="primary" width="w-50"/>
         </div>
       </div>
-    </div>
+   </div>
   );
 };
 

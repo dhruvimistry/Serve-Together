@@ -35,6 +35,7 @@
 
 .accordion-button {
   color: #003366 !important;
+  font-weight: bold;
 }
 
 .carousel-control-next-icon {
