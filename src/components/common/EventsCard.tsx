@@ -1,5 +1,7 @@
 import React from "react";
 import CustomButton from "./CustomButton";
+import { useNavigate } from "react-router";
+
 
 interface EventCardProps {
   title: string;
@@ -11,6 +13,8 @@ interface EventCardProps {
 }
 
 const EventCard: React.FC<EventCardProps> = ({ nameOfOrganization, title, location, date, time, skills }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="card mb-3 shadow-sm common-bg common-radius border-0 my-2 px-0">
       <div className="card-body p-4">
@@ -36,7 +40,7 @@ const EventCard: React.FC<EventCardProps> = ({ nameOfOrganization, title, locati
         </table>
         </p>
         <div className="d-flex justify-content-center gap-3">
-          <CustomButton label="Apply" variant="primary" width="w-50"/>
+          <CustomButton label="Apply" variant="primary" width="w-50" onClick={() => navigate('/requests')}/>
         </div>
       </div>
    </div>
